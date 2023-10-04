@@ -6,6 +6,15 @@ let Tm = {
     albums: ['trueStory', '1954']
 };
 const artist = (singer) => {
-    return `Hi ${singer.name}`;
+    if (singer.name) {
+        return `Hi ${singer.name.toString()}`;
+    }
+    return `Hi`;
 };
 log(artist(Tm));
+var nameEnum;
+(function (nameEnum) {
+    nameEnum[nameEnum["name"] = 0] = "name";
+    nameEnum[nameEnum["age"] = 1] = "age";
+    nameEnum[nameEnum["level"] = 2] = "level";
+})(nameEnum || (nameEnum = {}));
