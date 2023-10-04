@@ -1,4 +1,4 @@
-const {log} = console
+// const {log} = console
 type singer ={
     name?:string,
     active:boolean,

@@ -1,5 +1,4 @@
 "use strict";
-const { log } = console;
 let Tm = {
     name: 'Timaya',
     active: true,
