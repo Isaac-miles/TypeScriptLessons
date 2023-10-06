@@ -1,8 +1,6 @@
 "use strict";
-// interface TransactionObject {
-//     Account:number,
-//     Books:number,
-//     Job:number
+// interface TransactionObject{
+// readonly [index:string]:number
 // }
 const todaysTransactions = {
     Account: 10,
@@ -19,3 +17,4 @@ const todaysNet = (transactions) => {
     }
     return total;
 };
+console.log(todaysTransactions['Hello']); //this returns undefine and typescript doest complain because it has no idea the elements in the object if defined with an index signature [key:string]:number.
