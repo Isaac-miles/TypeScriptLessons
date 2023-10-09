@@ -102,7 +102,7 @@ type NewAssign = ReturnType<typeof createNewAssign>
 const tsAssign:NewAssign = createNewAssign('utilityTypes', 100)
 console.log(tsAssign)
 
-//Parameters
+//Parameters this mostly gives a tuple
 type AssignParams = Parameters<typeof createNewAssign>
 
 const assignArgs: AssignParams = ["Genre", 70]
