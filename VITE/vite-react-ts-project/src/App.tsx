@@ -1,19 +1,24 @@
-import React,{useState} from 'react'
-import Heading from "./components/Heading"
-import { Section } from "./components/Section"
-import Counter from "./components/Counter"
+import React,{useState,useEffect, useCallback} from 'react'
 
+interface User{
+    id:number,
+    username:string
+}
 function App() {
-  const [count, setCount] = useState< number>(0)
+    const [count, setCount] = useState(0)
+    const [users, setUsers] = useState<User[] | null>()
+
+    useEffect(()=>{
+    console.log('mounting')
+    console.log('users', users)
+    return ()=>console.log('unmounting')
+    }, [users])
 
   return (
-    <>
-     <Heading  title="React"/>
-     <Section>
-      hi
-     </Section>
-     <Counter setCount={setCount}>Count is {count}</Counter>
-    </>
+    <div className='App'>
+        <h1>{count}</h1>
+        <button onClick={}> Add </button>
+    </div>
   )
 }
 
