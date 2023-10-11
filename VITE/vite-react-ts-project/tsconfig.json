@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "../ts-module-lessons/contex", "../ts-module-lessons/Hooks", "../ts-module-lessons/GenericLesson"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
