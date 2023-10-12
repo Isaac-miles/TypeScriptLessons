@@ -24,18 +24,35 @@ export type ReducerAction ={
 const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
     switch(action.type){
         case REDUCER_ACTION_TYPE.ADD:{
-            console.log()
+            if(!action.payload){
+                throw new Error ('action.payload missing in ADD action')
+            }
+            const {sku,name,price} = action.payload
+            const filteredCart:CartItemType[]= state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
+            const itemExists:CartItemType | undefined = state.cart.find(item=>item.sku === sku)
+            const qty:number = itemExists ? itemExists.qty + 1 : 1 
+            return {...state, cart:[...filteredCart,{sku,name,qty, price}]}
+
         }
         case REDUCER_ACTION_TYPE.REMOVE:{
-            console.log()
+                if(!action.payload){
+                throw new Error ('action.payload missing in REMOVE action')
+            }
+            const {sku,name,price} = action.payload
+            const filteredCart:CartItemType[]= state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
         }
+
         case REDUCER_ACTION_TYPE.QUANTITY:{
-            console.log()
+            if(!action.payload){
+                throw new Error ('action.payload missing in QUANTITY action')
+            }
         }
+           
         case REDUCER_ACTION_TYPE.SUBMIT:{
-            console.log()
+            return {...state, cart:[]}
         }
         default:
-            throw new Error('Unidentified actio ')
+            throw new Error('Unidentified Action Type')
     }
+ 
 }
