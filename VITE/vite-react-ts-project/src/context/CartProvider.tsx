@@ -1,3 +1,5 @@
+import { useMemo, useReducer } from "react"
+
 export type CartItemType = {
     sku:string,
     name:string,
@@ -65,4 +67,15 @@ const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
             throw new Error('Unidentified Action Type')
     }
  
+}
+
+const useCartContext = (initCartState: CartStateType)=>{
+    const [state, dispatch] = useReducer(reducer, initCartState)
+    const REDUCER_ACTIONS = useMemo(()=>{
+        return REDUCER_ACTION_TYPE
+    },[])
+
+    const totalItems = state.cart.reduce((preVal, cartItem)=>{
+        return preVal + cartItem.qty
+    },0)
 }
