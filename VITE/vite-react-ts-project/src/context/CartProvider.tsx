@@ -36,6 +36,8 @@ const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
             return {...state, cart:[...filteredCart,{sku,name,qty, price}]}
 
         }
+          break;
+
         case REDUCER_ACTION_TYPE.REMOVE:{
                 if(!action.payload){
                 throw new Error ('action.payload missing in REMOVE action')
@@ -44,7 +46,7 @@ const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
             const filteredCart:CartItemType[]= state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
             return {...state, cart:[...filteredCart]}
         }
-
+        break;
         case REDUCER_ACTION_TYPE.QUANTITY:{
             if(!action.payload){
                 throw new Error ('action.payload missing in QUANTITY action')
@@ -59,7 +61,7 @@ const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
             const filteredCart:CartItemType[]= state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
             return {...state, cart:[...filteredCart, updatedItem]}
         }
-           
+           break;
         case REDUCER_ACTION_TYPE.SUBMIT:{
             return {...state, cart:[]}
         }
