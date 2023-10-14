@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import useCart from '../hooks/useCart'
-import { CartLineItem } from './CartLineItem'
+import MomoizedCartLineItem from './CartLineItem'
 
 const Cart = () => {
     const  [confirm, setConfirm] = useState<boolean>(false)
@@ -17,7 +17,7 @@ const Cart = () => {
             <ul className="cart">
                 {cart.map(item =>{
                     return (
-                        <CartLineItem
+                        <MomoizedCartLineItem
                         key={item.sku}
                         item={item}
                         dispatch={dispatch}
