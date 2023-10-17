@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { reactionAdded } from "./postsSlice";
 
@@ -14,8 +13,7 @@ const ReactionButtons = ({ post }) => {
 
     const dispatch = useDispatch()
 console.log(post)
-    const reactionButtons = Object.entries(reactionEmoji)?.map(([name, emoji]) => {
-        console.log(name, emoji)
+    const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         return (
             <button
                 key={name}
@@ -25,7 +23,7 @@ console.log(post)
                     dispatch(reactionAdded({ postId: post.id, reaction: name }))
                 }
             >
-                {/* {{emoji}} {post.reactions[name]} */} {name} 
+              {emoji} {post.reactions[name]}
             </button>
         )
     })
