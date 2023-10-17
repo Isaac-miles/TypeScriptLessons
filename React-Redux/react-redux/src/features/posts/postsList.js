@@ -9,12 +9,12 @@ const PostsList = () => {
     const postStatus = useSelector(getPostsStatus)
     const error = useSelector(getPostsError)
 
+
     useEffect(()=>{
         if(postStatus === 'idle'){
             dispatch(fetchPosts)
         }
     },[postStatus,dispatch])
-console.log(posts)
     let content;
     if (postStatus === 'loading') {
         content = <p>"Loading..."</p>;
@@ -24,7 +24,7 @@ console.log(posts)
     } else if (postStatus === 'failed') {
         content = <p>{error}</p>;
     }
-
+console.log(content)
   return (
     <section>
         <h2>Posts</h2>

@@ -32,7 +32,7 @@ import axios from 'axios'
 // ]
 
 
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
+const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 const initialState = {
     posts:[],
@@ -42,7 +42,7 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
     const res = await axios.get(POSTS_URL)
-    console.log(res, 'response')
+    // console.log(res, 'response')
     return res.data;
 })
 
@@ -91,10 +91,12 @@ const postsSlice = createSlice({
                 state.status = 'loading'
             })
             .addCase(fetchPosts.fulfilled, (state, action) => {
+                console.log(action)
                 state.status = 'succeeded'
                 // Adding date and reactions
                 let min = 1;
                 const loadedPosts = action.payload.map(post => {
+               
                     post.date = sub(new Date(), { minutes: min++ }).toISOString();
                     post.reactions = {
                         thumbsUp: 0,
