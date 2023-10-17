@@ -12,7 +12,7 @@ const PostsList = () => {
 
     useEffect(()=>{
         if(postStatus === 'idle'){
-            dispatch(fetchPosts)
+            dispatch(fetchPosts())
         }
     },[postStatus,dispatch])
     let content;
@@ -24,7 +24,6 @@ const PostsList = () => {
     } else if (postStatus === 'failed') {
         content = <p>{error}</p>;
     }
-console.log(content)
   return (
     <section>
         <h2>Posts</h2>
