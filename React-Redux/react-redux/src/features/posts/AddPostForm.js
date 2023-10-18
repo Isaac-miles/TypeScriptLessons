@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { addNewPost } from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddPostForm = () => {
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
 
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -13,11 +16,15 @@ const AddPostForm = () => {
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
     const users = useSelector(selectAllUsers)
+
     const onTitleChanged = e => setTitle(e.target.value)
     const onContentChanged = e => setContent(e.target.value)
     const onAuthorChanged = e => setUserId(e.target.value)
 
-   const onSavePostClicked = () => {
+
+    const canSave = [title, content, userId].every(Boolean) && addRequestStatus === 'idle';
+
+    const onSavePostClicked = () => {
         if (canSave) {
             try {
                 setAddRequestStatus('pending')
@@ -26,6 +33,7 @@ const AddPostForm = () => {
                 setTitle('')
                 setContent('')
                 setUserId('')
+                navigate('/')
             } catch (err) {
                 console.error('Failed to save the post', err)
             } finally {
@@ -34,8 +42,6 @@ const AddPostForm = () => {
         }
 
     }
-
-    const canSave = [title, content, userId].every(Boolean) && addRequestStatus==='idle';
 
     const usersOptions = users.map(user => (
         <option key={user.id} value={user.id}>
@@ -57,7 +63,7 @@ const AddPostForm = () => {
                 />
                 <label htmlFor="postAuthor">Author:</label>
                 <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-                    <option value="">Select Author</option>
+                    <option value=""></option>
                     {usersOptions}
                 </select>
                 <label htmlFor="postContent">Content:</label>
