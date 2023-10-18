@@ -16,6 +16,7 @@ const PostsList = () => {
     //     }
     // },[postStatus,dispatch])
     //fetching of posts is now being dispatched at index
+    
     let content;
     if (postStatus === 'loading') {
         content = <p>"Loading..."</p>;
