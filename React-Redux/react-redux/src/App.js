@@ -25,7 +25,7 @@ function App() {
           <Route path=":userId" element={<UserPage />} />
         </Route>
 
-        {/* Catch all - replace with 404 component if you want */}
+        Catch all - replace with 404 component if you want
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Route>
