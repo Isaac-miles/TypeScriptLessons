@@ -6,7 +6,7 @@ const postsAdapter = createEntityAdapter({
     sortComparer: (a, b) => b.date.localeCompare(a.date)
 })
 
-// const initialState = postsAdapter.getInitialState()
+const initialState = postsAdapter.getInitialState()
 
 export const extendedApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
