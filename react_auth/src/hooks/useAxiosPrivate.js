@@ -8,7 +8,22 @@ const useAxiosPrivate = () =>{
     const {auth} = useAuth();
 
     useEffect(()=>{
-        
+        const responseIntercept = axiosPrivate.interceptors.response.use(
+            response => response,
+            async (err)=>{
+                const prevRequest = err?.config;
+                if(err?.response?.status === 403 && !prevRequest?.sent){
+                    prevRequest.sent = true;
+                    const newAccessToken = await refresh();
+                    prevRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;
+                    return axiosPrivate(prevRequest)
+                }
+            }
+        )
+
+     return    ()=>{
+            axiosPrivate.interceptors.response.eject(responseIntercept)
+        }
 
 
     },[auth,refresh])
