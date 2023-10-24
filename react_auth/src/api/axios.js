@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL ='http://192.168.8.101:5005'
+const BASE_URL ='http://192.168.8.1:5005'
+// const BASE_URL ='http://192.168.8.101:5005'
 export default axios.create({
     // baseURL: 'http://EBKTECH-L930:5005'
     baseURL: BASE_URL

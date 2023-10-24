@@ -1,11 +1,14 @@
 import { useState,useEffect } from "react"
 import useAxiosPrivate from "../hooks/useAxiosPrivate"
 import useRefreshToken from "../hooks/useRefreshToken"
+import { useNavigate, useLocation } from "react-router-dom"
 
 const Users = () => {
     const [users, setusers] = useState()
     const axiosPrivate = useAxiosPrivate()
     const refresh = useRefreshToken()
+    const navigate = useNavigate()
+    const location = useLocation()
 
     useEffect(()=>{
         let isMounted = true;
@@ -22,6 +25,7 @@ const Users = () => {
                 if (error instanceof Error){
                     console.log(error.message)
                 }
+                navigate('/login', {state:{from:location}, replace:true})
             }
         }
         getUsers()
