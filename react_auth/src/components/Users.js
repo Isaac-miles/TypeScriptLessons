@@ -25,7 +25,7 @@ const Users = () => {
                 if (error instanceof Error){
                     console.log(error.message)
                 }
-                navigate('/login', {state:{from:location}, replace:true})
+                // navigate('/login', {state:{from:location}, replace:true})
             }
         }
         getUsers()
