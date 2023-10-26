@@ -2,13 +2,17 @@ import { axiosPrivate } from "../api/axios";
 import { useEffect } from "react";
 import useRefreshToken from './useRefreshToken'
 import useAuth from "./useAuth";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 const useAxiosPrivate = () =>{
     const refresh = useRefreshToken();
     const {auth} = useAuth();
 
     useEffect(()=>{
-        const reqIntercept = axiosPrivate.interceptors.request.use
+        const reqIntercept = axiosPrivate.interceptors.request.use(
+            config =>{},
+            (err)=>Promise.reject(err)
+        )
 
         const requestIntercept = axiosPrivate.interceptors.request.use(
             config =>{
