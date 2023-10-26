@@ -30,6 +30,7 @@ const useAxiosPrivate = () =>{
         )
 
 
+        
         const responseIntercept = axiosPrivate.interceptors.response.use(
             response => response,
             async (err)=>{
