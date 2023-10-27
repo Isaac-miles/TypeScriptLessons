@@ -9,24 +9,6 @@ const useAxiosPrivate = () =>{
     const {auth} = useAuth();
 
     useEffect(()=>{
-        const reqIntercept = axiosPrivate.interceptors.request.use(
-            config =>{
-                if(!config.headers['Authorization']){
-                    config.headers['Authorization'] = `Bearer ${auth.accessToken}`
-                }
-                return config
-            },
-            (err)=>Promise.reject(err)
-        )
-        const reqI = axiosPrivate.interceptors.request.use(
-            config=> {
-                if(!config.headers['Authorization']){
-                    config.headers['Authorization'] = `Bearer ${auth.accessToken}`
-                }
-                return config
-            },
-            (err)=>Promise.reject(err.message)
-        )
 
         const requestIntercept = axiosPrivate.interceptors.request.use(
             config =>{
