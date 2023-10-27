@@ -18,6 +18,13 @@ const useAxiosPrivate = () =>{
             },
             (err)=>Promise.reject(err)
         )
+        const reqI = axiosPrivate.interceptors.request.use(
+            config=> {
+                if(!config.headers['Authorization']){
+                    config.headers['']
+                }
+            }
+        )
 
         const requestIntercept = axiosPrivate.interceptors.request.use(
             config =>{
