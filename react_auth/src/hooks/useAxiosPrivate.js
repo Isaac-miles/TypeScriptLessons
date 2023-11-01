@@ -36,11 +36,6 @@ const useAxiosPrivate = () =>{
             }
         )
 
-            const resI = axiosPrivate.interceptors.response.use(
-         
-            )
-
-
      return    ()=>{
             axiosPrivate.interceptors.request.eject(requestIntercept)
             axiosPrivate.interceptors.response.eject(responseIntercept)
