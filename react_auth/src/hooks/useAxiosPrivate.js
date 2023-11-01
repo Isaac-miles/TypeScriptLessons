@@ -37,12 +37,7 @@ const useAxiosPrivate = () =>{
         )
 
             const resI = axiosPrivate.interceptors.response.use(
-                res => res,
-                async (err)=>{
-                    const prevReq = err?.config;
-                  
-            
-                }
+         
             )
 
 
