@@ -38,6 +38,9 @@ const useAxiosPrivate = () =>{
             res => res,
             async (err)=>{
                 const prReq = err?.config;
+                if(err?.response.status===403 && !prReq?.sent){
+
+                }
             }
         )
 
