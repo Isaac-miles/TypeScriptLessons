@@ -39,7 +39,8 @@ const useAxiosPrivate = () =>{
             async (err)=>{
                 const prReq = err?.config;
                 if(err?.response.status===403 && !prReq?.sent){
-
+                    const newToken =await refresh();
+                    prReq.headers['Authorization'] =`Bearer ${newToken}`
                 }
             }
         )
