@@ -20,8 +20,6 @@ const useAxiosPrivate = () =>{
             (err)=>Promise.reject(err)
         )
 
-
-        
         const responseIntercept = axiosPrivate.interceptors.response.use(
             response => response,
             async (err)=>{
@@ -35,6 +33,12 @@ const useAxiosPrivate = () =>{
                 return Promise.reject(err)
             }
         )
+
+        const reqIn = axiosPrivate.interceptors.request.use(
+            
+        )
+
+
 
      return    ()=>{
             axiosPrivate.interceptors.request.eject(requestIntercept)
