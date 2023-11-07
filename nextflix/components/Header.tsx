@@ -9,12 +9,13 @@ import { useEffect, useState } from "react"
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
+
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const accImgUrl = new URL(`/public/img/acc-img.png`, import.meta.url).href
 
     useEffect(()=>{
         const handleScroll = ():void =>{
-            if(window.scrollY > 0) {
+            if(window.scrollY > 0){
                 setIsScrolled(true)
                 console.log(true)
             }else{
@@ -27,9 +28,9 @@ const Header = () => {
 
         return window.removeEventListener('scroll',handleScroll)
     },[])
-console.log(window.scrollY)
+
   return (
-    <header className={`${isScrolled && 'bg-[#601e1e]'}`} >
+    <header className={`${isScrolled && 'bg-[#141414]'}`} >
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
@@ -49,7 +50,7 @@ console.log(window.scrollY)
         </ul>
       </div>
 
-      <div className="flex items-center space-x-4 text-sm font-light">
+      <div className="flex items-center space-x-4 text-sm font-light ">
         <SearchIcon className="hidden h-6 w-6 sm:inline "/>
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="hidden h-6 w-6 sm:inline "/>
