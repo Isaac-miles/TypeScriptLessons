@@ -8,17 +8,18 @@ import { useEffect, useState } from "react"
 
 
 const Header = () => {
-    const [isScrolled, setIscrolled] = useState(false)
-
+    const [isScrolled, setIsScrolled] = useState(false)
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const accImgUrl = new URL(`/public/img/acc-img.png`, import.meta.url).href
 
     useEffect(()=>{
-        const handleScroll = ()=>{
-            if(window.scrollY > 0){
-                setIscrolled(true)
+        const handleScroll = ():void =>{
+            if(window.scrollY > 0) {
+                setIsScrolled(true)
+                console.log(true)
             }else{
-                setIscrolled(false)
+                setIsScrolled(false)
+                console.log(false)
             }
         }
        
@@ -26,16 +27,18 @@ const Header = () => {
 
         return window.removeEventListener('scroll',handleScroll)
     },[])
-
+console.log(window.scrollY)
   return (
-    <header>
+    <header className={`${isScrolled && 'bg-[#601e1e]'}`} >
+
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
         src={imgUrl}
         alt="netflix"
-        width={150}
-        height={150}
-        className="cursor-pointer object-contain"/>
+        width={100}
+        height={100}
+        priority
+        className="cursor-pointer object-contain w-auto h-auto"/>
 
         <ul className="hidden space-x-4 md:flex">
             <li className="headerLink">Home</li>
