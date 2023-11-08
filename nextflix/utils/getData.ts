@@ -1,16 +1,25 @@
 import requests from "./request"
-import { Movies } from "@/types"
+import { Movies,MovieProps } from "@/types"
 
-export const getNetFlixOriginals =async ():Promise<Movies[]> => {
+// export const getNetFlixOriginals =async ():Promise<Movies[]> => {
 
-   const data = await  fetch(requests.fetchNetflixOriginals).then((res) => res.json())
-    return data
+//    const data = await  fetch(requests.fetchNetflixOriginals).then((res) => res.json())
+//     return data
+// }
+// export type GetNetFlixOriginalsProps = Awaited<ReturnType<typeof getNetFlixOriginals>>
+
+interface  ReturnedMovieProps {
+    netflixOriginals:MovieProps
+        trendingNow:MovieProps
+        topRated:MovieProps
+        actionMovies:MovieProps
+        comedyMovies:MovieProps
+        horrorMovies:MovieProps
+        romanceMovies:MovieProps
+        documentaries:MovieProps
 }
-export type GetNetFlixOriginalsProps = Awaited<ReturnType<typeof getNetFlixOriginals>>
 
-
-
-const getData = async() => {
+const getMoviesData = async():Promise<ReturnedMovieProps> => {
 
        const [
         netflixOriginals,
@@ -46,4 +55,4 @@ const getData = async() => {
 }
 
 
-// export default getData
+export default getMoviesData
