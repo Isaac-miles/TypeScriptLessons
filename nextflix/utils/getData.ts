@@ -1,12 +1,5 @@
 import requests from "./request"
-import { Movies,MovieProps } from "@/types"
-
-// export const getNetFlixOriginals =async ():Promise<Movies[]> => {
-
-//    const data = await  fetch(requests.fetchNetflixOriginals).then((res) => res.json())
-//     return data
-// }
-// export type GetNetFlixOriginalsProps = Awaited<ReturnType<typeof getNetFlixOriginals>>
+import {MovieProps } from "@/types"
 
 interface  ReturnedMovieProps {
     netflixOriginals:MovieProps
