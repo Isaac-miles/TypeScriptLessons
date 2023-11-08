@@ -5,13 +5,13 @@ import getMoviesData from '@/utils/getData'
 import { Movies } from '@/types'
 
 export default async function Home() {
-  const {netflixOriginals} = await getMoviesData()
-  // const netflixOriginals = {
-  //   page:1,
-  //   results: [],
-  //   total_pages:1,
-  //   total_results:1
-  // }
+  // const {netflixOriginals} = await getMoviesData()
+  const netflixOriginals = {
+    page:1,
+    results: [],
+    total_pages:1,
+    total_results:1
+  }
     if(!netflixOriginals){
       return <p>Error while fetching Movies...</p>
     }

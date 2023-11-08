@@ -1,3 +1,4 @@
+import { useCallback } from "react"
 import requests from "./request"
 import {MovieProps } from "@/types"
 
