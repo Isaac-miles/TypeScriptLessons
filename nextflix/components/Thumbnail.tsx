@@ -4,6 +4,7 @@ import Image from "next/image"
 
 type ThumbnailProps ={
     movie:Movies
+    // movie:Movies | DocumentData
 }
 
 const Thumbnail = ({movie}:ThumbnailProps) => {

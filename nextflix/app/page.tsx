@@ -36,7 +36,6 @@ export default async function Home() {
         <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
         <Row title="Documentaries" movies={documentaries.results}/>
-        {'list'}
         <Row title="Action Movies" movies={actionMovies.results}/>
         <Row title="Comedy Movies" movies={comedyMovies.results}/>
         <Row title="Horror Movies" movies={horrorMovies.results}/>

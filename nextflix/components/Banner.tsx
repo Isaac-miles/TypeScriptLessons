@@ -32,6 +32,7 @@ const Banner = ({netflixOriginals}:Props) => {
         </div>
 
         <h1 className="text-2xl md:text-4xl font-bold lg:text-7xl">{movie?.title || movie?.original_title}</h1>
+        <h1 className="text-2xl md:text-4xl font-bold lg:text-7xl">Isaac Omokafe</h1>
         <p  className="max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">{movie?.overview}</p>
 
         <div className="flex space-x-3">
