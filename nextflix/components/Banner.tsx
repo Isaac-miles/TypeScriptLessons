@@ -19,10 +19,10 @@ const Banner = ({netflixOriginals}:Props) => {
 
     },[netflixOriginals.results])
 
-    // if(!movie){
-    //     return <p>Failed to fetch Movies</p>
-    // }
-
+    if(!movie){
+        return <p>Loading Image...</p>
+    }
+    
     const movieImage = new URL(`${BASE_URL}${movie?.backdrop_path || movie?.poster_path}`, import.meta.url).href
 
   return (
