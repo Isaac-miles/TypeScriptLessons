@@ -32,7 +32,7 @@ export default async function Home() {
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
       <Banner netflixOriginals={netflixOriginals} />
       <section className='md:space-y-24'>
-        <Row title="NetflixOriginals" movies={netflixOriginals.results}/>
+        <Row title="Netflix Originals" movies={netflixOriginals.results}/>
         <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
         <Row title="Documentaries" movies={documentaries.results}/>
