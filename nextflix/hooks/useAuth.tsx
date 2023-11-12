@@ -17,7 +17,7 @@ interface IAuthContext {
     signIn:(email:string, password:string)=>Promise<void>
     logOut:()=>Promise<void>
     loading:boolean
-    error:string | null
+    // error:string | null
 }
 
 type Children = {
@@ -31,25 +31,27 @@ signIn:async ()=>{},
 signUp:async ()=>{},
 logOut:async ()=>{}
 }
-const AuthContext = createContext<IAuthContext>(initialValue)
 
 export function useAuth() {
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
+    // const [error, setError] = useState<string | null>(null)
     const [user, setUser] = useState<User | null>(null)
     const router = useRouter()
 
    const signUp = async (email:string, password:string):Promise<void> => {
         setLoading(true)
-        setError(null)
+        // setError(null)
         await createUserWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
             router.push('/')
             setLoading(false)
-        }).catch((err:string)=>{
-                  setError(err)
-                // return new NextResponse(err.message)
+        }).catch((err)=>{
+                //   setError(err)
+                if(err instanceof Error){
+
+                    return new NextResponse(err.message)
+                }
         }).finally(()=>setLoading(false))
    }
 
@@ -63,8 +65,11 @@ export function useAuth() {
                 setLoading(false)
             }
            
-        }).catch((err:string)=>{
-                setError(err)
+        }).catch((err)=>{
+            if(err instanceof Error){
+
+                return new NextResponse(err.message)
+            }
                 // return new NextResponse(err.message)
             
         }).finally(()=>setLoading(false))
@@ -85,8 +90,15 @@ export function useAuth() {
             }
         }).finally(()=>setLoading(false))
    }
-  return {loading, user, signIn,signUp,logOut, error}
+    const memoedValues =  useMemo(()=>({
+        loading, user, signIn,signUp,logOut
+   }),[user, loading])
+
+  return memoedValues
 }
+
+const AuthContext = createContext<IAuthContext>(initialValue)
+
 export function AuthProvider({children}:Children) {
   return <AuthContext.Provider value={useAuth()}>
     {children}
