@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext,useMemo, ReactNode } from "react"
+import { useState, useEffect, useContext, createContext,useMemo, ReactNode, Children } from "react"
 import { useRouter } from "next/router"
 import { auth } from "../firebase"
 import {
@@ -9,6 +9,7 @@ import {
      User
      } from "@firebase/auth"
 import { NextResponse } from "next/server"
+import { error } from "console"
 
 interface IAuthContext {
     user:User | null
@@ -16,30 +17,39 @@ interface IAuthContext {
     signIn:(email:string, password:string)=>Promise<void>
     logOut:()=>Promise<void>
     loading:boolean
+    error:string | null
 }
 
 type Children = {
     children: ReactNode
 }
-const AuthContext = createContext<IAuthContext>({})
+const initialValue = {
+user: null,
+error:null,
+loading:false,
+signIn:async ()=>{},
+signUp:async ()=>{},
+logOut:async ()=>{}
+}
+const AuthContext = createContext<IAuthContext>(initialValue)
 
-export function AuthProvider({children}:Children) {
+export function useAuth() {
     const [loading, setLoading] = useState(false)
-    const [user, setUser] = useState<User | null>()
+    const [error, setError] = useState<string | null>(null)
+    const [user, setUser] = useState<User | null>(null)
     const router = useRouter()
 
    const signUp = async (email:string, password:string):Promise<void> => {
         setLoading(true)
+        setError(null)
         await createUserWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
             router.push('/')
             setLoading(false)
-        }).catch((err)=>{
-            if (err instanceof Error){
-                return err.message
+        }).catch((err:string)=>{
+                  setError(err)
                 // return new NextResponse(err.message)
-            }
         }).finally(()=>setLoading(false))
    }
 
@@ -53,11 +63,10 @@ export function AuthProvider({children}:Children) {
                 setLoading(false)
             }
            
-        }).catch((err)=>{
-            if (err instanceof Error){
-                return err.message
+        }).catch((err:string)=>{
+                setError(err)
                 // return new NextResponse(err.message)
-            }
+            
         }).finally(()=>setLoading(false))
    }
 
@@ -76,8 +85,13 @@ export function AuthProvider({children}:Children) {
             }
         }).finally(()=>setLoading(false))
    }
-  return[loading, user, setLoading, setUser]
+  return {loading, user, signIn,signUp,logOut, error}
+}
+export function AuthProvider({children}:Children) {
+  return <AuthContext.Provider value={useAuth()}>
+    {children}
+  </AuthContext.Provider>
 }
 
 
-export default useAuth
+// export default 
