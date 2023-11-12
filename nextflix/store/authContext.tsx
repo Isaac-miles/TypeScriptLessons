@@ -34,6 +34,7 @@ logOut:async ()=>{}
 
 export function useAuth() {
     const [loading, setLoading] = useState(false)
+    const [initialLoading, setInitialLoading] = useState(true)
     // const [error, setError] = useState<string | null>(null)
     const [user, setUser] = useState<User | null>(null)
     const router = useRouter()
@@ -50,8 +51,9 @@ export function useAuth() {
                 setLoading(true)
                 router.push('/login')
             }
+            setInitialLoading(false)
         })
-    ,[])
+    ,[router])
 
    const signUp = async (email:string, password:string):Promise<void> => {
         setLoading(true)
@@ -116,7 +118,7 @@ export function useAuth() {
 
 export default function AuthProvider({children}:Children) {
   return <AuthContext.Provider value={useAuth()}>
-    {children}
+    {!loading && children}
   </AuthContext.Provider>
 }
 
