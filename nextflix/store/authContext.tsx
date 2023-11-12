@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext,useMemo, ReactNode, Children } from "react"
+import { useState, useEffect, useContext, createContext,useMemo, ReactNode, Children, ReactElement } from "react"
 import { useRouter } from "next/router"
 import { auth } from "../firebase"
 import {
@@ -21,7 +21,7 @@ interface IAuthContext {
 }
 
 type Children = {
-    children: ReactNode
+    children?: ReactElement | ReactElement[]
 }
 const initialValue = {
 user: null,
@@ -118,7 +118,7 @@ export function useAuth() {
 
 export default function AuthProvider({children}:Children) {
   return <AuthContext.Provider value={useAuth()}>
-    {!loading && children}
+    {children} 
   </AuthContext.Provider>
 }
 

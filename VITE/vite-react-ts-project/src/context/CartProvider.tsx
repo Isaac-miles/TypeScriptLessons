@@ -23,7 +23,8 @@ export type ReducerAction ={
     payload?: CartItemType
 }
 
-const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
+const reducer = (state:CartStateType, action:ReducerAction):CartStateType =>{
+    
     switch(action.type){
         case REDUCER_ACTION_TYPE.ADD:{
             if(!action.payload){
@@ -58,7 +59,7 @@ const reducer = (state:CartStateType, action:ReducerAction):CartStateType=>{
             }
 
             const updatedItem:CartItemType = {...itemExists, qty}
-            const filteredCart:CartItemType[]= state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
+            const filteredCart:CartItemType[] = state.cart.filter((item)=>item.sku !== sku) //list of items we are not adding to or updating
             return {...state, cart:[...filteredCart, updatedItem]}
         }
            break;
@@ -87,7 +88,7 @@ const useCartContext = (initCartState: CartStateType)=>{
         return prev + (cartItem.qty * cartItem.price)
     },0))
 
-    const cart = state.cart.sort((a, b)=>{
+    const cart = state.cart.sort((a, b) => {
         const itemA = Number(a.sku.slice(-4))
         const itemB = Number(b.sku.slice(-4))
         return itemA - itemB
