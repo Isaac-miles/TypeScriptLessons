@@ -38,7 +38,20 @@ export function useAuth() {
     const [user, setUser] = useState<User | null>(null)
     const router = useRouter()
 
-    
+    useEffect(()=>
+        onAuthStateChanged(auth,(user)=>{
+            if(user){
+                //Logged in...
+                setUser(user)
+                setLoading(false)
+            }else{
+                //Not Logged in..
+                setUser(null)
+                setLoading(true)
+                router.push('/login')
+            }
+        })
+    ,[])
 
    const signUp = async (email:string, password:string):Promise<void> => {
         setLoading(true)
