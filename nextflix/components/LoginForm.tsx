@@ -24,6 +24,7 @@ function LoginForm() {
             await signIn(email,password)
         }else {
             await signUp(email,password)
+    
         }
       }
 
@@ -55,7 +56,7 @@ function LoginForm() {
 
             <div className='text-[grey]'>
                <span>New to Netflix ? </span> 
-                <button type="submit" className='text-white hover:underline' onClick={()=>setLogin(true)}>Sign up</button>
+                <button type="submit" className='text-white hover:underline' onClick={()=>setLogin(false)}>Sign up</button>
             </div>
     </form>
   )

@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect, useContext, createContext,useMemo, ReactNode, Children, ReactElement } from "react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { auth } from "../firebase"
 import {
      createUserWithEmailAndPassword,
@@ -66,9 +68,8 @@ export function useAuth() {
         }).catch((err)=>{
                 //   setError(err)
                 if(err instanceof Error){
-
-                    return new NextResponse(err.message)
-                }
+                    alert(err.message)
+                  }
         }).finally(()=>setLoading(false))
    }
 
@@ -82,10 +83,9 @@ export function useAuth() {
                 setLoading(false)
             }
            
-        }).catch((err)=>{
+        }).catch((err)=>{        
             if(err instanceof Error){
-
-                return new NextResponse(err.message)
+              alert(err.message)
             }
                 // return new NextResponse(err.message)
             
@@ -101,10 +101,9 @@ export function useAuth() {
             router.replace('/login')
         })
         .catch((err)=>{
-            if (err instanceof Error){
-                return err.message
-                // return new NextResponse(err.message)
-            }
+            if(err instanceof Error){
+                alert(err.message)
+              }
         }).finally(()=>setLoading(false))
    }
     const memoedValues =  useMemo(()=>({
