@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext,useMemo } from "react"
+import { useState, useEffect, useContext, createContext,useMemo, ReactNode } from "react"
 import { useRouter } from "next/router"
 import { auth } from "../firebase"
 import {
@@ -10,7 +10,20 @@ import {
      } from "@firebase/auth"
 import { NextResponse } from "next/server"
 
-function useAuth() {
+interface IAuthContext {
+    user:User | null
+    signUp:(email:string, password:string)=>Promise<void>
+    signIn:(email:string, password:string)=>Promise<void>
+    logOut:()=>Promise<void>
+    loading:boolean
+}
+
+type Children = {
+    children: ReactNode
+}
+const AuthContext = createContext<IAuthContext>({})
+
+export function AuthProvider({children}:Children) {
     const [loading, setLoading] = useState(false)
     const [user, setUser] = useState<User | null>()
     const router = useRouter()
@@ -35,8 +48,11 @@ function useAuth() {
         await signInWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
-            router.push('/')
-            setLoading(false)
+            if(userCredentials.user){
+                router.push('/')
+                setLoading(false)
+            }
+           
         }).catch((err)=>{
             if (err instanceof Error){
                 return err.message
@@ -60,7 +76,8 @@ function useAuth() {
             }
         }).finally(()=>setLoading(false))
    }
-  return[]
+  return[loading, user, setLoading, setUser]
 }
+
 
 export default useAuth
