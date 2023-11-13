@@ -4,7 +4,6 @@ import Header from '@/components/Header'
 import getMoviesData from '@/utils/getData'
 
 import Row from '@/components/Row'
-import {useAuth }from '@/store/authContext'
 
 export default async function Home() {
   // const {loading} = useAuth()
