@@ -4,6 +4,14 @@ import { RootState } from "@/store/store";
 const initialState = {
     modal:false
 }
+// export const modalState = {
+//     key: 'modalState',
+//     default:false
+// }
+// export const movieState = {
+//     key: 'movieState',
+//     default:null
+// }
 
 const modalSlice = createSlice({
     name: 'modal',
