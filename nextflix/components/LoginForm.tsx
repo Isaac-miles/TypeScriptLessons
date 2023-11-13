@@ -3,6 +3,10 @@
 import React, { useState } from 'react'
 import {useForm,SubmitHandler} from 'react-hook-form'
 import useAuth from '@/hooks/useAuth'
+// import { useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux/es/hooks/useSelector'
+import { modalState } from '@/features/modalSlice'
+
 interface Inputs {
     email:string,
     password:string
@@ -11,6 +15,7 @@ interface Inputs {
 function LoginForm() {
     const {loading,signIn,signUp,user} = useAuth()
     const [login, setLogin] = useState(false)
+    // const modal = useSelector(modalState)
     const {
         register,
         handleSubmit,
@@ -26,7 +31,6 @@ function LoginForm() {
     
         }
       }
-
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14'> 

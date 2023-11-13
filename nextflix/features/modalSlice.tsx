@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
+
 const initialState = {
     modal:false
 }
@@ -17,5 +18,5 @@ const modalSlice = createSlice({
 })
 
 
-export const modalState = (state:RootState)=> state.modal
+export const modalState = (state:RootState)=>state.modal
 export default modalSlice.reducer
