@@ -18,7 +18,8 @@ const movieSlice = createSlice({
     reducers :{
 
         movie:(state, action:PayloadAction<Movies>)=>{
-            return state
+            state.movie = action.payload
+            // return state.movie
         }
     }
 })

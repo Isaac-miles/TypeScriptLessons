@@ -1,12 +1,14 @@
+import App from './app'
 import Banner from '@/components/Banner'
 import Header from '@/components/Header'
-
 import getMoviesData from '@/utils/getData'
-
 import Row from '@/components/Row'
+import {  useSelector } from 'react-redux/es/hooks/useSelector'
+import { modalState } from '@/features/modalSlice'
+
 
 export default async function Home() {
-  // const {loading} = useAuth()
+  // const modal = useSelector(modalState)
   
    const {
     netflixOriginals,
@@ -20,29 +22,15 @@ export default async function Home() {
   
   } = await getMoviesData()
   
-    // if(loading){
-    //   return <p>Loading...</p>
-    // }
-
   return (
-    <div className='relative h-screen bg-gradient-to-b  lg:h-[140vh]'>
-
-      <Header />
-
-    <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
-      <Banner netflixOriginals={netflixOriginals} />
-      <section className='md:space-y-24'>
-        <Row title="Netflix Originals" movies={netflixOriginals.results}/>
-        <Row title="Trending Now" movies={trendingNow.results}/>
-        <Row title="TopRated" movies={topRated.results}/>
-        <Row title="Documentaries" movies={documentaries.results}/>
-        <Row title="Action Movies" movies={actionMovies.results}/>
-        <Row title="Comedy Movies" movies={comedyMovies.results}/>
-        <Row title="Horror Movies" movies={horrorMovies.results}/>
-        <Row title="Romance Movies" movies={romanceMovies.results}/>
-
-      </section>
-    </main>
-    </div>
+    <App 
+    netflixOriginals={netflixOriginals}
+    trendingNow={trendingNow}
+    topRated={topRated}
+    actionMovies={actionMovies}
+    comedyMovies={comedyMovies}
+    horrorMovies={horrorMovies}
+    romanceMovies={romanceMovies}
+    documentaries={documentaries} />
   )
 }
