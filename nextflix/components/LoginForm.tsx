@@ -33,8 +33,8 @@ function LoginForm() {
     <form onSubmit={handleSubmit(onSubmit)} className='relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14'> 
         <h1 className='text-4xl font-semibold'>Sign In</h1>
         <div className='space-y-4'>
-            <label htmlFor="email"  className='inline-block w-full '>
-                <input type='email'  placeholder='Email Address' className='input' {...register("email", { required: true })}/>
+            <label htmlFor="mail"  className='inline-block w-full '>
+                <input type='email' id='mail' autoComplete='off' placeholder='Email Address' className='input' {...register("email", { required: true })}/>
                 {errors.email && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
                 Please enter a valid email.
@@ -42,8 +42,8 @@ function LoginForm() {
             )}
             </label>
 
-            <label htmlFor="password" className='inline-block w-full '>
-                <input type='password'  placeholder='Password' className='input' {...register("password", { required: true })}/>
+            <label htmlFor="pass" className='inline-block w-full '>
+                <input type='password' id='pass' placeholder='Password' className='input' {...register("password", { required: true })}/>
                 {errors.password && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
                 Your password must contain between 4 and 60 characters.
