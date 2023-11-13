@@ -4,10 +4,11 @@ import Header from '@/components/Header'
 import getMoviesData from '@/utils/getData'
 
 import Row from '@/components/Row'
-import { useAuth } from '@/store/authContext'
+import {useAuth }from '@/store/authContext'
 
 export default async function Home() {
-  const {loading} = useAuth()
+  // const {loading} = useAuth()
+  
    const {
     netflixOriginals,
     trendingNow,
@@ -20,9 +21,9 @@ export default async function Home() {
   
   } = await getMoviesData()
   
-    if(loading){
-      return <p>Loading...</p>
-    }
+    // if(loading){
+    //   return <p>Loading...</p>
+    // }
 
   return (
     <div className='relative h-screen bg-gradient-to-b  lg:h-[140vh]'>
