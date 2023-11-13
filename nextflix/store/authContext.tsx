@@ -49,9 +49,9 @@ export function useAuth() {
                 setLoading(false)
             }else{
                 //Not Logged in..
+                router.push('/login')
                 setUser(null)
                 setLoading(true)
-                router.push('/login')
             }
             setInitialLoading(false)
         })

@@ -1,6 +1,5 @@
 'use client'
-import { log } from 'console'
-import { sign } from 'crypto'
+
 import React, { useState } from 'react'
 import {useForm,SubmitHandler} from 'react-hook-form'
 import useAuth from '@/hooks/useAuth'
@@ -10,7 +9,7 @@ interface Inputs {
 }
 
 function LoginForm() {
-    const {loading,logOut,signIn,signUp,user} = useAuth()
+    const {loading,signIn,signUp,user} = useAuth()
     const [login, setLogin] = useState(false)
     const {
         register,
@@ -34,7 +33,7 @@ function LoginForm() {
         <h1 className='text-4xl font-semibold'>Sign In</h1>
         <div className='space-y-4'>
             <label htmlFor="mail"  className='inline-block w-full '>
-                <input type='email' id='mail' autoComplete='off' placeholder='Email Address' className='input' {...register("email", { required: true })}/>
+                <input type='email' id='mail' autoComplete='of' placeholder='Email Address' className='input' {...register("email", { required: true })}/>
                 {errors.email && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
                 Please enter a valid email.

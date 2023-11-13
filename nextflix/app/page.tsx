@@ -2,7 +2,7 @@ import Banner from '@/components/Banner'
 import Header from '@/components/Header'
 
 import getMoviesData from '@/utils/getData'
-import { Movies } from '@/types'
+
 import Row from '@/components/Row'
 
 export default async function Home() {
