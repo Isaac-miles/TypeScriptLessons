@@ -6,15 +6,14 @@ type InitialStateType = {
     movie:Movies | null
 }
 
-const initialState = {
-    key:'movieState',
-    movie: null
+const initialMovieState:InitialStateType = {
+    movie:null
 }
 
 
 const movieSlice = createSlice({
     name: 'movie',
-     initialState:initialState,
+     initialState:initialMovieState,
 
     reducers :{
 
@@ -25,5 +24,5 @@ const movieSlice = createSlice({
 })
 
 
-export const movieState = (state:RootState)=>state.modal
+export const movieState = (state:RootState)=>state.movie
 export default movieSlice.reducer
