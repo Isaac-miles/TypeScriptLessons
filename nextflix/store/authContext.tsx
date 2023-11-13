@@ -63,6 +63,7 @@ export function useAuth() {
         await createUserWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
+            alert('User successfully created')
             router.push('/')
             setLoading(false)
         }).catch((err)=>{

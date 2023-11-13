@@ -5,11 +5,12 @@ import Link from "next/link"
 
 import { BellIcon, MagnifyingGlassIcon as SearchIcon, } from "@heroicons/react/20/solid"
 import { useEffect, useState } from "react"
+import { useAuth } from "@/store/authContext"
 
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
-
+    const {logOut} = useAuth()
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const accImgUrl = new URL(`/public/img/acc-img.png`, import.meta.url).href
 
@@ -54,14 +55,14 @@ const Header = () => {
         <SearchIcon className="hidden h-6 w-6 sm:inline "/>
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="hidden h-6 w-6 sm:inline "/>
-        <Link href={'/account'}>
-          <Image 
+        {/* <Link href={'/account'}> */}
+          <Image onClick={()=>logOut()}
         src={accImgUrl}
         alt="account"
         width={30}
         height={30}
         className="cursor-pointer rounded"/>
-        </Link>
+        {/* </Link> */}
       </div>
     </header>
   )

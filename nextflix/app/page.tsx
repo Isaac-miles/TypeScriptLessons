@@ -4,8 +4,10 @@ import Header from '@/components/Header'
 import getMoviesData from '@/utils/getData'
 
 import Row from '@/components/Row'
+import { useAuth } from '@/store/authContext'
 
 export default async function Home() {
+  const {loading} = useAuth()
    const {
     netflixOriginals,
     trendingNow,
@@ -18,8 +20,8 @@ export default async function Home() {
   
   } = await getMoviesData()
   
-    if(!netflixOriginals){
-      return <p>Error while fetching Movies...</p>
+    if(loading){
+      return <p>Loading...</p>
     }
 
   return (
