@@ -25,5 +25,5 @@ const movieSlice = createSlice({
 })
 
 
-export const movieState = (state:RootState)=>state.movie
+export const movieState = (state:RootState)=>state.movie.movie
 export default movieSlice.reducer

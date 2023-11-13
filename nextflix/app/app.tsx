@@ -7,6 +7,7 @@ import Row from '@/components/Row'
 import { MovieProps } from '@/types'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { modalState } from '@/features/modalSlice'
+import Modal from '@/components/Modal'
 
 interface AppProps {
     netflixOriginals:MovieProps
@@ -18,10 +19,18 @@ interface AppProps {
         romanceMovies:MovieProps
         documentaries:MovieProps
 }
-export default  function App({netflixOriginals, trendingNow,topRated,actionMovies,comedyMovies,   horrorMovies, romanceMovies, documentaries}: AppProps) {
-  // const modal = useSelector(modalState)
-  
+export default  function App({
+    netflixOriginals,
+    trendingNow,
+    topRated,
+    actionMovies,
+    comedyMovies,
+    horrorMovies,
+    romanceMovies,
+    documentaries}: AppProps) {
 
+  const modal = useSelector(modalState)
+  
   return (
     <div className='relative h-screen bg-gradient-to-b  lg:h-[140vh]'>
 
@@ -41,7 +50,7 @@ export default  function App({netflixOriginals, trendingNow,topRated,actionMovie
 
       </section>
     </main>
-    {/* {modal && <Modal/>} */}
+    {modal && <Modal/>}
     </div>
   )
 }

@@ -4,14 +4,6 @@ import { RootState } from "@/store/store";
 const initialState = {
     modal:false
 }
-// export const modalState = {
-//     key: 'modalState',
-//     default:false
-// }
-// export const movieState = {
-//     key: 'movieState',
-//     default:null
-// }
 
 const modalSlice = createSlice({
     name: 'modal',
@@ -20,11 +12,17 @@ const modalSlice = createSlice({
     reducers :{
 
         openModal:(state, action:PayloadAction<boolean>)=>{
+         if(action.payload){
+            state.modal = action.payload
+         }
+        },
+        closeModal:(state, action:PayloadAction<boolean>)=>{
             return state
         }
     }
 })
 
 
-export const modalState = (state:RootState)=>state.modal
+export const modalState = (state:RootState)=>state.modal.modal
+export const {openModal, closeModal} = modalSlice.actions
 export default modalSlice.reducer

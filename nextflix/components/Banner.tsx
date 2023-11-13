@@ -4,7 +4,8 @@ import { MovieProps,Movies } from "@/types"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { BASE_URL } from "@/constants/movie"
-
+import { openModal } from '@/features/modalSlice'
+import { useAppDispatch } from "@/store/store"
 import {FaPlay} from 'react-icons/fa'
 import { InformationCircleIcon } from "@heroicons/react/20/solid"
 type Props ={
@@ -13,6 +14,7 @@ type Props ={
 
 const Banner = ({netflixOriginals}:Props) => {
     const [movie, setMovie] = useState<Movies | null>(null)
+    const dispatch = useAppDispatch()
 
     useEffect(()=>{
         setMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)])
@@ -25,6 +27,9 @@ const Banner = ({netflixOriginals}:Props) => {
     
     const movieImage = new URL(`${BASE_URL}${movie?.backdrop_path || movie?.poster_path}`, import.meta.url).href
 
+    const handleDispatch =()=>{
+        dispatch(openModal(true))
+    }
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
         <div className="absolute top-0 left-0 w-screen h-[95vh] -z-10">
@@ -42,7 +47,7 @@ const Banner = ({netflixOriginals}:Props) => {
 
         <div className="flex space-x-3">
             <button className="btn-banner bg-white text-black"><FaPlay className="h-4 w-4 text-black md:h-7 md:w-7"/> play</button>
-            <button className="btn-banner bg-[grey]/70">
+            <button className="btn-banner bg-[grey]/70" onClick={()=>handleDispatch()}>
                 More Info <InformationCircleIcon className="h-5 w-5 md:h-8 md:w-8"/></button>
         </div>
     </div>
