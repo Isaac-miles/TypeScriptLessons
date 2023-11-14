@@ -1,9 +1,9 @@
 import Image from "next/image"
 import { BASE_URL_THUMBNAIL } from "@/constants/movie"
 import { Movies } from "@/types"
-import { openMovie ,movieState} from "@/features/movieSlice"
+import { openMovie} from "@/features/movieSlice"
+import { openCloseModal } from '@/features/modalSlice'
 import { useAppDispatch } from "@/store/store"
-import { useSelector } from "react-redux"
 type ThumbnailProps ={
     movie:Movies
     // movie:Movies | DocumentData
@@ -15,6 +15,7 @@ const Thumbnail = ({movie}:ThumbnailProps) => {
 
       const handleDispatch = ()=>{
         dispatch(openMovie(movie))
+        dispatch(openCloseModal({type:'open', action:true}))
       }
 
       
