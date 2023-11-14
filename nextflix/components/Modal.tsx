@@ -9,7 +9,7 @@ function Modal() {
 
     const handleClose =()=>{
         // set modal to false
-      dispatch(openCloseModal(false))
+      dispatch(openCloseModal())
       console.log('closs')
     }
   return (
