@@ -9,8 +9,8 @@ function Modal() {
 
     const handleClose =()=>{
         // set modal to false
-      dispatch(openCloseModal())
-      console.log('closs')
+      dispatch(openCloseModal({type:'close', action:false}))
+    
     }
   return (
     <MuiModal open={modal} onClose={handleClose}>

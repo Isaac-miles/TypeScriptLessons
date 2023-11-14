@@ -10,8 +10,16 @@ const modalSlice = createSlice({
      initialState:initialState,
 
     reducers :{
-        openCloseModal:(state)=>{
-                return  {...state, modal:!state.modal}
+        openCloseModal:(state, action:PayloadAction<{type:string, action:boolean}>)=>{
+               if(action?.payload.type === 'open'){
+                return  {...state, modal:action?.payload.action}
+
+               }else if(action?.payload.type === 'close'){
+                return  {...state, modal:action?.payload.action}
+               }else{
+                return alert("Action not specified")
+               }
+                
         }
     }
 })

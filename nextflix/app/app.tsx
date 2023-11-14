@@ -50,7 +50,7 @@ export default  function App({
 
       </section>
     </main>
-    {/* {modal && <Modal/>} */}
+    {modal && <Modal/>}
     </div>
   )
 }

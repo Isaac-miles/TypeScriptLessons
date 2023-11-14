@@ -28,7 +28,7 @@ const Banner = ({netflixOriginals}:Props) => {
     const movieImage = new URL(`${BASE_URL}${movie?.backdrop_path || movie?.poster_path}`, import.meta.url).href
 
     const handleDispatch=() =>{
-        dispatch(openCloseModal())
+        dispatch(openCloseModal({type:'open',action:true }))
         console.log('dispatching')
     }
   return (
