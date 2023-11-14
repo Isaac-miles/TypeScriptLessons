@@ -8,23 +8,28 @@ import { openCloseModal } from '@/features/modalSlice'
 import { useAppDispatch } from "@/store/store"
 import {FaPlay} from 'react-icons/fa'
 import { InformationCircleIcon } from "@heroicons/react/20/solid"
+import { openMovie, movieState} from "@/features/movieSlice"
+import { useSelector } from "react-redux"
+
+
 type Props ={
     netflixOriginals :MovieProps
 }
 
 const Banner = ({netflixOriginals}:Props) => {
-    const [movie, setMovie] = useState<Movies | null>(null)
+    // const [movie, setMovie] = useState<Movies | null>(null)
     const dispatch = useAppDispatch()
-
+    const movie = useSelector(movieState)
     useEffect(()=>{
-        setMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)])
+        // setMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)])
+        dispatch(openMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)]))
+   
 
     },[netflixOriginals.results])
-
     if(!movie){
         return <p>Loading Image...</p>
     }
-    
+  
     const movieImage = new URL(`${BASE_URL}${movie?.backdrop_path || movie?.poster_path}`, import.meta.url).href
 
     const handleDispatch=() =>{

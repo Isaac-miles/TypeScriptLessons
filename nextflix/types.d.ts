@@ -12,7 +12,8 @@ export type Movies = {
     title: string,
     video: boolean,
     vote_average: number,
-    vote_count: number
+    vote_count: number,
+    media_type:string
 }
 
 export type MovieProps = {
