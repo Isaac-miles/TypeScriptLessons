@@ -22,3 +22,17 @@ export type MovieProps = {
     total_pages:number
     total_results:number
 }
+
+export type Element = {
+    type:
+       | 'Bloopers'
+       | 'Features'
+       | 'Behind the Scenes'
+       | 'Clip'
+       | 'Trailer'
+       | 'Teaser'
+}
+export type Genre = {
+    id:number
+    name:'string'
+}

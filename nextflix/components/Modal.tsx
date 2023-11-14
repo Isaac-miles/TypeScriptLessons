@@ -5,12 +5,14 @@ import { useAppDispatch } from '@/store/store'
 import { modalState,openCloseModal} from '@/features/modalSlice'
 import { XMarkIcon } from '@heroicons/react/20/solid'
 import { movieState } from '@/features/movieSlice' 
+import { Element,Genre } from '@/types'
 
 function Modal() {
   const dispatch = useAppDispatch()
   const movie = useSelector(movieState)
   const modal = useSelector(modalState)
-
+  const [trailer, setTrailer] = useState("")
+  const [genres, setGenres] = useState<Genre[]>([])
 
     useEffect(()=>{
       if(!movie) return
@@ -22,12 +24,22 @@ function Modal() {
           }/${movie?.id}?api_key=${
             process.env.NEXT_PUBLIC_API_KEY
           }&language=en-US&append_to_response=videos`
-        ).then((res)=>res.json())
+        )
+        .then((res)=>res.json())
+        .catch((err)=>{
+          // alert(err)
+        })
           console.log(data)
-        // if(data?.videos){
-        //   const index = data.videos
-        // }
+        if(data?.videos){
+          const index = data.videos.results.findIndex((element:Element)=>element.type=== "Trailer")
+          setTrailer(data?.videos.results[index]?.key)
+        }
+
+        if(data?.videos.genres){
+          setGenres(data.videos.genres)
+        }
       }
+   
       fetchMovie()
     },[movie])
     const handleClose =()=>{
