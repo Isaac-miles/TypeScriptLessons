@@ -32,7 +32,7 @@ export default  function App({
   const modal = useSelector(modalState)
   
   return (
-    <div className='relative h-screen bg-gradient-to-b  lg:h-[140vh]'>
+    <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
 
       <Header />
 
