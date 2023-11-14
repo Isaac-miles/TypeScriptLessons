@@ -2,6 +2,7 @@ import MuiModal from '@mui/material/Modal'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { useAppDispatch } from '@/store/store' 
 import { modalState,openCloseModal} from '@/features/modalSlice'
+import { XMarkIcon } from '@heroicons/react/20/solid'
 
 function Modal() {
   const modal = useSelector(modalState)
@@ -15,7 +16,9 @@ function Modal() {
   return (
     <MuiModal open={modal} onClose={handleClose}>
     <>
-    
+      <button onClick={handleClose}>
+        <XMarkIcon className='h-6 w-6'/>
+      </button>
     </>
     </MuiModal>
 
