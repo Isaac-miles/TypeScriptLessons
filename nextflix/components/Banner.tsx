@@ -2,7 +2,7 @@
 
 import { MovieProps,Movies } from "@/types"
 import Image from "next/image"
-import { MouseEventHandler, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { BASE_URL } from "@/constants/movie"
 import { openCloseModal } from '@/features/modalSlice'
 import { useAppDispatch } from "@/store/store"
