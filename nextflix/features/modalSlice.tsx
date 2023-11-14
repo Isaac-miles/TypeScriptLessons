@@ -17,7 +17,13 @@ const modalSlice = createSlice({
          }
         },
         closeModal:(state, action:PayloadAction<boolean>)=>{
-            return state
+            if(action.payload){
+                state.modal = action.payload
+                return state
+             }
+          
+             console.log(action.payload)
+             console.log(state.modal)
         }
     }
 })

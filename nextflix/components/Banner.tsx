@@ -29,6 +29,7 @@ const Banner = ({netflixOriginals}:Props) => {
 
     const handleDispatch =()=>{
         dispatch(openModal(true))
+        //dispatch(moviiii)
     }
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
