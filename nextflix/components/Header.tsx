@@ -12,7 +12,7 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const {logOut} = useAuth()
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
-    const accImgUrl = new URL(`/public/img/acc-img.png`, import.meta.url).href
+    const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
 
     useEffect(()=>{
         const handleScroll = ():void =>{
