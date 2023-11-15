@@ -6,8 +6,8 @@ import { modalState,openCloseModal} from '@/features/modalSlice'
 import { HandThumbUpIcon, PlusIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { movieState } from '@/features/movieSlice' 
 import { Element,Genre } from '@/types'
-import ReactPlayer from 'react-player/lazy'
-import { FaPlay, FaVolumeMute, FaVolumeOff, FaVolumeUp } from 'react-icons/fa'
+import ReactPlayer from 'react-player/youtube'
+import { FaPlay, FaVolumeMute, FaVolumeUp } from 'react-icons/fa'
 
 function Modal() {
   const dispatch = useAppDispatch()
@@ -57,12 +57,7 @@ function Modal() {
 
       <div className='relative pt-[56.25%]'>
       <ReactPlayer 
-      url={`https://www.youtube.com/watch?v=${trailer}`}
-      config={{
-        youtube:{
-          playerVars:{showinfo:1}
-        }
-      }}
+      url={`http://www.youtube.com/watch?v=${trailer}`}
       width= "100%"
       height= "100%"
       style={{position:'absolute', top:'0', left:'0'}}

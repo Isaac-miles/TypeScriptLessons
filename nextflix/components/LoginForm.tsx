@@ -32,7 +32,7 @@ function LoginForm() {
       }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14'> 
+    <form onSubmit={handleSubmit(onSubmit)} className='relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14' name='loginForm' id='login'> 
         <h1 className='text-4xl font-semibold'>Sign In</h1>
         <div className='space-y-4'>
             <label htmlFor="mail"  className='inline-block w-full '>

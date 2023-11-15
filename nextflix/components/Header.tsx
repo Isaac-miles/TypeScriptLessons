@@ -14,21 +14,21 @@ const Header = () => {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
 
-    useEffect(()=>{
-        const handleScroll = ():void =>{
-            if(window.scrollY > 0){
-                setIsScrolled(true)
-                console.log(true)
-            }else{
-                setIsScrolled(false)
-                console.log(false)
-            }
-        }
+    // useEffect(()=>{
+    //     const handleScroll = ():void =>{
+    //         if(window.scrollY > 0){
+    //             setIsScrolled(true)
+    //             console.log(true)
+    //         }else{
+    //             setIsScrolled(false)
+    //             console.log(false)
+    //         }
+    //     }
        
-        window.addEventListener('scroll', handleScroll)
+    //     window.addEventListener('scroll', handleScroll)
 
-        return window.removeEventListener('scroll',handleScroll)
-    },[])
+    //     return window.removeEventListener('scroll',handleScroll)
+    // },[])
 
   return (
     <header className={`${isScrolled && 'bg-[#141414]'}`} >
@@ -61,7 +61,7 @@ const Header = () => {
         alt="account"
         width={30}
         height={30}
-        className="cursor-pointer rounded"/>
+        className="cursor-pointer rounded w-auto h-auto"/>
         {/* </Link> */}
       </div>
     </header>
