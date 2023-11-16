@@ -17,7 +17,7 @@ function Plans() {
         </Head>
 
         <header className='border-b border-white/10 bg-[#141414] '>
-            {/* <Link href='/' as ={'image'}>
+            <Link href='/' as ={'image'}>
             <Image 
             src={imgUrl}
             alt="netflix"
@@ -25,7 +25,7 @@ function Plans() {
             height={100}
             priority
             className="cursor-pointer object-contain w-auto h-auto"/>
-            </Link> */}
+            </Link>
             <button className='text-lg font-medium hover:underline' onClick={logOut}>Sign Out</button>
         </header>
         
@@ -47,10 +47,10 @@ function Plans() {
             </ul>
             
             <div>
-                <div>
-                    <div className='planBox'>
-
-                    </div>
+                <div className='flex w-full items-center justify-end self-end md:w-3/5 '>
+                    <div className='planBox'></div>
+                    <div className='planBox'></div>
+                    <div className='planBox'></div>
                 </div>
             </div>
         </main>
