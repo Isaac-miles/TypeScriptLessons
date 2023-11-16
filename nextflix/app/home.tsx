@@ -34,6 +34,7 @@ export default  function Home({
     const subscription = false
     if(!subscription) return <Plans />
 
+    
   return (
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
 
