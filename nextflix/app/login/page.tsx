@@ -1,16 +1,16 @@
 import LoginForm from '@/components/LoginForm'
-import type { Metadata } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: 'NextFlix',
-  description: 'login page',
-}
 
 function login() {
   const loginImage = new URL('../../public/img/login.jpeg', import.meta.url).href
   const logoImage = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
   return (
+      <>
+      <Head>
+        <title>Netnaija Login</title>
+      </Head>
     <div className='relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent'>
      <Image 
          src={loginImage} 
@@ -32,7 +32,7 @@ function login() {
       
     </div>
 
-
+    </>
     
   )
 }

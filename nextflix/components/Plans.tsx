@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 
 function Plans() {
   return (
-    <div>Plans</div>
+    <div>
+        <Head>
+            <title>Netnaija flix</title>
+        </Head>
+    </div>
   )
 }
 
