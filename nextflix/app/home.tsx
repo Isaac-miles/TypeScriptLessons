@@ -31,7 +31,7 @@ export default  function Home({
 
   const modal = useSelector(modalState)
     const subscription = false
-    // if(!subscription) return <p>Subscribe before proceeding</p>
+    if(!subscription) return <p>Subscribe before proceeding</p>
 
   return (
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
