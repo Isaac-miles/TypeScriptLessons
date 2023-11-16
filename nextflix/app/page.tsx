@@ -1,15 +1,13 @@
-import App from './home'
-import getMoviesData from '@/utils/getData'
-
+import {Provider} from 'react-redux'
+import store from '@/store/store'
+import App from './app'
 
 
 export default async function Home() {
-  // const modal = useSelector(modalState)
-  const subscription = false
-
-    if(!subscription) return <>Plans</>
 
   return (
-    <div></div>
+    <Provider store={store}>
+     <App />
+    </Provider>
   )
 }
