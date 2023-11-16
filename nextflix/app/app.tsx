@@ -1,56 +1,31 @@
-'use client'
+import getMoviesData from "@/utils/getData"
 
-import Banner from '@/components/Banner'
-import Header from '@/components/Header'
-import getMoviesData from '@/utils/getData'
-import Row from '@/components/Row'
-import { MovieProps } from '@/types'
-import {  useSelector } from 'react-redux/es/hooks/useSelector'
-import { modalState } from '@/features/modalSlice'
-import Modal from '@/components/Modal'
+import Home from "./home"
 
-interface AppProps {
-    netflixOriginals:MovieProps
-        trendingNow: MovieProps
-        topRated:MovieProps
-        actionMovies:MovieProps
-        comedyMovies:MovieProps
-        horrorMovies:MovieProps
-        romanceMovies:MovieProps
-        documentaries:MovieProps
-}
-export default  function App({
-    netflixOriginals,
-    trendingNow,
-    topRated,
-    actionMovies,
-    comedyMovies,
-    horrorMovies,
-    romanceMovies,
-    documentaries}: AppProps) {
-
-  const modal = useSelector(modalState)
-  
+async function App() {
+    const {
+        netflixOriginals,
+        trendingNow,
+        topRated,
+        actionMovies,
+        comedyMovies,
+        horrorMovies,
+        romanceMovies,
+        documentaries
+      
+      } = await getMoviesData()
   return (
-    <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
-
-      <Header />
-
-    <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
-      <Banner netflixOriginals={netflixOriginals} />
-      <section className='md:space-y-24'>
-        <Row title="Netflix Originals" movies={netflixOriginals.results}/>
-        <Row title="Trending Now" movies={trendingNow.results}/>
-        <Row title="TopRated" movies={topRated.results}/>
-        <Row title="Documentaries" movies={documentaries.results}/>
-        <Row title="Action Movies" movies={actionMovies.results}/>
-        <Row title="Comedy Movies" movies={comedyMovies.results}/>
-        <Row title="Horror Movies" movies={horrorMovies.results}/>
-        <Row title="Romance Movies" movies={romanceMovies.results}/>
-
-      </section>
-    </main>
-    {modal && <Modal/>}
-    </div>
+    <Home 
+    netflixOriginals={netflixOriginals}
+    trendingNow={trendingNow}
+    topRated={topRated}
+    actionMovies={actionMovies}
+    comedyMovies={comedyMovies}
+    horrorMovies={horrorMovies}
+    romanceMovies={romanceMovies}
+    documentaries={documentaries} />
+  
   )
 }
+
+export default App
