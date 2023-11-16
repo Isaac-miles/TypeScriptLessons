@@ -29,7 +29,7 @@ function Plans() {
             <button className='text-lg font-medium hover:underline' onClick={logOut}>Sign Out</button>
         </header>
         
-        <main className='pt-28 '>
+        <main className='pt-28 max-w-5xl  px-5 pb-12  transition-all md:px-10'>
             <h1 className='mb-3 text-3xl font-medium'>Choose a plan</h1>
             <ul>
                 <li className='flex items-center gap-x-2 text-lg'>
@@ -46,12 +46,15 @@ function Plans() {
                 </li>
             </ul>
             
-            <div>
+            <div className='flex mt-4 flex-col space-y-4'>
                 <div className='flex w-full items-center justify-end self-end md:w-3/5 '>
                     <div className='planBox'></div>
                     <div className='planBox'></div>
                     <div className='planBox'></div>
                 </div>
+                {/* <Table /> */}
+
+                <button>Subscribe</button>
             </div>
         </main>
     </div>
