@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useContext, createContext,useMemo, ReactNode, Children, ReactElement } from "react"
 import { useRouter } from "next/navigation"
-import { auth } from "../firebase"
+import { auth } from "../lib/firebase"
 import {
      createUserWithEmailAndPassword,
      onAuthStateChanged,
