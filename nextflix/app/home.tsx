@@ -8,6 +8,7 @@ import { MovieProps } from '@/types'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { modalState } from '@/features/modalSlice'
 import Modal from '@/components/Modal'
+import Plans from '@/components/Plans'
 
 interface HomeProps {
     netflixOriginals:MovieProps
@@ -31,7 +32,7 @@ export default  function Home({
 
   const modal = useSelector(modalState)
     const subscription = false
-    if(!subscription) return <p>Subscribe before proceeding</p>
+    if(!subscription) return <Plans />
 
   return (
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
