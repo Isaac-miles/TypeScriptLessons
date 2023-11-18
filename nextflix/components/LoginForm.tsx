@@ -27,7 +27,7 @@ function LoginForm() {
             await signIn(email,password)
         }else {
             await signUp(email,password)
-    
+         
         }
       }
 
