@@ -77,7 +77,7 @@ function Modal() {
           </button>
 
           <button className='modalbtn'>
-            {/* <HandThumbUpIcon className='h-7 w-7' /> */}
+            <HandThumbUpIcon className='h-7 w-7' />
           </button>
         </div>
 
