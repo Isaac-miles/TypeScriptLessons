@@ -105,7 +105,7 @@ function Modal() {
 
               <div>
                 <span className='text-[grey]'>Original language: </span>
-                {movie?.original_language}
+                {/* {movie?.original_language} */}
               </div>
 
               <div>
