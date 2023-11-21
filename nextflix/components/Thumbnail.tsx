@@ -26,7 +26,7 @@ const Thumbnail = ({movie}:ThumbnailProps) => {
          alt="thumbnail"
          fill={true} 
          sizes="100%"
-        //  className="rounded-sm object-cover md:rounded"/>
+         className="rounded-sm object-cover md:rounded"/>
     </div>
   )
 }
