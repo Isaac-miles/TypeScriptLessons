@@ -15,7 +15,7 @@ const Thumbnail = ({movie}:ThumbnailProps) => {
 
       const handleDispatch = ()=>{
         dispatch(openMovie(movie))
-        dispatch(openCloseModal({type:'open', action:true}))
+        // dispatch(openCloseModal({type:'open', action:true}))
       }
 
       
