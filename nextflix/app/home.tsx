@@ -32,7 +32,7 @@ export default  function Home({
 
   const modal = useSelector(modalState)
     const subscription = false
-    if(subscription) return <Plans />
+    // if(subscription) return <Plans />
 
     
   return (
