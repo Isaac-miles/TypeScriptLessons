@@ -10,8 +10,7 @@ import {
      signOut,
      User
      } from "@firebase/auth"
-import { NextResponse } from "next/server"
-import { error } from "console"
+
 
 interface IAuthContext {
     user:User | null
@@ -118,7 +117,7 @@ export function useAuth(){
 
 export default function AuthProvider({children}:Children) {
   return <AuthContext.Provider value={useAuth()}>
-    {children} 
+    {/* {children}  */}
   </AuthContext.Provider>
 }
 
