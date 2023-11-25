@@ -117,7 +117,7 @@ export function useAuth(){
 
 export default function AuthProvider({children}:Children) {
   return <AuthContext.Provider value={useAuth()}>
-    {/* {children}  */}
+    {children} 
   </AuthContext.Provider>
 }
 
