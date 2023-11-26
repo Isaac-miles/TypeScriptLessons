@@ -52,7 +52,7 @@ export function useAuth(){
                 setUser(null)
                 setLoading(true)
             }
-            setInitialLoading(false)
+            // setInitialLoading(false)
         })
     ,[router])
 
