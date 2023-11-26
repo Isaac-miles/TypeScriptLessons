@@ -48,7 +48,7 @@ export function useAuth(){
                 setLoading(false)
             }else{
                 //Not Logged in..
-                router.push('/login')
+                // router.push('/login')
                 setUser(null)
                 setLoading(true)
             }
