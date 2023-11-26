@@ -22,7 +22,7 @@ interface IAuthContext {
 }
 
 type Children = {
-    children?: ReactElement | ReactElement[]
+    // children?: ReactElement | ReactElement[]
 }
 const initialValue = {
 user: null,
