@@ -9,6 +9,7 @@ import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { modalState } from '@/features/modalSlice'
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
+import { Product } from '@stripe/firestore-stripe-payments'
 
 interface HomeProps {
     netflixOriginals:MovieProps
@@ -19,7 +20,9 @@ interface HomeProps {
         horrorMovies:MovieProps
         romanceMovies:MovieProps
         documentaries:MovieProps
+        products:Product[] | void
 }
+
 export default  function Home({
     netflixOriginals,
     trendingNow,
@@ -28,10 +31,13 @@ export default  function Home({
     comedyMovies,
     horrorMovies,
     romanceMovies,
-    documentaries}: HomeProps) {
+    documentaries,
+    products
+  }: HomeProps) {
 
   const modal = useSelector(modalState)
     const subscription = false
+    console.log(products)
     if(!subscription) return <Plans />
 
     
