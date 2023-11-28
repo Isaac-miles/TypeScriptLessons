@@ -8,27 +8,31 @@ import {useEffect} from 'react'
 import { getProducts } from "@stripe/firestore-stripe-payments"
 import payments from "@/lib/stripe"
 
+import getProduct from '@/app/getProduct'
+
 function Plans() {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
 
     useEffect(()=>{
         async function fetchData() {
-            const products = await getProducts(payments, {
-                includePrices:true,
-                activeOnly:true
-              })
-              .then((res)=>{
-                console.log('heerere', res)
-              })
-              .catch((err)=>console.log(err.message))
-            
+          const products =  await getProduct()
             console.log(products)
+            // const products = await getProducts(payments, {
+            //     includePrices:true,
+            //     activeOnly:true
+            //   })
+            //   .then((res)=>{
+            //     console.log('heerere', res)
+            //   })
+            //   .catch((err)=>console.log(err.message))
+            
+            // console.log(products)
             // ...
           }
         
           fetchData()
-   
+         
 
     },[])
         
