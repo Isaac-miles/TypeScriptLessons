@@ -4,11 +4,34 @@ import React from 'react'
 import Image from 'next/image'
 import useAuth from '@/hooks/useAuth'
 import { CheckIcon } from '@heroicons/react/24/outline'
+import {useEffect} from 'react'
+import { getProducts } from "@stripe/firestore-stripe-payments"
+import payments from "@/lib/stripe"
 
 function Plans() {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
 
+    useEffect(()=>{
+        async function fetchData() {
+            const products = await getProducts(payments, {
+                includePrices:true,
+                activeOnly:true
+              })
+              .then((res)=>{
+                console.log('heerere', res)
+              })
+              .catch((err)=>console.log(err.message))
+            
+            console.log(products)
+            // ...
+          }
+        
+          fetchData()
+   
+
+    },[])
+        
 
   return (
     <div>

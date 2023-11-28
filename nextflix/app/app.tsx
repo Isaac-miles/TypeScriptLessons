@@ -5,14 +5,16 @@ import { getProducts } from "@stripe/firestore-stripe-payments"
 import payments from "@/lib/stripe"
 
 async function App() {
-  const products = await getProducts(payments, {
-    includePrices:true,
-    activeOnly:true
-  })
-  .then((res)=>res)
-  .catch((err)=>console.log(err.message))
+//   const products = await getProducts(payments, {
+//     includePrices:true,
+//     activeOnly:true
+//   })
+//   .then((res)=>{
+//     console.log('heerere', res)
+//   })
+//   .catch((err)=>console.log(err.message))
 
-console.log(products)
+// console.log(products)
     const {
         netflixOriginals,
         trendingNow,
@@ -35,7 +37,8 @@ console.log(products)
     horrorMovies={horrorMovies}
     romanceMovies={romanceMovies}
     documentaries={documentaries} 
-    products={products}/>
+    // products={products}
+    />
   
   )
 }
