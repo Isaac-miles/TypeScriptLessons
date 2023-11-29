@@ -20,7 +20,7 @@ interface HomeProps {
         horrorMovies:MovieProps
         romanceMovies:MovieProps
         documentaries:MovieProps
-        products:Product
+        products:ProductType
 }
 
 export default  function Home({
@@ -37,7 +37,7 @@ export default  function Home({
 
   const modal = useSelector(modalState)
     const subscription = false
-    // console.log(products)
+    console.log(products)
     if(!subscription) return <Plans />
 
     
