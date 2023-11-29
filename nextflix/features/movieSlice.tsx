@@ -3,10 +3,12 @@ import { RootState } from "@/store/store";
 import { Movies } from "@/types";
 
 type InitialStateType = {
+    movies:Movies[]
     movie:Movies | null
 }
 
 const initialMovieState:InitialStateType = {
+    movies:[],
     movie:null
 }
 
