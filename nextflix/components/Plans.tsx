@@ -18,22 +18,10 @@ function Plans() {
         async function fetchData() {
           const products =  await getProduct()
             console.log(products)
-            // const products = await getProducts(payments, {
-            //     includePrices:true,
-            //     activeOnly:true
-            //   })
-            //   .then((res)=>{
-            //     console.log('heerere', res)
-            //   })
-            //   .catch((err)=>console.log(err.message))
-            
-            // console.log(products)
-            // ...
           }
         
           fetchData()
          
-
     },[])
         
 

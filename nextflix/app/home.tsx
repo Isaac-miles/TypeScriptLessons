@@ -9,7 +9,7 @@ import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { modalState } from '@/features/modalSlice'
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
-import { Product } from '@stripe/firestore-stripe-payments'
+import { ProductType } from './getProduct'
 
 interface HomeProps {
     netflixOriginals:MovieProps
@@ -20,7 +20,7 @@ interface HomeProps {
         horrorMovies:MovieProps
         romanceMovies:MovieProps
         documentaries:MovieProps
-        // products:Product[] | void
+        products:Product
 }
 
 export default  function Home({
@@ -32,7 +32,7 @@ export default  function Home({
     horrorMovies,
     romanceMovies,
     documentaries,
-    // products
+    products
   }: HomeProps) {
 
   const modal = useSelector(modalState)

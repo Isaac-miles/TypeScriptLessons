@@ -1,20 +1,12 @@
 import getMoviesData from "@/utils/getData"
 
 import Home from "./home"
-import { getProducts } from "@stripe/firestore-stripe-payments"
+import getProduct from "./getProduct"
 import payments from "@/lib/stripe"
 
 async function App() {
-//   const products = await getProducts(payments, {
-//     includePrices:true,
-//     activeOnly:true
-//   })
-//   .then((res)=>{
-//     console.log('heerere', res)
-//   })
-//   .catch((err)=>console.log(err.message))
-
-// console.log(products)
+  const products = await getProduct()
+  console.log(products)
     const {
         netflixOriginals,
         trendingNow,
@@ -37,7 +29,7 @@ async function App() {
     horrorMovies={horrorMovies}
     romanceMovies={romanceMovies}
     documentaries={documentaries} 
-    // products={products}
+    products={products}
     />
   
   )

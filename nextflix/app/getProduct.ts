@@ -35,4 +35,5 @@ const products = await Promise.all(productsPromises);
 
 }
 
+export type ProductType = await<ReturnType< typeof getProduct>>
 export default getProduct
