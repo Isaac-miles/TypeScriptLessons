@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
+import {useState} from 'react'
 import Image from 'next/image'
 import useAuth from '@/hooks/useAuth'
 import { CheckIcon } from '@heroicons/react/24/outline'
@@ -8,16 +8,17 @@ import {useEffect} from 'react'
 import { getProducts } from "@stripe/firestore-stripe-payments"
 import payments from "@/lib/stripe"
 
-import getProduct from '@/app/getProduct'
+import getProduct, { ProductType } from '@/app/getProduct'
 
 function Plans() {
+    const [products, setProducts] = useState<ProductType>()
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
 
     useEffect(()=>{
         async function fetchData() {
           const products =  await getProduct()
-            console.log(products)
+            setProducts(products)
           }
         
           fetchData()
