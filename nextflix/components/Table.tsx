@@ -7,8 +7,8 @@ function Table({products}:{products:ProductType}) {
   return (
     <table>
         <tbody>
-            <tr>
-                <td>Monthly Price</td>
+            <tr className='tableRow'>
+                <td className='tableDataTitle'>Monthly Price</td>
                 {products?.map((product)=>(
                     <td className='tabledataFeature' key={product.priceId}>₦{product.priceInfo.unit_amount! /100000}k</td>
                 ))}
