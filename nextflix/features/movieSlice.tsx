@@ -50,7 +50,7 @@ const movieSlice = createSlice({
             .addCase(fetchMovies.fulfilled, (state,action)=>{
                 state.status = 'succeeded'
                 // add our movies here
-                // console.log(action.payload)
+                console.log('movvvv',action.payload)
 
             })
             .addCase(fetchMovies.rejected,(state,action)=>{
