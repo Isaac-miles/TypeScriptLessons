@@ -48,7 +48,7 @@ export default  function Home({
        
   },[])
     // console.log(products)
-    if(!subscription) return <Plans products ={products} />
+    if(!subscription && products.length > 0) return <Plans products ={products} />
 
     
   return (

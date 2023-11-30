@@ -10,7 +10,7 @@ import Table from './Table'
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
-    const [selectedPlan, setSelectedPlan] = useState< ProductElementType | null>(products[2])
+    const [selectedPlan, setSelectedPlan] = useState< ProductElementType>(products[2])
   return (
     <div>
         <Head>
@@ -50,7 +50,7 @@ function Plans({products}:{products:ProductType}) {
             <div className='flex mt-4 flex-col space-y-4'>
                 <div className='flex w-full items-center justify-end self-end md:w-3/5 '>
                     {products?.map((product)=>(
-                         <div className={`planBox ${selectedPlan?.priceId===product.priceId? 'opacity-100' : 'opacity-60'}`} key={product.priceId} onClick={()=>setSelectedPlan(product)}>
+                         <div className={`planBox ${selectedPlan?.priceId===product.priceId? 'opacity-100' :'opacity-60'}`} key={product.priceId} onClick={()=>setSelectedPlan(product)}>
                             {product.name}
                          </div>
                     ))}
