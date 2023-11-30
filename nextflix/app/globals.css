@@ -34,13 +34,13 @@
 
   /* table */
   .tabledataFeature{
-    @apply w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 bg-teal-300
+    @apply w-[calc(100%/3)] p-2.5 text-center md:w-[calc(60%/3)] md:p-3.5 
   }
   .tableRow{
-    @apply flex flex-wrap items-center font-medium bg-blue-200
+    @apply flex flex-wrap items-center font-medium
   }
   .tableDataTitle{
-    @apply w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base bg-cyan-400
+    @apply w-full p-2.5 text-center text-sm font-normal text-white md:w-2/5 md:p-3.5 md:text-left md:text-base 
   }
  
 }

@@ -36,4 +36,5 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 }
 
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
+export type ProductElementType = ProductType[0]
 export default getProduct
