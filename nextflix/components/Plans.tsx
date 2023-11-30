@@ -64,9 +64,11 @@ function Plans() {
             
             <div className='flex mt-4 flex-col space-y-4'>
                 <div className='flex w-full items-center justify-end self-end md:w-3/5 '>
-                    <div className='planBox'></div>
-                    <div className='planBox'></div>
-                    <div className='planBox'></div>
+                    {products?.map((product)=>(
+                         <div className='planBox' key={product.id}>
+                            {product.name}
+                         </div>
+                    ))}
                 </div>
                 {/* <Table /> */}
 
