@@ -9,23 +9,12 @@ import { getProducts } from "@stripe/firestore-stripe-payments"
 import payments from "@/lib/stripe"
 
 import getProduct, { ProductType } from '@/app/getProduct'
+import Table from './Table'
 
-function Plans() {
-    const [products, setProducts] = useState<ProductType>()
+function Plans({products}:{products:ProductType}) {
+
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
-
-    useEffect(()=>{
-        async function fetchData() {
-          const products =  await getProduct()
-            setProducts(products)
-          }
-        
-          fetchData()
-         
-    },[])
-        
-
   return (
     <div>
         <Head>
@@ -71,6 +60,7 @@ function Plans() {
                     ))}
                 </div>
                 {/* <Table /> */}
+                <Table/>
 
                 <button>Subscribe</button>
             </div>

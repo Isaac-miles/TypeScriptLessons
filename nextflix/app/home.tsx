@@ -1,5 +1,5 @@
 'use client'
-
+import {useState, useEffect} from 'react'
 import Banner from '@/components/Banner'
 import Header from '@/components/Header'
 import getMoviesData from '@/utils/getData'
@@ -10,7 +10,7 @@ import { modalState } from '@/features/modalSlice'
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
 import { ProductType } from './getProduct'
-
+import getProduct from './getProduct'
 interface HomeProps {
     netflixOriginals:MovieProps
         trendingNow: MovieProps
@@ -20,7 +20,7 @@ interface HomeProps {
         horrorMovies:MovieProps
         romanceMovies:MovieProps
         documentaries:MovieProps
-        // products:ProductType
+
 }
 
 export default  function Home({
@@ -32,13 +32,23 @@ export default  function Home({
     horrorMovies,
     romanceMovies,
     documentaries,
-    // products
+
   }: HomeProps) {
   const modal = useSelector(modalState)
+  const [products, setProducts] = useState<ProductType>([])
+
     const subscription = false
-    
+    useEffect(()=>{
+      async function fetchData() {
+        const products =  await getProduct()
+          setProducts(products)
+        }
+      
+        fetchData()
+       
+  },[])
     // console.log(products)
-    if(!subscription) return <Plans />
+    if(!subscription) return <Plans products ={products} />
 
     
   return (

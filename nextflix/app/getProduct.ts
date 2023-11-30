@@ -29,7 +29,7 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 });
 
 // 'products' is an array of products (including price info)
-const products = await Promise.all(productsPromises);
+ const products = await Promise.all(productsPromises);
 
        return products
 
