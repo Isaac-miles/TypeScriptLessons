@@ -1,17 +1,20 @@
 import {getApp} from "@firebase/app"
-import {getStripePayments} from "@invertase/firestore-stripe-payments"
+import {getStripePayments,getProducts} from "@invertase/firestore-stripe-payments"
 
 
 const app = getApp();
-const payments = getStripePayments(app,{
+export const payments = getStripePayments(app,{
     productsCollection:"products",
     customersCollection:"customers"
 })
 
+ const products = await getProducts(payments,{
+    includePrices:true,
+    activeOnly:true
+})
 
 
-
-
+export default products
 
 
 

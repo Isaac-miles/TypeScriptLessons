@@ -2,31 +2,34 @@ import getMoviesData from "@/utils/getData"
 
 import Home from "./home"
 import getProduct from "./getProduct"
-import payments from "@/lib/stripe"
 
-async function getData() {
+
+
+// import  products  from "@/lib/stripe"
+// async function getData() {
   // const res = await fetch('https://api.example.com/...')
-  const products = await getProduct()
+  // const products = await getProduct()
 
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
-  if (!res.ok) {
+  // if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
+    // throw new Error('Failed to fetch data')
+  // }
  
-  return res.json()
-}
+  // return res.json()
+// }
  
-export default async function Page() {
-  const data = await getData()
+// export default async function Page() {
+//   const data = await getData()
  
-  return <main></main>
-}
+//   return <main></main>
+// }
 
 
 async function App() {
+
   const {
     netflixOriginals,
     trendingNow,
@@ -38,8 +41,6 @@ async function App() {
     documentaries
   
   } = await getMoviesData()
-
-
 
   return (
     <Home 
