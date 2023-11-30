@@ -54,13 +54,13 @@ function Plans({products}:{products:ProductType}) {
             <div className='flex mt-4 flex-col space-y-4'>
                 <div className='flex w-full items-center justify-end self-end md:w-3/5 '>
                     {products?.map((product)=>(
-                         <div className='planBox' key={product.id}>
+                         <div className='planBox' key={product.priceId}>
                             {product.name}
                          </div>
                     ))}
                 </div>
                 {/* <Table /> */}
-                <Table/>
+                <Table products={products}/>
 
                 <button>Subscribe</button>
             </div>
