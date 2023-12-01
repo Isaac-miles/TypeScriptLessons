@@ -49,6 +49,7 @@ export default  function Home({
       if(status ==='idle'){
         dispatch(fetchMovies())
         console.log('dispatched')
+       
       }
       async function fetchData() {
         const products =  await getProduct()
@@ -58,6 +59,7 @@ export default  function Home({
         fetchData()
        
   },[status,dispatch])
+  
     // if(!subscription && products.length > 0) return <Plans products ={products} />
 
     
