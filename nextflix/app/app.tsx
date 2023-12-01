@@ -19,17 +19,17 @@ async function getData() {
 export default async function App() {
   const data = await getData()
   console.log('produc', data)
-  const {
-    netflixOriginals,
-    trendingNow,
-    topRated,
-    actionMovies,
-    comedyMovies,
-    horrorMovies,
-    romanceMovies,
-    documentaries
+  // const {
+  //   netflixOriginals,
+  //   trendingNow,
+  //   topRated,
+  //   actionMovies,
+  //   comedyMovies,
+  //   horrorMovies,
+  //   romanceMovies,
+  //   documentaries
   
-  } = await getMoviesData()
+  // } = await getMoviesData()
 
   return (
     // <Home 
@@ -44,7 +44,7 @@ export default async function App() {
     // // products={products}
     // />
   <div>
-    
+
   </div>
   )
 }
