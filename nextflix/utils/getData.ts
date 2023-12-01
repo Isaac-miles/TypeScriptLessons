@@ -36,7 +36,7 @@ const getMoviesData = async():Promise<ReturnedMovieProps> => {
       ])
 
 
-         return {  
+         return {
            netflixOriginals,
            trendingNow,
            topRated,
@@ -45,7 +45,7 @@ const getMoviesData = async():Promise<ReturnedMovieProps> => {
            horrorMovies,
            romanceMovies,
            documentaries
-        }
+         }
 }
 
 
