@@ -6,11 +6,14 @@ import getMoviesData from '@/utils/getData'
 import Row from '@/components/Row'
 import { MovieProps } from '@/types'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
-import { modalState } from '@/features/modalSlice'
+import {modalState} from '@/features/modalSlice'
+import {statusState,errorState,fetchMovies} from '@/features/movieSlice'
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
 import { ProductType } from './getProduct'
 import getProduct from './getProduct'
+import { useAppDispatch } from '@/store/store' 
+
 interface HomeProps {
     netflixOriginals:MovieProps
         trendingNow: MovieProps
@@ -34,9 +37,13 @@ export default  function Home({
     documentaries,
 
   }: HomeProps) {
-  const modal = useSelector(modalState)
-  const [products, setProducts] = useState<ProductType>([])
+    const dispatch = useAppDispatch()
+    const modal = useSelector(modalState)
+    const status = useSelector(statusState)
+    const errorMessage = useSelector(errorState)
+    const [products, setProducts] = useState<ProductType>([])
 
+    console.log(statusState, errorMessage)
     const subscription = false
     useEffect(()=>{
       async function fetchData() {
@@ -47,8 +54,7 @@ export default  function Home({
         fetchData()
        
   },[])
-    // console.log(products)
-    if(!subscription && products.length > 0) return <Plans products ={products} />
+    // if(!subscription && products.length > 0) return <Plans products ={products} />
 
     
   return (

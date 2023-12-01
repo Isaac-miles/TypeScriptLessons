@@ -17,8 +17,8 @@ async function getData() {
  
 
 export default async function App() {
-  const data = await getData()
-  console.log('produc', data)
+  // const data = await getData()
+  // console.log('produc')
   // const {
   //   netflixOriginals,
   //   trendingNow,
@@ -43,9 +43,7 @@ export default async function App() {
     // documentaries={documentaries} 
     // // products={products}
     // />
-  <div>
-
-  </div>
+<p></p>
   )
 }
 

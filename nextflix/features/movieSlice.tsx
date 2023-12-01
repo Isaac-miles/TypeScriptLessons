@@ -62,5 +62,7 @@ const movieSlice = createSlice({
 
 
 export const movieState = (state:RootState)=>state.movie.movie
+export const statusState = (state:RootState)=>state.movie.status
+export const errorState = (state:RootState)=>state.movie.errorMessage
 export const {openMovie} = movieSlice.actions
 export default movieSlice.reducer
