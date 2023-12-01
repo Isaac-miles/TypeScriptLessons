@@ -19,31 +19,31 @@ async function getData() {
 export default async function App() {
   // const data = await getData()
   // console.log('produc')
-  // const {
-  //   netflixOriginals,
-  //   trendingNow,
-  //   topRated,
-  //   actionMovies,
-  //   comedyMovies,
-  //   horrorMovies,
-  //   romanceMovies,
-  //   documentaries
+  const {
+    netflixOriginals,
+    trendingNow,
+    topRated,
+    actionMovies,
+    comedyMovies,
+    horrorMovies,
+    romanceMovies,
+    documentaries
   
-  // } = await getMoviesData()
+  } = await getMoviesData()
 
   return (
-    // <Home 
-    // netflixOriginals={netflixOriginals}
-    // trendingNow={trendingNow}
-    // topRated={topRated}
-    // actionMovies={actionMovies}
-    // comedyMovies={comedyMovies}
-    // horrorMovies={horrorMovies}
-    // romanceMovies={romanceMovies}
-    // documentaries={documentaries} 
-    // // products={products}
-    // />
-<p></p>
+    <Home 
+    netflixOriginals={netflixOriginals}
+    trendingNow={trendingNow}
+    topRated={topRated}
+    actionMovies={actionMovies}
+    comedyMovies={comedyMovies}
+    horrorMovies={horrorMovies}
+    romanceMovies={romanceMovies}
+    documentaries={documentaries} 
+    // products={products}
+    />
+
   )
 }
 

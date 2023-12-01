@@ -37,15 +37,18 @@ export default  function Home({
     documentaries,
 
   }: HomeProps) {
+    const subscription = false
     const dispatch = useAppDispatch()
     const modal = useSelector(modalState)
     const status = useSelector(statusState)
     const errorMessage = useSelector(errorState)
     const [products, setProducts] = useState<ProductType>([])
 
-    console.log(statusState, errorMessage)
-    const subscription = false
+   
     useEffect(()=>{
+      if(status ==='idle'){
+        dispatch(fetchMovies)
+      }
       async function fetchData() {
         const products =  await getProduct()
           setProducts(products)
@@ -53,7 +56,7 @@ export default  function Home({
       
         fetchData()
        
-  },[])
+  },[status,dispatch])
     // if(!subscription && products.length > 0) return <Plans products ={products} />
 
     
@@ -61,7 +64,7 @@ export default  function Home({
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
 
       <Header />
-
+{/* 
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
       <Banner netflixOriginals={netflixOriginals} />
       <section className='md:space-y-24'>
@@ -75,7 +78,7 @@ export default  function Home({
         <Row title="Romance Movies" movies={romanceMovies.results}/>
 
       </section>
-    </main>
+    </main> */}
     {modal && <Modal/>}
     </div>
   )

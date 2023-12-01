@@ -4,15 +4,15 @@ import { Movies } from "@/types";
 import getMoviesData from "@/utils/getData";
 
 type InitialStateType = {
-    errorMessage:string | undefined
+    errorMessage:string | null
     status: string
     movies:Movies[]
     movie:Movies | null
 }
 
 const initialMovieState:InitialStateType = {
-    errorMessage:undefined,
-    status: 'idlle',
+    errorMessage:null,
+    status: 'idle',
     movies:[],
     movie:null
 }
@@ -55,7 +55,8 @@ const movieSlice = createSlice({
             })
             .addCase(fetchMovies.rejected,(state,action)=>{
                 state.status = 'failed'
-                state.errorMessage = action.error.message
+                if(state.errorMessage)action.error.message
+    
             })
     }
 })
