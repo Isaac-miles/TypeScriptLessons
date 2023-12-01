@@ -18,6 +18,7 @@ const initialMovieState:InitialStateType = {
 }
 
 export const fetchMovies = createAsyncThunk('movies/getMovies',async () => {
+
     const res = await getMoviesData()
     return res
 })
@@ -40,8 +41,6 @@ const movieSlice = createSlice({
             .addCase(fetchMovies.fulfilled, (state,action)=>{
                 state.status = 'succeeded'
                 // add our movies here
-                // state.movies = state.movies.push(action.payload)
-
                 console.log('movvvv',action.payload)
 
             })
