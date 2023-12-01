@@ -47,7 +47,8 @@ export default  function Home({
    
     useEffect(()=>{
       if(status ==='idle'){
-        dispatch(fetchMovies)
+        dispatch(fetchMovies())
+        console.log('dispatched')
       }
       async function fetchData() {
         const products =  await getProduct()
