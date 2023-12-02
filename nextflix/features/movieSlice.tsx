@@ -30,7 +30,7 @@ const movieSlice = createSlice({
     reducers :{
         openMovie:(state, action:PayloadAction<Movies>)=>{
             return {...state, movie:action.payload}
-            // return state.movie
+            return state.movie
         }
     },
     extraReducers(builder){
