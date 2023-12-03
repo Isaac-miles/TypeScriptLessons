@@ -48,5 +48,6 @@ const getMoviesData = async():Promise<ReturnedMovieProps> => {
          }
 }
 
+type GetDataType = Awaited<ReturnType<typeof getMoviesData>>
 
 export default getMoviesData
