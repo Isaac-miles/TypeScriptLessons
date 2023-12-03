@@ -49,4 +49,4 @@ const getMoviesData = async():Promise<ReturnedMovieProps> => {
 }
 
 
-export default getMoviesData
+// export default getMoviesData
