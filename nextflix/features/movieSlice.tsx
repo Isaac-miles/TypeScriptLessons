@@ -2,6 +2,7 @@ import { PayloadAction, createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
 import { Movies } from "@/types";
 import getMoviesData from "@/utils/getData";
+import { GetReturnedMovieType } from "@/utils/getData";
 
 type InitialStateType = {
     errorMessage:string | null
