@@ -7,14 +7,14 @@ import { GetReturnedMovieType } from "@/utils/getData";
 type InitialStateType = {
     errorMessage:string | null
     status: string
-    movies:GetReturnedMovieType
+    movies:GetReturnedMovieType | null
     movie:Movies | null
 }
 
 const initialMovieState:InitialStateType = {
     errorMessage:null,
     status: 'idle',
-    movies:[],
+    movies:null,
     movie:null
 }
 
@@ -42,7 +42,7 @@ const movieSlice = createSlice({
             .addCase(fetchMovies.fulfilled, (state,action)=>{
                 state.status = 'succeeded'
                 // add our movies here
-                console.log('movvvv',action.payload)
+                state.movies = action.payload
 
             })
             .addCase(fetchMovies.rejected,(state,action)=>{
