@@ -54,6 +54,7 @@ const movieSlice = createSlice({
 })
 
 
+export const moviesState = (state:RootState)=>state.movie.movies
 export const movieState = (state:RootState)=>state.movie.movie
 export const statusState = (state:RootState)=>state.movie.status
 export const errorState = (state:RootState)=>state.movie.errorMessage
