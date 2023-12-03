@@ -7,7 +7,7 @@ import { GetReturnedMovieType } from "@/utils/getData";
 type InitialStateType = {
     errorMessage:string | null
     status: string
-    movies:Movies[]
+    movies:GetReturnedMovieType
     movie:Movies | null
 }
 
