@@ -56,7 +56,7 @@ function Plans({products}:{products:ProductType}) {
                     ))}
                 </div>
                 {/* <Table /> */}
-                <Table products={products}/>
+                <Table products={products} selectedPlan ={selectedPlan}/>
 
                 <button>Subscribe</button>
             </div>
