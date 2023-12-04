@@ -28,12 +28,8 @@ function Table({products, selectedPlan}:TableProps) {
           <td className="tableDataTitle">Resolution</td>
           {products.map((product) => (
             <td
-              className={`tableDataFeature ${
-                selectedPlan?.id === product.id
-                  ? 'text-[#E50914]'
-                  : 'text-[gray]'
-              }`}
-              key={product.id}
+            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`}
+              key={product.priceId}
             >
               {product.metadata.resolution}
             </td>
@@ -45,14 +41,10 @@ function Table({products, selectedPlan}:TableProps) {
           </td>
           {products.map((product) => (
             <td
-              className={`tableDataFeature ${
-                selectedPlan?.id === product.id
-                  ? 'text-[#E50914]'
-                  : 'text-[gray]'
-              }`}
-              key={product.id}
+            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`}
+              key={product.PriceId}
             >
-              {product.metadata.portability === 'true' && (
+              {product.metadata.flexibility === 'true' && (
                 <CheckIcon className="inline-block h-8 w-8" />
               )}
             </td>
