@@ -12,23 +12,18 @@ function Table({products, selectedPlan}:TableProps) {
     <table>
         <tbody className='divide-y divide-[grey]'>
             <tr className='tableRow'>
-                <td className='tableDataTitle'>Monthly Price</td>
+                <td className="tableDataTitle">Monthly Price</td>
                 {products?.map((product)=>(
-                    <td className='tabledataFeature' key={product.priceId}>₦{product.priceInfo.unit_amount! /100000}k</td>
+                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>₦{product.priceInfo.unit_amount! /100000}k</td>
                 ))}
             </tr>
             <tr className='tableRow'>
-                <td className='tableDataTitle'>Video Quality</td>
+                <td className="tableDataTitle">Video Quality</td>
                 {products?.map((product)=>(
-                    <td className='tabledataFeature' key={product.priceId}>{product.metadata.videoQuality }</td>
+                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>{product.metadata.videoQuality }</td>
                 ))}
             </tr>
-            <tr className='tableRow'>
-                <td className='tableDataTitle'>Video Quality</td>
-                {products?.map((product)=>(
-                    <td className='tabledataFeature' key={product.priceId}>{product.metadata.videoQuality }</td>
-                ))}
-            </tr>
+       
         </tbody>
     </table>
   )
