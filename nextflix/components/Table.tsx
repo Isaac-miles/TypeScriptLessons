@@ -3,7 +3,7 @@ import { ProductType } from '@/app/getProduct'
 
 
 function Table({products}:{products:ProductType}) {
-    console.log(products)
+
   return (
     <table>
         <tbody className='divide-y divide-[grey]'>

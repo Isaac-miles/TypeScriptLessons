@@ -44,7 +44,6 @@ export default  function Home({
     const errorMessage = useSelector(errorState)
     const [products, setProducts] = useState<ProductType>([])
 
-   console.log(movies)
     useEffect(()=>{
       if(status ==='idle'){
         dispatch(fetchMovies())
@@ -60,9 +59,7 @@ export default  function Home({
        
   },[status,dispatch])
   
-    // if(!subscription && products.length > 0) return <Plans products ={products} />
-    console.log(movies)
-
+    if(!subscription && products.length > 0) return <Plans products ={products} />
     
   return (
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
