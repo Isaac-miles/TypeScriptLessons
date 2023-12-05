@@ -58,19 +58,19 @@ function Plans({products}:{products:ProductType}) {
                 {/* <Table /> */}
                 <Table products={products} selectedPlan ={selectedPlan}/>
 
-            <button
-                disabled={!selectedPlan || isBillingLoading}
-                className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
-                isBillingLoading && 'opacity-60'
-                }`}
-                onClick={subscribeToPlan}
-            >
-                {isBillingLoading ? (
-                <Loader color="dark:fill-gray-300" />
-                ) : (
-                'Subscribe'
-                )}
-          </button>
+                {/* <button
+            disabled={!selectedPlan || isBillingLoading}
+            className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
+              isBillingLoading && 'opacity-60'
+            }`}
+            onClick={subscribeToPlan}
+          >
+            {isBillingLoading ? (
+              <Loader color="dark:fill-gray-300" />
+            ) : (
+              'Subscribe'
+            )}
+          </button> */}
             </div>
         </main>
     </div>
