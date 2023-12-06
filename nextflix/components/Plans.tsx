@@ -6,7 +6,7 @@ import useAuth from '@/hooks/useAuth'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import  {ProductType, ProductElementType } from '@/app/getProduct'
 import Table from './Table'
-
+import Loader from './Loader'
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
@@ -66,7 +66,7 @@ function Plans({products}:{products:ProductType}) {
             className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
                 billingLoading && 'opacity-60'
             }`}
-            onClick={subscribeToPlan}
+            // onClick={subscribeToPlan}
           >
             {billingLoading ? (
               <Loader color="dark:fill-gray-300" />
