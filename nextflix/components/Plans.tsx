@@ -58,7 +58,7 @@ function Plans({products}:{products:ProductType}) {
                 {/* <Table /> */}
                 <Table products={products} selectedPlan ={selectedPlan}/>
 
-                {/* <button
+                <button
             disabled={!selectedPlan || isBillingLoading}
             className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
               isBillingLoading && 'opacity-60'
@@ -70,7 +70,7 @@ function Plans({products}:{products:ProductType}) {
             ) : (
               'Subscribe'
             )}
-          </button> */}
+          </button>
             </div>
         </main>
     </div>
