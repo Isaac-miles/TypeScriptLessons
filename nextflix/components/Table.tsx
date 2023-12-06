@@ -42,7 +42,7 @@ function Table({products, selectedPlan}:TableProps) {
           {products.map((product) => (
             <td
             className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`}
-              key={product.PriceId}
+              key={product.priceId}
             >
               {product.metadata.flexibility === 'true' && (
                 <CheckIcon className="inline-block h-8 w-8" />
