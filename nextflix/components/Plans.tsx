@@ -11,6 +11,9 @@ function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut} = useAuth()
     const [selectedPlan, setSelectedPlan] = useState< ProductElementType>(products[2])
+    const [billingLoading, setBillingLoading] = useState(false)
+
+
   return (
     <div>
         <Head>
@@ -59,13 +62,13 @@ function Plans({products}:{products:ProductType}) {
                 <Table products={products} selectedPlan ={selectedPlan}/>
 
                 <button
-            disabled={!selectedPlan || isBillingLoading}
+            disabled={!selectedPlan || billingLoading}
             className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
-              isBillingLoading && 'opacity-60'
+                billingLoading && 'opacity-60'
             }`}
             onClick={subscribeToPlan}
           >
-            {isBillingLoading ? (
+            {billingLoading ? (
               <Loader color="dark:fill-gray-300" />
             ) : (
               'Subscribe'
