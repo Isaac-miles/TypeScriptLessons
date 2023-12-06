@@ -7,12 +7,20 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import  {ProductType, ProductElementType } from '@/app/getProduct'
 import Table from './Table'
 import Loader from './Loader'
+import { loadCheckout } from '@/lib/stripe'
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
-    const {logOut} = useAuth()
+    const {logOut,user} = useAuth()
     const [selectedPlan, setSelectedPlan] = useState< ProductElementType>(products[2])
     const [billingLoading, setBillingLoading] = useState(false)
+    
 
+    const subscribeToPlan =()=>{
+        if(!user) return
+
+        loadCheckout(selectedPlan.priceId)
+        setBillingLoading(true)
+    }
 
   return (
     <div>
@@ -66,7 +74,7 @@ function Plans({products}:{products:ProductType}) {
             className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
                 billingLoading && 'opacity-60'
             }`}
-            // onClick={subscribeToPlan}
+            onClick={subscribeToPlan}
           >
             {billingLoading ? (
               <Loader color="dark:fill-gray-300" />
