@@ -7,7 +7,7 @@ import app from "./firebase";
     customersCollection: "customers",
   });
 
- export const loadCheckout =async (priceId:string) => {
+ export const loadCheckout = async (priceId:string) => {
     await createCheckoutSession(payments, {
         price:priceId,
         success_url:window.location.origin,
