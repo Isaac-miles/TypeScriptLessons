@@ -17,4 +17,4 @@
 //     .catch((err)=>console.log(err.message))
 //  }
 
- export default payments
+//  export default payments
