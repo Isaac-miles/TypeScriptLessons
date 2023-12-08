@@ -41,7 +41,9 @@ export async function loadCheckout(priceId:string) {
         success_url:window.location.origin,
         cancel_url:window.location.origin
     })
-    docRef.onSnapshot
+    docRef.onSnapshot(async(snap)=>(
+        
+    ))
 }
 
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
