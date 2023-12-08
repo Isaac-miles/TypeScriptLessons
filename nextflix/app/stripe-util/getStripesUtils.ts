@@ -2,7 +2,7 @@ import { query, collection, where, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 
-async function getProduct() {
+export async function getProduct() {
 
     // create a query object
 const q = query(
@@ -35,6 +35,9 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 
 }
 
+export async function loadCheckout(priceId:string) {
+    
+}
+
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
 export type ProductElementType = ProductType[0]
-export default getProduct

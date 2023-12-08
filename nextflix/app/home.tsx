@@ -10,8 +10,8 @@ import {modalState} from '@/features/modalSlice'
 import {moviesState,statusState,errorState,fetchMovies} from '@/features/movieSlice'
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
-import { ProductType } from './getProduct'
-import getProduct from './getProduct'
+import { ProductType } from './stripe-util/getStripesUtils'
+import {getProduct} from './stripe-util/getStripesUtils'
 import { useAppDispatch } from '@/store/store' 
 interface HomeProps {
     netflixOriginals:MovieProps

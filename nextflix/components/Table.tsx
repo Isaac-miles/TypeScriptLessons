@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProductType,ProductElementType } from '@/app/getProduct'
+import { ProductType,ProductElementType } from '@/app/stripe-util/getStripesUtils'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 interface TableProps {

@@ -4,7 +4,7 @@ import {useState} from 'react'
 import Image from 'next/image'
 import useAuth from '@/hooks/useAuth'
 import { CheckIcon } from '@heroicons/react/24/outline'
-import  {ProductType, ProductElementType } from '@/app/getProduct'
+import  {ProductType, ProductElementType } from '@/app/stripe-util/getStripesUtils'
 import Table from './Table'
 import Loader from './Loader'
 import { loadCheckout } from '@/lib/stripe

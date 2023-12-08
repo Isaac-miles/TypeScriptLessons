@@ -1,7 +1,7 @@
 import getMoviesData from "@/utils/getData"
 
 import Home from "./home"
-import getProduct from "./getProduct"
+import {getProduct} from "./stripe-util/getStripesUtils"
 import  products  from "@/lib/stripe"
 
 
