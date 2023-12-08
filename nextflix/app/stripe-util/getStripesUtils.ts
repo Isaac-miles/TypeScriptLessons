@@ -46,6 +46,10 @@ export async function loadCheckout(priceId:string) {
         if(error){
             alert(error.message)
         }
+        if(sessionId){
+            const stripe = await loadStripe("pk_test_51OD3tRF0B2JGggPGDejQCvi3lDW2Kp3UKJi9uG4klhWkoRtwoAHKadG530NHbQuPHphp5cjh4ZbzvdxZgaVj23UG00eeyHR0dj");
+            stripe.redirectToCheckout({sessionId})
+        }
     ))
 }
 
