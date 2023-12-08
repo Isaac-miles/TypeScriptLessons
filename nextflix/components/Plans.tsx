@@ -7,7 +7,7 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import  {ProductType, ProductElementType } from '@/app/getProduct'
 import Table from './Table'
 import Loader from './Loader'
-import { loadCheckout } from '@/lib/stripe'
+import { loadCheckout } from '@/lib/stripe
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut,user} = useAuth()
