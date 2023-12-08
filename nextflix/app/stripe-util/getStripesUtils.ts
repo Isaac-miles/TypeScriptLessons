@@ -42,7 +42,10 @@ export async function loadCheckout(priceId:string) {
         cancel_url:window.location.origin
     })
     docRef.onSnapshot(async(snap)=>(
-        
+        const {error, sessionId} = snap.data();
+        if(error){
+            alert(error.message)
+        }
     ))
 }
 
