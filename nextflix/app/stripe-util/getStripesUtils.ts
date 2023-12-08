@@ -36,7 +36,12 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 }
 
 export async function loadCheckout(priceId:string) {
-    
+    const docRef = await db.collection("customers").doc(user.uid).collection("checkout_session").add({
+        priceId,
+        success_url:window.location.origin,
+        cancel_url:window.location.origin
+    })
+    docRef.onSnapshot
 }
 
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
