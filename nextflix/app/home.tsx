@@ -13,6 +13,7 @@ import Plans from '@/components/Plans'
 import { ProductType } from './stripe-util/getStripesUtils'
 import {getProduct} from './stripe-util/getStripesUtils'
 import { useAppDispatch } from '@/store/store' 
+import { getProductz } from '@/lib/stripe'
 interface HomeProps {
     netflixOriginals:MovieProps
         trendingNow: MovieProps
@@ -51,8 +52,8 @@ export default  function Home({
        
       }
       async function fetchData() {
-        const products =  await getProduct()
-          setProducts(products)
+        const products =  await getProductz()
+          // setProducts(products)
         }
       
         fetchData()

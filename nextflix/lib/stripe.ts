@@ -8,6 +8,7 @@ import app from "./firebase";
     customersCollection: "customers",
   });
 
+  console.log(payments)
  export const loadCheckout = async (priceId:string) => {
     await createCheckoutSession(payments, {
         price:priceId,
@@ -19,3 +20,14 @@ import app from "./firebase";
  }
 
  export default payments
+
+ import { getProducts } from "@stripe/firestore-stripe-payments";
+
+
+ export const getProductz = async () => {
+    await await getProducts(payments, {
+        includePrices: true,
+        activeOnly: true,
+      });
+      
+ }
