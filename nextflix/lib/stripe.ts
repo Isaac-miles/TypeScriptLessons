@@ -8,7 +8,7 @@ import app from "./firebase";
     customersCollection: "customers",
   });
 
-  console.log(payments)
+  console.log(payments.app)
  export const loadCheckout = async (priceId:string) => {
     await createCheckoutSession(payments, {
         price:priceId,
@@ -25,7 +25,7 @@ import app from "./firebase";
 
 
  export const getProductz = async () => {
-    await await getProducts(payments, {
+    await await getProducts(payments,{
         includePrices: true,
         activeOnly: true,
       });
