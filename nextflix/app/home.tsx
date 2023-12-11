@@ -52,7 +52,7 @@ export default  function Home({
        
       }
       async function fetchData() {
-        const products =  await getProductz()
+        const products =  await getProduct()
           setProducts(products)
         }
       
