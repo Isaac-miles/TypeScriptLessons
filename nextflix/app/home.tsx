@@ -53,7 +53,7 @@ export default  function Home({
       }
       async function fetchData() {
         const products =  await getProduct()
-          setProducts(products)
+          // setProducts(products)
         }
       
         fetchData()
