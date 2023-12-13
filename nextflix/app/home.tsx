@@ -56,7 +56,7 @@ export default  function Home({
           // setProducts(products)
         }
       
-        fetchData()
+        // fetchData()
        
   },[status,dispatch])
   
