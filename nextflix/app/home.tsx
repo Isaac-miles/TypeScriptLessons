@@ -81,7 +81,7 @@ export default  function Home({
 
       </section>
     </main> */}
-    {modal && <Modal/>}
+    {modal && <Modal/>} 
     </div>
   )
 }
