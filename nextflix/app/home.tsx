@@ -27,7 +27,7 @@ interface HomeProps {
 }
 
 export default  function Home({
-    netflixOriginals,
+    // netflixOriginals,
     trendingNow,
     topRated,
     actionMovies,
