@@ -12,7 +12,7 @@ import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
 import { ProductType } from './stripe-util/getStripesUtils'
 import {getProduct} from './stripe-util/getStripesUtils'
-import { useAppDispatch } from '@/store/store' 
+// import { useAppDispatch } from '@/store/store' 
 
 interface HomeProps {
     netflixOriginals:MovieProps
