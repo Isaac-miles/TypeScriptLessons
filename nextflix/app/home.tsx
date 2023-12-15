@@ -34,7 +34,7 @@ export default  function Home({
     comedyMovies,
     horrorMovies,
     romanceMovies,
-    // documentaries,
+    documentaries,
 
   }: HomeProps) {
     const subscription = false
