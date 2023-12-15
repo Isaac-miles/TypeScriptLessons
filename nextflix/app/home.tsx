@@ -22,7 +22,7 @@ interface HomeProps {
         comedyMovies:MovieProps
         horrorMovies:MovieProps
         romanceMovies:MovieProps
-        documentaries:MovieProps
+        // documentaries:MovieProps
 
 }
 
