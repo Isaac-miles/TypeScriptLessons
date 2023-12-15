@@ -11,7 +11,7 @@ import {moviesState,statusState,errorState,fetchMovies} from '@/features/movieSl
 import Modal from '@/components/Modal'
 import Plans from '@/components/Plans'
 import { ProductType } from './stripe-util/getStripesUtils'
-// import {getProduct} from './stripe-util/getStripesUtils'
+import {getProduct} from './stripe-util/getStripesUtils'
 import { useAppDispatch } from '@/store/store' 
 
 interface HomeProps {
