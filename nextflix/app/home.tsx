@@ -42,7 +42,7 @@ export default  function Home({
     const modal = useSelector(modalState)
     const status = useSelector(statusState)
     const movies = useSelector(moviesState)
-    const errorMessage = useSelector(errorState)
+    // const errorMessage = useSelector(errorState)
     const [products, setProducts] = useState<ProductType>([])
 
     useEffect(()=>{
