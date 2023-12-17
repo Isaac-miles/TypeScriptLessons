@@ -33,7 +33,7 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 
 }
 
-export async function loadCheckout(priceId:string) {
+export async function loadCheckoutSession(priceId:string, currentUser:string) {
     let checkOutSessionData ={
         price:priceId,
         success_url:window.location.origin,
@@ -42,19 +42,20 @@ export async function loadCheckout(priceId:string) {
     
     const checkOutSessionRef = await addDoc(
         //current user is provided by firebase, via getAuth
-        collection(db, `customers/${currentUser.uid}/checkout_session`),
+        collection(db, `customers/${currentUser}/checkout_session`),
         checkOutSessionData
     )
 
     //the stripe extention creates a payment link for us
     onSnapshot(checkOutSessionRef, (snap)=>{
-        const {error, url} = snap.data();
-        if(error){
-            // handle error
-        }
-        if(url){
-            window.location.assign(url); // redirect to payment link
-        }
+        console.log(snap.data())
+        // const {error, url} = snap.data();
+        // if(error){
+        //     // handle error
+        // }
+        // if(url){
+        //     window.location.assign(url); // redirect to payment link
+        // }
     })
 }
 

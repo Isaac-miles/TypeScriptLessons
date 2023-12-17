@@ -7,7 +7,7 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import  {ProductType, ProductElementType } from '@/app/stripe-util/getStripesUtils'
 import Table from './Table'
 import Loader from './Loader'
-import { loadCheckout } from '@/lib/stripe'
+import { loadCheckoutSession } from '@/app/stripe-util/getStripesUtils'
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut,user} = useAuth()
@@ -15,10 +15,10 @@ function Plans({products}:{products:ProductType}) {
     const [billingLoading, setBillingLoading] = useState(false)
     
 
-    const subscribeToPlan =()=>{
+    const subscribeToPlan = ()=>{
         if(!user) return
 
-        loadCheckout(selectedPlan.priceId)
+       loadCheckoutSession(selectedPlan.priceId, user.uid)
         setBillingLoading(true)
     }
 
