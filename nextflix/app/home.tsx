@@ -43,7 +43,7 @@ export default  function Home({
     const status = useSelector(statusState)
     const movies = useSelector(moviesState)
     const errorMessage = useSelector(errorState)
-    // const [products, setProducts] = useState<ProductType>([])
+    const [products, setProducts] = useState<ProductType>([])
 
     useEffect(()=>{
       if(status ==='idle'){
