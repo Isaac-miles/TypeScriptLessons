@@ -1,9 +1,8 @@
-import { query, collection, where, getDocs } from 'firebase/firestore';
+import {addDoc, query, collection, where, getDocs,onSnapshot } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
 
 export async function getProduct() {
-
     // create a query object
 const q = query(
     collection(db, 'products'), 
@@ -11,7 +10,6 @@ const q = query(
 );
 
 const querySnapshot = await getDocs(q);
-
 
 // for each product, get the product price info
 const productsPromises = querySnapshot.docs.map(async (productDoc) => {
@@ -35,23 +33,9 @@ const productsPromises = querySnapshot.docs.map(async (productDoc) => {
 
 }
 
-// export async function loadCheckout(priceId:string) {
-//     const docRef = await db.collection("customers").doc(user.uid).collection("checkout_session").add({
-//         priceId,
-//         success_url:window.location.origin,
-//         cancel_url:window.location.origin
-//     })
-//     docRef.onSnapshot(async(snap)=>{
-//         const {error, sessionId} = snap.data();
-//         if(error){
-//             alert(error.message)
-//         }
-//         if(sessionId){
-//             const stripe = await loadStripe("pk_test_51OD3tRF0B2JGggPGDejQCvi3lDW2Kp3UKJi9uG4klhWkoRtwoAHKadG530NHbQuPHphp5cjh4ZbzvdxZgaVj23UG00eeyHR0dj");
-//             stripe.redirectToCheckout({sessionId})
-//         }
-// })
-// }
+export async function loadCheckout(priceId:string) {
+    
+}
 
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
 export type ProductElementType = ProductType[0]
