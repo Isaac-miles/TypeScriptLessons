@@ -68,7 +68,7 @@ export async function getActiveSubscription(currentUser:string) {
     //fetch the active subscription
     const querySnapshot = await getDocs(q);
     if(querySnapshot.empty){
-        // return
+         return null
     }
     const subscription = querySnapshot.docs[0].data();
     return subscription

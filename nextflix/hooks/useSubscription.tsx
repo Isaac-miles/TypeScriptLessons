@@ -16,5 +16,6 @@ export default function useSubscription(user:User | null) {
       
     },[user])
 
-  return setSubscription
+
+  return subscription
 }

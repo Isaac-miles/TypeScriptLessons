@@ -61,8 +61,7 @@ export default  function Home({
         fetchData()
        
   },[status,dispatch])
-  
-    if(!subscription && products.length > 0) return <Plans products ={products} />
+    if(subscription === null && products.length > 0) return <Plans products ={products} />
     
   return (
     <div className={`relative h-screen bg-gradient-to-b  lg:h-[140vh] ${modal && '!h-screen overflow-hidden'}`}>
