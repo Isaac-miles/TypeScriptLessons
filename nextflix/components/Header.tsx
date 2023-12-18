@@ -9,29 +9,14 @@ import { useAuth } from "@/store/authContext"
 
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false)
+   
     const {logOut} = useAuth()
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
 
-    // useEffect(()=>{
-    //     const handleScroll = ():void =>{
-    //         if(window.scrollY > 0){
-    //             setIsScrolled(true)
-    //             console.log(true)
-    //         }else{
-    //             setIsScrolled(false)
-    //             console.log(false)
-    //         }
-    //     }
-       
-    //     window.addEventListener('scroll', handleScroll)
-
-    //     return window.removeEventListener('scroll',handleScroll)
-    // },[])
 
   return (
-    <header className={`${isScrolled && 'bg-[#141414]'}`} >
+    <header className={`${'bg-[#141414]'}`} >
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
