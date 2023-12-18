@@ -13,6 +13,8 @@ import Plans from '@/components/Plans'
 import { ProductType } from './stripe-util/getStripesUtils'
 import {getProduct} from './stripe-util/getStripesUtils'
 import { useAppDispatch } from '@/store/store' 
+import useSubscription from '@/hooks/useSubscription'
+import useAuth from '@/hooks/useAuth'
 
 interface HomeProps {
     netflixOriginals:MovieProps
@@ -37,7 +39,8 @@ export default  function Home({
     documentaries,
 
   }: HomeProps) {
-    const subscription = false
+    const {user} = useAuth()
+    const subscription = useSubscription(user)
     const dispatch = useAppDispatch()
     const modal = useSelector(modalState)
     const status = useSelector(statusState)

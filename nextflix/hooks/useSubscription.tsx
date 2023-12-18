@@ -7,10 +7,14 @@ export default function useSubscription(user:User | null) {
 
     useEffect(()=>{
         if(!user) return
-        const activeSub =  getActiveSubscription(user.uid)
+        const getSubs =async () => {
+        const activeSub = await getActiveSubscription(user.uid)
         setSubscription(activeSub)
-    },[user])
+        }
 
+        getSubs()
+      
+    },[user])
 
   return setSubscription
 }
