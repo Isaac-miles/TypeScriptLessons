@@ -41,11 +41,11 @@ export async function loadCheckoutSession(priceId:string, currentUser:string) {
     }
    
     
-    // const checkOutSessionRef = await addDoc(
-    //     //current user is provided by firebase, via getAuth
-    //     collection(db, `customers/${currentUser}/checkout_session`),
-    //     checkOutSessionData
-    // )
+    const checkOutSessionRef = await addDoc(
+        //current user is provided by firebase, via getAuth
+        collection(db, `customers/${currentUser}/checkout_sessions`),
+        checkOutSessionData
+    )
 
     //the stripe extention creates a payment link for us
     // onSnapshot(checkOutSessionRef, (snap)=>{
