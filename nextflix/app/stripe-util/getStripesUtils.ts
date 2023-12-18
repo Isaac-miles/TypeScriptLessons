@@ -46,10 +46,8 @@ export async function loadCheckoutSession(priceId:string, currentUser:string) {
         collection(db, `customers/${currentUser}/checkout_sessions`),
         checkOutSessionData
     )
-
     //the stripe extention creates a payment link for us
     onSnapshot(checkOutSessionRef, (snap)=>{
-        console.log(snap.data())
         const result = snap.data();
         if(result?.error){
            // handle error

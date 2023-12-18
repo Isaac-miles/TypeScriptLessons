@@ -15,7 +15,7 @@ function Table({products, selectedPlan}:TableProps) {
             <tr className='tableRow'>
                 <td className="tableDataTitle">Monthly Price</td>
                 {products?.map((product)=>(
-                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>₦{product.priceInfo.unit_amount! /100000}k</td>
+                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>₦{product.priceInfo.unit_amount/100}</td>
                 ))}
             </tr>
             <tr className='tableRow'>
