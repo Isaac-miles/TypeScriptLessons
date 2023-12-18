@@ -50,12 +50,12 @@ export async function loadCheckoutSession(priceId:string, currentUser:string) {
     //the stripe extention creates a payment link for us
     onSnapshot(checkOutSessionRef, (snap)=>{
         console.log(snap.data())
-        const {error, url} = snap.data();
-        if(error){
-            handle error
+        const result = snap.data();
+        if(result?.error){
+           // handle error
         }
-        if(url){
-            window.location.assign(url); //redirect to payment link
+        if(result?.url){
+            window.location.assign(result.url); //redirect to payment link
         }
     })
 }
