@@ -57,6 +57,8 @@ export async function loadCheckoutSession(priceId:string, currentUser:string) {
         }
     })
 }
-
+export async function getActiveSubscription(currentUser:string) {
+    
+}
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
 export type ProductElementType = ProductType[0]
