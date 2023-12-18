@@ -57,8 +57,23 @@ export async function loadCheckoutSession(priceId:string, currentUser:string) {
         }
     })
 }
+
 export async function getActiveSubscription(currentUser:string) {
-    
+    //create a query object to the current users active subscriptions 
+    const q = query(
+        //current user is provided by firebase via getAuth
+        collection(db, 'customers', currentUser, 'subscriptions'),
+        where('status','in',['trialing', 'active'])
+    );
+    //fetch the active subscription
+    const querySnapshot = await getDocs(q);
+    if(querySnapshot.empty){
+        // return
+    }
+    const subscription = querySnapshot.docs[0].data();
+    return subscription
 }
+
+export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
 export type ProductElementType = ProductType[0]
