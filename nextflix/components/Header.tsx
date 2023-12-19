@@ -16,7 +16,7 @@ const Header = () => {
 
 
   return (
-    <header className={`${'bg-[#141414]'}`} >
+    <header className='bg-[#141414]'>
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
@@ -40,14 +40,15 @@ const Header = () => {
         <SearchIcon className="hidden h-6 w-6 sm:inline "/>
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="hidden h-6 w-6 sm:inline "/>
-        {/* <Link href={'/account'}> */}
-          <Image onClick={()=>logOut()}
+        <Link href={'/account'}>
+          <Image 
+        //onClick={()=>logOut()}
         src={accImgUrl}
         alt="account"
         width={30}
         height={30}
         className="cursor-pointer rounded w-auto h-auto"/>
-        {/* </Link> */}
+        </Link>
       </div>
     </header>
   )
