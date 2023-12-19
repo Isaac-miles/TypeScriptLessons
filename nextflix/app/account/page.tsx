@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-// import Membership from '../components/Membership'
+import Membership from '@/components/Membership'
 import useAuth from '@/hooks/useAuth'
 import useSubscription from '@/hooks/useSubscription'
 import moment from  "moment"
