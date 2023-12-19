@@ -1,11 +1,14 @@
+'use client'
+
 import { getProducts, Product } from '@stripe/firestore-stripe-payments'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 // import Membership from '../components/Membership'
-// import useAuth from '../hooks/useAuth'
-// import useSubscription from '../hooks/useSubscription'
+import useAuth from '@/hooks/useAuth'
+import useSubscription from '@/hooks/useSubscription'
+import moment from  "moment"
 // import payments from '../lib/stripe'
 
 interface Props {
@@ -14,8 +17,14 @@ interface Props {
 
 function Account({ products }: Props) {
   console.log(products)
-//   const { user, logout } = useAuth()
-//   const subscription = useSubscription(user)
+  const { user,logOut } = useAuth()
+    let formattedDate
+  const subscription = useSubscription(user)
+    if(subscription){
+        const millisecondsTimestamp = subscription?.created.seconds * 1000;
+        formattedDate = moment(millisecondsTimestamp).format('YYYY-MM-DD HH:mm:ss');
+    }
+
 
   return (
     <div>
@@ -51,7 +60,7 @@ function Account({ products }: Props) {
           <div className="-ml-0.5 flex items-center gap-x-1.5">
             <img src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
             <p className="text-xs font-semibold text-[#555]">
-              {/* Member since {subscription?.created} */}
+              Member since {formattedDate}
             </p>
           </div>
         </div>
