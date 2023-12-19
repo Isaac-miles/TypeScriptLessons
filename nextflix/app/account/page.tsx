@@ -1,6 +1,6 @@
 'use client'
-
-import { getProducts, Product } from '@stripe/firestore-stripe-payments'
+import {useState,useEffect} from 'react'
+import { getProduct,ProductType } from '../stripe-util/getStripesUtils'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -9,17 +9,27 @@ import Membership from '@/components/Membership'
 import useAuth from '@/hooks/useAuth'
 import useSubscription from '@/hooks/useSubscription'
 import moment from  "moment"
-// import payments from '../lib/stripe'
 
-interface Props {
-  products: Product[]
-}
 
-function Account({ products }: Props) {
-  console.log(products)
+function Account() {
+  const [products, setProducts] = useState<ProductType>([])
   const { user,logOut } = useAuth()
-    let formattedDate
+  let formattedDate;
   const subscription = useSubscription(user)
+
+  useEffect(()=>{
+
+    async function fetchData() {
+      const products =  await getProduct()
+        setProducts(products)
+        console.log(products)
+        console.log('subscription',subscription)
+      }
+    
+      fetchData()
+     
+},[])
+
     if(subscription){
         const millisecondsTimestamp = subscription?.created.seconds * 1000;
         formattedDate = moment(millisecondsTimestamp).format('YYYY-MM-DD HH:mm:ss');
@@ -45,7 +55,7 @@ function Account({ products }: Props) {
         </Link>
         <Link href="/account">
         <Image 
-        //onClick={()=>logOut()}
+        onClick={()=>logOut()}
         src="/img/acc-logo.png"
         alt="account"
         width={30}
@@ -71,11 +81,11 @@ function Account({ products }: Props) {
           <h4 className="text-lg text-[gray]">Plan Details</h4>
           {/* Find the current plan */}
           <div className="col-span-2 font-medium">
-            {/* {
+            {
               products.filter(
-                (product) => product.id === subscription?.product
+                (product) => product.priceId === subscription?.product
               )[0]?.name
-            } */}
+            }
           </div>
           <p className="cursor-pointer text-blue-500 hover:underline md:text-right">
             Change plan
