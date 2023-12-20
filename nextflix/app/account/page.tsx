@@ -69,7 +69,7 @@ function Account() {
           <div className="-ml-0.5 flex items-center gap-x-1.5">
             <img src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
             <p className="text-xs font-semibold text-[#555]">
-              Member since {formattedDate}
+              {/* Member since {formattedDate} */}
             </p>
           </div>
         </div>
