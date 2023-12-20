@@ -23,7 +23,6 @@ function Account() {
       const products =  await getProduct()
         setProducts(products)
         console.log(products)
-        console.log('subscription',subscription)
       }
     
       fetchData()
@@ -82,9 +81,8 @@ function Account() {
           {/* Find the current plan */}
           <div className="col-span-2 font-medium">
             {
-              products.filter(
-                (product) => product.priceId === subscription?.product
-              )[0]?.name
+           products.filter((product) => product.priceId === subscription?.items[0]?.price?.product.default_price
+          )[0]?.name
             }
           </div>
           <p className="cursor-pointer text-blue-500 hover:underline md:text-right">
