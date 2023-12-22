@@ -47,12 +47,12 @@ function Membership() {
 
         <div className="flex flex-col justify-between pt-4 pb-4 md:flex-row md:pb-0">
           <div>
-            {/* <p>
+            <p>
               {subscription?.cancel_at_period_end
                 ? 'Your membership will end on '
                 : 'Your next billing date is '}
-              {subscription?.current_period_end}
-            </p> */}
+              {subscription?.current_period_end.seconds}
+            </p>
           </div>
           <div className="md:text-right">
             <p className="membershipLink">Manage payment info</p>
