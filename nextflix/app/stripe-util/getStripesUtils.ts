@@ -80,7 +80,9 @@ export async function gotToBillingPage(){
     const functionRef = httpsCallable(instance,'ext-firestore-stripe-payments-createPortalLink');
     await functionRef({
         returnUrl: `${window.location.origin}/account`
-    }).then(({data}:any)=>window.location.assign(data.url))
+    })
+    .then(({data}:any)=>window.location.assign(data.url))
+    .catch((error)=>alert(error.message))
 }
 export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
