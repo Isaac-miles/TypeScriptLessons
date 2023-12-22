@@ -9,6 +9,7 @@ import  {ProductType, ProductElementType } from '@/app/stripe-util/getStripesUti
 import Table from './Table'
 import Loader from './Loader'
 import { loadCheckoutSession } from '@/app/stripe-util/getStripesUtils'
+
 function Plans({products}:{products:ProductType}) {
     const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
     const {logOut,user} = useAuth()

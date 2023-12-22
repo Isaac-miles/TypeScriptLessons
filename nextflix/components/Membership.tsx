@@ -3,19 +3,22 @@ import useAuth from '../hooks/useAuth'
 import useSubscription from '../hooks/useSubscription'
 import { gotToBillingPage } from '@/app/stripe-util/getStripesUtils'
 import Loader from './Loader'
-
+import moment from 'moment'
 function Membership() {
   const { user } = useAuth()
   const subscription = useSubscription(user)
   const [isBillingLoading, setBillingLoading] = useState(false)
-
+  let formattedDate;
   const manageSubscription = () => {
     if (subscription) {
       setBillingLoading(true)
       gotToBillingPage()
     }
   }
-
+  if(subscription){
+    const millisecondsTimestamp = subscription?.created.seconds * 1000;
+    formattedDate = moment(millisecondsTimestamp).format('YYYY-MM-DD HH:mm:ss');
+}
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0">
       <div className="space-y-2 py-4">
@@ -51,7 +54,7 @@ function Membership() {
               {subscription?.cancel_at_period_end
                 ? 'Your membership will end on '
                 : 'Your next billing date is '}
-              {subscription?.current_period_end.seconds}
+              {}
             </p>
           </div>
           <div className="md:text-right">
