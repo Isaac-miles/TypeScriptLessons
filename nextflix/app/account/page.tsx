@@ -22,7 +22,6 @@ function Account() {
     async function fetchData() {
       const products =  await getProduct()
         setProducts(products)
-        console.log(products)
       }
     
       fetchData()
