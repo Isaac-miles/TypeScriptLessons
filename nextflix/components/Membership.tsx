@@ -16,7 +16,7 @@ function Membership() {
     }
   }
   if(subscription){
-    const millisecondsTimestamp = subscription?.created.seconds * 1000;
+    const millisecondsTimestamp = subscription?.current_period_end.seconds * 1000;
     formattedDate = moment(millisecondsTimestamp).format('YYYY-MM-DD HH:mm:ss');
 }
   return (
