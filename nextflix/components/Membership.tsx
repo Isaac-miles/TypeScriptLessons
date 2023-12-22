@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useAuth from '../hooks/useAuth'
 import useSubscription from '../hooks/useSubscription'
-import { goToBillingPortal } from '../lib/stripe'
+import { gotToBillingPage } from '@/app/stripe-util/getStripesUtils'
 import Loader from './Loader'
 
 function Membership() {
@@ -12,7 +12,7 @@ function Membership() {
   const manageSubscription = () => {
     if (subscription) {
       setBillingLoading(true)
-      goToBillingPortal()
+      gotToBillingPage()
     }
   }
 
@@ -47,12 +47,12 @@ function Membership() {
 
         <div className="flex flex-col justify-between pt-4 pb-4 md:flex-row md:pb-0">
           <div>
-            <p>
+            {/* <p>
               {subscription?.cancel_at_period_end
                 ? 'Your membership will end on '
                 : 'Your next billing date is '}
               {subscription?.current_period_end}
-            </p>
+            </p> */}
           </div>
           <div className="md:text-right">
             <p className="membershipLink">Manage payment info</p>

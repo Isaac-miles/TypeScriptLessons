@@ -1,5 +1,6 @@
 import {addDoc, query, collection, where, getDocs,onSnapshot } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import app from '@/lib/firebase'
 import {getFunctions,httpsCallable} from '@firebase/functions'
 
 export async function getProduct() {
