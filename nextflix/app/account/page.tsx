@@ -94,7 +94,7 @@ function Account() {
           <h4 className="text-lg text-[gray]">Settings</h4>
           <p
             className="col-span-3 cursor-pointer text-blue-500 hover:underline"
-            // onClick={logout}
+            onClick={logOut}
           >
             Sign out of all devices
           </p>
