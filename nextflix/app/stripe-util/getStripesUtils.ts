@@ -77,7 +77,10 @@ export async function getActiveSubscription(currentUser:string) {
 
 export async function gotToBillingPage(){
     const instance = getFunctions(app, 'us-central1')
-    const functionRef = httpsCallable
+    const functionRef = httpsCallable(instance,'ext-firestore-stripe-payments-createPortalLink');
+    await functionRef({
+        returnUrl: `${window.location.origin}/account`
+    })
 }
 export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
