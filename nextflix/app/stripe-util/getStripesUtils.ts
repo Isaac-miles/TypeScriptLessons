@@ -1,6 +1,6 @@
 import {addDoc, query, collection, where, getDocs,onSnapshot } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-
+import {getFunctions,httpsCallable} from '@firebase/functions'
 
 export async function getProduct() {
     // create a query object
@@ -74,6 +74,10 @@ export async function getActiveSubscription(currentUser:string) {
     return subscription
 }
 
+export async function gotToBillingPage(){
+    const instance = getFunctions(app, 'us-central1')
+    const functionRef = httpsCallable
+}
 export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>
 export type ProductType = Awaited<ReturnType< typeof getProduct>>
 export type ProductElementType = ProductType[0]
