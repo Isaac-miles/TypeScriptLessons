@@ -1,4 +1,6 @@
 import { useEffect,useState } from 'react'
+import {deleteDoc,doc} from 'firebase/firestore'
+import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { useAppDispatch } from '@/store/store' 
@@ -8,6 +10,7 @@ import { movieState } from '@/features/movieSlice'
 import { Element,Genre } from '@/types'
 import ReactPlayer from 'react-player/youtube'
 import { FaPlay, FaVolumeMute, FaVolumeUp } from 'react-icons/fa'
+import { useAuth } from '@/store/authContext'
 
 function Modal() {
   const dispatch = useAppDispatch()
@@ -17,6 +20,7 @@ function Modal() {
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
+  const {user} = useAuth()
     useEffect(()=>{
       if(!movie) return
 
@@ -47,6 +51,11 @@ function Modal() {
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
+    }
+    const handleList =async ()=>{
+      if(addedToList){
+        await deleteDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!))
+      }
     }
   return (
     <MuiModal open={modal} onClose={handleClose} className='fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide '>
