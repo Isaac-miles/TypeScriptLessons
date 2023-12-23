@@ -3,7 +3,7 @@ import MuiModal from '@mui/material/Modal'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { useAppDispatch } from '@/store/store' 
 import { modalState,openCloseModal} from '@/features/modalSlice'
-import { HandThumbUpIcon, PlusIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import { HandThumbUpIcon, PlusIcon, XMarkIcon, CheckIcon } from '@heroicons/react/20/solid'
 import { movieState } from '@/features/movieSlice' 
 import { Element,Genre } from '@/types'
 import ReactPlayer from 'react-player/youtube'
@@ -73,7 +73,9 @@ function Modal() {
           </button>
 
           <button className='modalbtn' onClick={handleList}>
-            <PlusIcon className='h-7 w-7' />
+            {addedToList ? (<CheckIcon className='h-7 w-7'/>):(
+              <PlusIcon className='h-7 w-7' />
+            )}
           </button>
 
           <button className='modalbtn'>
