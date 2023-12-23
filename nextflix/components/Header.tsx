@@ -6,6 +6,7 @@ import Link from "next/link"
 import { BellIcon, MagnifyingGlassIcon as SearchIcon, } from "@heroicons/react/20/solid"
 import { useEffect, useState } from "react"
 import { useAuth } from "@/store/authContext"
+import BasicMenu from "./BasicMenu"
 
 
 const Header = () => {
@@ -27,6 +28,7 @@ const Header = () => {
         priority
         className="cursor-pointer object-contain w-auto h-auto"/>
 
+        <BasicMenu/>
         <ul className="hidden space-x-4 md:flex">
             <li className="headerLink">Home</li>
             <li className="headerLink">Tv Shows</li>
