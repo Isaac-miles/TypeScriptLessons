@@ -16,7 +16,7 @@ function Modal() {
   const [trailer, setTrailer] = useState("")
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
-
+  const [addedToList, setAddedToList]= useState(false)
     useEffect(()=>{
       if(!movie) return
 
@@ -72,7 +72,7 @@ function Modal() {
             Play
           </button>
 
-          <button className='modalbtn'>
+          <button className='modalbtn' onClick={handleList}>
             <PlusIcon className='h-7 w-7' />
           </button>
 
