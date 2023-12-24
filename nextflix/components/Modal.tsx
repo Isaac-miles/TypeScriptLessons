@@ -61,7 +61,7 @@ function Modal() {
           
         })
       }else {
-        await setDoc(doc(db, 'customers', user?.uid, 'myList', movie?.id))
+        await setDoc(doc(db, 'customers', user?.uid, 'myList', movie?.id.toString()!),)
       }
     }
 
