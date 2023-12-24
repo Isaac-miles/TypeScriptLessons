@@ -12,8 +12,8 @@ import BasicMenu from "./BasicMenu"
 const Header = () => {
    
     const {logOut} = useAuth()
-    const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
-    const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
+    // const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
+    // const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
 
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
-        src={imgUrl}
+        src="/netflix-logo.png"
         alt="netflix"
         width={100}
         height={100}
@@ -45,7 +45,7 @@ const Header = () => {
         <Link href={'/account'}>
           <Image 
         //onClick={()=>logOut()}
-        src={accImgUrl}
+        src="/img/acc-logo.png"
         alt="account"
         width={30}
         height={30}
