@@ -1,5 +1,5 @@
 import { useEffect,useState } from 'react'
-import {deleteDoc,doc, setDoc} from 'firebase/firestore'
+import {collection, deleteDoc,doc, onSnapshot, setDoc} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
 import {Toaster,toast} from 'react-hot-toast'
@@ -21,6 +21,7 @@ function Modal() {
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
+  const [movies, setMovies]= useState(false)
   const {user} = useAuth()
 
     useEffect(()=>{
@@ -52,7 +53,11 @@ function Modal() {
     },[movie])
 
     // find all the movies in the user's list
-    useEffect()
+    useEffect(()=>{
+      if(user){
+        return onSnapshot(collection(db, 'customers', user.uid, 'myList'), (snapshot)=>setMovies(snapshot.docs))
+      }
+    },[])
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
