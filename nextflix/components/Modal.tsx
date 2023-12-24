@@ -22,6 +22,7 @@ function Modal() {
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
   const {user} = useAuth()
+  
     useEffect(()=>{
       if(!movie) return
 
