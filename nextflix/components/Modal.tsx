@@ -59,7 +59,10 @@ function Modal() {
       if(user){
         return onSnapshot(collection(db, 'customers', user.uid, 'myList'), (snapshot)=>setMovies(snapshot.docs))
       }
-    },[])
+    },[movie?.id])
+
+    // check if the movie is already in the user's list
+    useEffect()
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
