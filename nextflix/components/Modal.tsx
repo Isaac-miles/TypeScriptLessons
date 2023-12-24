@@ -58,10 +58,12 @@ function Modal() {
         await deleteDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!))
         toast(`${movie?.title || movie?.original_title} has been removed from My list`,{
           duration:8000,
-          
         })
       }else {
         await setDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!),{...movie})
+        toast(`${movie?.title || movie?.original_title} has been added to My list`,{
+          duration:8000,
+        })
       }
     }
 
