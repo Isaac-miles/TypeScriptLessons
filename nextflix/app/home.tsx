@@ -68,13 +68,13 @@ export default  function Home({
 
       <Header /> 
 
-    {/* <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
+    <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
       <Banner netflixOriginals={netflixOriginals} />
       <section className='md:space-y-24'>
         <Row title="Netflix Originals" movies={netflixOriginals.results}/>
         <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
-        
+
         <Row title="Documentaries" movies={documentaries.results}/>
         <Row title="Action Movies" movies={actionMovies.results}/>
         <Row title="Comedy Movies" movies={comedyMovies.results}/>
@@ -82,7 +82,7 @@ export default  function Home({
         <Row title="Romance Movies" movies={romanceMovies.results}/>
 
       </section>
-    </main> */}
+    </main>
     {modal && <Modal/>} 
     </div>
   )
