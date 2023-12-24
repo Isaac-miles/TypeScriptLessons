@@ -1,5 +1,5 @@
 import { useEffect,useState } from 'react'
-import {collection, deleteDoc,doc,DocumentData onSnapshot, setDoc} from 'firebase/firestore'
+import {collection, deleteDoc,doc,DocumentData, onSnapshot, setDoc} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
 import {Toaster,toast} from 'react-hot-toast'
@@ -21,7 +21,7 @@ function Modal() {
   const [trailer, setTrailer] = useState("")
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
-  const [addedToList, setAddedToList]= useState(false)
+  const [addedToList, setAddedToList]= useState<>(false)
   const [movies, setMovies] = useState<Movies[] | DocumentData[]>([])
 
   const {user} = useAuth()
@@ -62,7 +62,9 @@ function Modal() {
     },[movie?.id])
 
     // check if the movie is already in the user's list
-    useEffect()
+    useEffect(()=>{
+      setAddedToList(movies.findIndex((result)=>result.data().id===movie?.id) !=-1)
+    },[])
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
