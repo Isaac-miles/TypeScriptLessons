@@ -22,7 +22,7 @@ function Modal() {
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
   const {user} = useAuth()
-  
+
     useEffect(()=>{
       if(!movie) return
 
@@ -50,6 +50,9 @@ function Modal() {
    
       fetchMovie()
     },[movie])
+
+    // find all the movies in the user's list
+    useEffect()
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
