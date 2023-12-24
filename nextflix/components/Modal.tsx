@@ -1,5 +1,5 @@
 import { useEffect,useState } from 'react'
-import {deleteDoc,doc} from 'firebase/firestore'
+import {deleteDoc,doc, setDoc} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
 import {Toaster,toast} from 'react-hot-toast'
@@ -56,7 +56,12 @@ function Modal() {
     const handleList =async ()=>{
       if(addedToList){
         await deleteDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!))
-        toast(`${movie?.title || movie?.original_title} has been removed from My list`)
+        toast(`${movie?.title || movie?.original_title} has been removed from My list`,{
+          duration:8000,
+          
+        })
+      }else {
+        await setDoc(doc(db, 'customers', user?.uid, 'myList', movie?.id))
       }
     }
 
