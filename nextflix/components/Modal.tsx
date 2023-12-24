@@ -2,6 +2,7 @@ import { useEffect,useState } from 'react'
 import {deleteDoc,doc} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
+import {Toaster} from 'react-hot-toast'
 import {  useSelector } from 'react-redux/es/hooks/useSelector'
 import { useAppDispatch } from '@/store/store' 
 import { modalState,openCloseModal} from '@/features/modalSlice'
@@ -60,6 +61,7 @@ function Modal() {
   return (
     <MuiModal open={modal} onClose={handleClose} className='fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide '>
     <>
+    <Toaster />
       <button onClick={handleClose} className='modalbtn absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#962c2c] hover:bg-[#181818]'>
         <XMarkIcon className='h-6 w-6'/>
       </button>
