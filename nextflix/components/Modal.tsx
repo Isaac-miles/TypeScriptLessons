@@ -1,5 +1,5 @@
 import { useEffect,useState } from 'react'
-import {collection, deleteDoc,doc, onSnapshot, setDoc} from 'firebase/firestore'
+import {collection, deleteDoc,doc,DocumentData onSnapshot, setDoc} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import MuiModal from '@mui/material/Modal'
 import {Toaster,toast} from 'react-hot-toast'
@@ -12,6 +12,7 @@ import { Element,Genre } from '@/types'
 import ReactPlayer from 'react-player/youtube'
 import { FaPlay, FaVolumeMute, FaVolumeUp } from 'react-icons/fa'
 import { useAuth } from '@/store/authContext'
+import { Movies } from '@/types'
 
 function Modal() {
   const dispatch = useAppDispatch()
@@ -21,7 +22,8 @@ function Modal() {
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
-  const [movies, setMovies]= useState<>()
+  const [movies, setMovies] = useState<Movies[] | DocumentData[]>([])
+
   const {user} = useAuth()
 
     useEffect(()=>{
