@@ -21,7 +21,7 @@ function Modal() {
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
   const [addedToList, setAddedToList]= useState(false)
-  const [movies, setMovies]= useState(false)
+  const [movies, setMovies]= useState<>()
   const {user} = useAuth()
 
     useEffect(()=>{
