@@ -21,7 +21,7 @@ function Modal() {
   const [trailer, setTrailer] = useState("")
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
-  const [addedToList, setAddedToList]= useState<>(false)
+  const [addedToList, setAddedToList]= useState(false)
   const [movies, setMovies] = useState<Movies[] | DocumentData[]>([])
 
   const {user} = useAuth()
@@ -59,12 +59,12 @@ function Modal() {
       if(user){
         return onSnapshot(collection(db, 'customers', user.uid, 'myList'), (snapshot)=>setMovies(snapshot.docs))
       }
-    },[movie?.id])
+    },[user,movie?.id])
 
     // check if the movie is already in the user's list
     useEffect(()=>{
       setAddedToList(movies.findIndex((result)=>result.data().id===movie?.id) !=-1)
-    },[])
+    },[user,movies, movie?.id])
 
     const handleClose =()=>{
       dispatch(openCloseModal({type:'close', action:false}))
