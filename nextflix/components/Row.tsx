@@ -8,8 +8,8 @@ import { useRef, useState } from "react"
 
 type RowProps = {
     title:string,
-    movies:Movies[]
-    // movie:Movies | DocumentData
+    // movies:Movies[]
+    movie:Movies | DocumentData
 
 }
 
