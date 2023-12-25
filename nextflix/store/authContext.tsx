@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, createContext,useMemo, Children, ReactElement } from "react"
+import { useState, useEffect, createContext,useMemo, Children, ReactElement, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { auth } from "../lib/firebase"
 import {
@@ -91,24 +91,25 @@ export function useAuth(){
             
         }).finally(()=>setLoading(false))
    }
+ 
+   const logOut = useCallback(async ():Promise<void>  =>{
+    setLoading(true)
 
-   const logOut = async ():Promise<void>  =>{
-        setLoading(true)
+    signOut(auth)
+    .then(()=>{
+        setUser(null)
+        router.replace('/login')
+    })
+    .catch((err)=>{
+        if(err instanceof Error){
+            alert(err.message)
+          }
+    }).finally(()=>setLoading(false))
+},[router])
 
-        signOut(auth)
-        .then(()=>{
-            setUser(null)
-            router.replace('/login')
-        })
-        .catch((err)=>{
-            if(err instanceof Error){
-                alert(err.message)
-              }
-        }).finally(()=>setLoading(false))
-   }
     const memoedValues =  useMemo(()=>({
         loading, user, signIn,signUp,logOut
-   }),[user, loading])
+   }),[user, loading,signIn,signUp, logOut])
 
   return memoedValues
 }
