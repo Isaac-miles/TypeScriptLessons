@@ -47,7 +47,8 @@ export default  function Home({
     const movies = useSelector(moviesState)
     const errorMessage = useSelector(errorState)
     const [products, setProducts] = useState<ProductType>([])
-    const list = useList()
+    const list = useList(user?.uid)
+
     useEffect(()=>{
       if(status ==='idle'){
         dispatch(fetchMovies())
@@ -74,7 +75,7 @@ export default  function Home({
         <Row title="Netflix Originals" movies={netflixOriginals.results}/>
         <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
-
+        {list.length}
         <Row title="Documentaries" movies={documentaries.results}/>
         <Row title="Action Movies" movies={actionMovies.results}/>
         <Row title="Comedy Movies" movies={comedyMovies.results}/>
