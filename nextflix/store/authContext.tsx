@@ -56,7 +56,7 @@ export function useAuth(){
         })
     ,[router])
 
-   const signUp = async (email:string, password:string):Promise<void> => {
+    const signUp = useCallback(async (email:string, password:string):Promise<void> => {
         setLoading(true)
         // setError(null)
         await createUserWithEmailAndPassword(auth,email, password)
@@ -71,27 +71,28 @@ export function useAuth(){
                     alert(err.message)
                   }
         }).finally(()=>setLoading(false))
-   }
+   },[router])
 
-   const signIn =async (email:string, password:string):Promise<void> => {
-        setLoading(true)
-        await signInWithEmailAndPassword(auth,email, password)
-        .then((userCredentials):void =>{
-            setUser(userCredentials.user)
-            if(userCredentials.user){
-                router.push('/')
-                setLoading(false)
-            }
-           
-        }).catch((err)=>{        
-            if(err instanceof Error){
-              alert(err.message)
-            }
-                // return new NextResponse(err.message)
-            
-        }).finally(()=>setLoading(false))
-   }
- 
+   const signIn = useCallback(async (email:string, password:string):Promise<void> => {
+    setLoading(true)
+    await signInWithEmailAndPassword(auth,email, password)
+    .then((userCredentials):void =>{
+        setUser(userCredentials.user)
+        if(userCredentials.user){
+            router.push('/')
+            setLoading(false)
+        }
+       
+    }).catch((err)=>{        
+        if(err instanceof Error){
+          alert(err.message)
+        }
+            // return new NextResponse(err.message)
+        
+    }).finally(()=>setLoading(false))
+}
+,[router])
+
    const logOut = useCallback(async ():Promise<void>  =>{
     setLoading(true)
 
