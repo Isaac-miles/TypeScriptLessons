@@ -15,7 +15,7 @@ import {getProduct} from './stripe-util/getStripesUtils'
 import { useAppDispatch } from '@/store/store' 
 import useSubscription from '@/hooks/useSubscription'
 import useAuth from '@/hooks/useAuth'
-
+import useList from '@/hooks/useList'
 interface HomeProps {
     netflixOriginals:MovieProps
         trendingNow: MovieProps
@@ -47,7 +47,7 @@ export default  function Home({
     const movies = useSelector(moviesState)
     const errorMessage = useSelector(errorState)
     const [products, setProducts] = useState<ProductType>([])
-
+    const list = useList()
     useEffect(()=>{
       if(status ==='idle'){
         dispatch(fetchMovies())
