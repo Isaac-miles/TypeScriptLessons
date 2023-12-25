@@ -3,12 +3,13 @@ import { RootState } from "@/store/store";
 import { Movies } from "@/types";
 import getMoviesData from "@/utils/getData";
 import { GetReturnedMovieType } from "@/utils/getData";
+import { DocumentData } from "firebase/firestore"
 
 type InitialStateType = {
     errorMessage:string | null
     status: string
     movies:GetReturnedMovieType | null
-    movie:Movies | null
+    movie:Movies |DocumentData | null
 }
 
 const initialMovieState:InitialStateType = {
@@ -29,7 +30,7 @@ const movieSlice = createSlice({
      initialState:initialMovieState,
 
     reducers :{
-        openMovie:(state, action:PayloadAction<Movies>)=>{
+        openMovie:(state, action:PayloadAction<Movies | DocumentData >)=>{
             return {...state, movie:action.payload}
             // return state.movie
         }
