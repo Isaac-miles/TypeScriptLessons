@@ -75,7 +75,7 @@ export default  function Home({
         <Row title="Netflix Originals" movies={netflixOriginals.results}/>
         <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
-        {list.length}
+        {list.length > 0 && <Row title='My List' movies={list}/>}
         <Row title="Documentaries" movies={documentaries.results}/>
         <Row title="Action Movies" movies={actionMovies.results}/>
         <Row title="Comedy Movies" movies={comedyMovies.results}/>
