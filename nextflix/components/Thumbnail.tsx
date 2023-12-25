@@ -4,9 +4,11 @@ import { Movies } from "@/types"
 import { openMovie} from "@/features/movieSlice"
 import { openCloseModal } from '@/features/modalSlice'
 import { useAppDispatch } from "@/store/store"
+import { DocumentData } from "firebase/firestore"
+
 type ThumbnailProps ={
-    movie:Movies
-    // movie:Movies | DocumentData
+    // movie:Movies
+    movie:Movies | DocumentData
 }
 
 const Thumbnail = ({movie}:ThumbnailProps) => {

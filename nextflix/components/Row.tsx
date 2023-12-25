@@ -4,12 +4,12 @@ import { Movies } from "@/types"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import Thumbnail from "./Thumbnail"
 import { useRef, useState } from "react"
-
+import { DocumentData } from "firebase/firestore"
 
 type RowProps = {
     title:string,
     // movies:Movies[]
-    movie:Movies | DocumentData
+    movies:Movies[] | DocumentData[]
 
 }
 
