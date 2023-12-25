@@ -17,7 +17,7 @@ const Header = () => {
 
 
   return (
-    <header className='bg-[#141414]'>
+    <header className='bg-transparent'>
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
