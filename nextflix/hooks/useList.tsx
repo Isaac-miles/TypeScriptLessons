@@ -2,6 +2,7 @@ import { Movies } from '@/types'
 import {useState, useEffect} from 'react'
 import {DocumentData,onSnapshot,collection} from 'firebase/firestore'
 import { db } from '@/lib/firebase'
+
 function useList(uid:string | undefined) {
     const [list, setList] = useState<Movies[] | DocumentData[]>([])
 
@@ -21,9 +22,8 @@ function useList(uid:string | undefined) {
           )
         }, [uid])
       
-  return (
-    <div>useList</div>
-  )
+  return list
+  
 }
 
 export default useList
