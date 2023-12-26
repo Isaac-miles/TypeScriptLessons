@@ -2,7 +2,8 @@ import {addDoc, query, collection, where, getDocs,onSnapshot } from 'firebase/fi
 import { db } from '@/lib/firebase';
 import app from '@/lib/firebase'
 import {getFunctions,httpsCallable} from '@firebase/functions'
-
+import toast from 'react-hot-toast';
+import { toastStyle } from '@/utils/styles';
 export async function getProduct() {
     // create a query object
 const q = query(
@@ -82,7 +83,12 @@ export async function gotToBillingPage(){
         returnUrl: `${window.location.origin}/account`
     })
     .then(({data}:any)=>window.location.assign(data.url))
-    .catch((error)=>alert(error.message))
+    .catch((error)=>{
+        toast.error(error.message,{
+            duration:5000,
+            style:toastStyle
+        })
+    })
 }
 export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>
 export type ProductType = Awaited<ReturnType< typeof getProduct>>

@@ -4,6 +4,7 @@ import { useState, useEffect, createContext,useMemo, Children, ReactElement, use
 import { useRouter } from "next/navigation"
 import { auth } from "../lib/firebase"
 import toast from "react-hot-toast"
+import { toastStyle } from "@/utils/styles"
 import {
      createUserWithEmailAndPassword,
      onAuthStateChanged,
@@ -11,7 +12,6 @@ import {
      signOut,
      User
      } from "@firebase/auth"
-
 
 interface IAuthContext {
     user:User | null
@@ -72,8 +72,10 @@ export function useAuth(){
         }).catch((err)=>{
                 //   setError(err)
                 if(err instanceof Error){
-                    toast.error(err.message)
-                    alert(err.message)
+                    toast.error(err.message,{
+                        duration:5000,
+                        style:toastStyle
+                    })
                   }
         }).finally(()=>setLoading(false))
    },[router])
