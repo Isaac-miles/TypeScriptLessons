@@ -17,8 +17,7 @@ async function getData() {
  
 
 export default async function App() {
-  // const data = await getData()
-  // console.log('produc')
+
   const {
     netflixOriginals,
     trendingNow,
@@ -32,6 +31,8 @@ export default async function App() {
   } = await getMoviesData()
 
   return (
+    <>
+    <Toaster position='bottom-center' />
     <Home 
     netflixOriginals={netflixOriginals}
     trendingNow={trendingNow}
@@ -41,8 +42,9 @@ export default async function App() {
     horrorMovies={horrorMovies}
     romanceMovies={romanceMovies}
     documentaries={documentaries} 
-    // products={products}
     />
+    </>
+
 
   )
 }
