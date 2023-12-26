@@ -21,7 +21,7 @@ function login() {
 
       <Image 
         src={logoImage}
-        alt="netflix"
+        alt="thriller"
         width={100}
         height={100}
         priority

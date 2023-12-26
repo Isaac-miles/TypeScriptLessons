@@ -4,25 +4,17 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { BellIcon, MagnifyingGlassIcon as SearchIcon, } from "@heroicons/react/20/solid"
-import { useEffect, useState } from "react"
-import { useAuth } from "@/store/authContext"
 import BasicMenu from "./BasicMenu"
 
 
 const Header = () => {
-   
-    const {logOut} = useAuth()
-    // const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
-    // const accImgUrl = new URL(`/public/img/acc-logo.png`, import.meta.url).href
-
-
   return (
     <header className='bg-black/10'>
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
         src="/img/thriller.png"
-        alt="netflix"
+        alt="thriller"
         width={60}
         height={60}
         priority

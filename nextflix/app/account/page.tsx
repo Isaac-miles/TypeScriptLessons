@@ -44,7 +44,7 @@ function Account() {
         <Link href="/">
         <Image 
         src="/img/thriller.png"
-        alt="netflix"
+        alt="thriller"
         width={65}
         height={65}
         priority

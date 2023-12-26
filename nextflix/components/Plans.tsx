@@ -27,14 +27,14 @@ function Plans({products}:{products:ProductType}) {
   return (
     <div>
         <Head>
-            <title>Netnaija flix</title>
+            <title>Thriller</title>
         </Head>
 
         <header className='border-b border-white/10 bg-[#141414] '>
             <Link href='/' as ={'image'}>
             <Image 
             src={imgUrl}
-            alt="netflix"
+            alt="thriller"
             width={65}
             height={65}
             priority
