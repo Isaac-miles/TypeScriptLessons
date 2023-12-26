@@ -72,8 +72,9 @@ export function useAuth(){
             setLoading(false)
         }).catch((err)=>{
                 //   setError(err)
-                alert(err.message)
                 if(err instanceof Error){
+                alert(err.message)
+
                     toast.error(err.message,{
                         duration:5000,
                         style:toastStyle
