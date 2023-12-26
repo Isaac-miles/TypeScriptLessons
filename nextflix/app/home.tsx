@@ -25,7 +25,6 @@ interface HomeProps {
         horrorMovies:MovieProps
         romanceMovies:MovieProps
         documentaries:MovieProps
-
 }
 
 export default  function Home({
