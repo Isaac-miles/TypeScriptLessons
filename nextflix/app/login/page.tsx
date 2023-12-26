@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function login() {
   const loginImage = new URL('../../public/img/login.jpeg', import.meta.url).href
-  const logoImage = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
+  const logoImage = new URL(`/public/img/thriller.png`, import.meta.url).href
   return (
       <>
       <Head>

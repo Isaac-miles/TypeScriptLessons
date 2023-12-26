@@ -43,10 +43,10 @@ function Account() {
       <header className={`bg-[#141414]`}>
         <Link href="/">
         <Image 
-        src="/img/netflix-logo.png"
+        src="/img/thriller.png"
         alt="netflix"
-        width={100}
-        height={100}
+        width={65}
+        height={65}
         priority
         className="cursor-pointer object-contain w-auto h-auto"/>
         </Link>

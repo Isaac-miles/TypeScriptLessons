@@ -11,7 +11,7 @@ import Loader from './Loader'
 import { loadCheckoutSession } from '@/app/stripe-util/getStripesUtils'
 
 function Plans({products}:{products:ProductType}) {
-    const imgUrl = new URL(`/public/img/netflix-logo.png`, import.meta.url).href
+    const imgUrl = new URL(`/public/img/thriller.png`, import.meta.url).href
     const {logOut,user} = useAuth()
     const [selectedPlan, setSelectedPlan] = useState< ProductElementType>(products[2])
     const [billingLoading, setBillingLoading] = useState(false)
