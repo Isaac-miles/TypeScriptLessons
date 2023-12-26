@@ -3,6 +3,7 @@
 import { useState, useEffect, createContext,useMemo, Children, ReactElement, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { auth } from "../lib/firebase"
+import toast from "react-hot-toast"
 import {
      createUserWithEmailAndPassword,
      onAuthStateChanged,
@@ -62,12 +63,16 @@ export function useAuth(){
         await createUserWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
-            alert('User successfully created')
+            toast.success('SignUp successful, kindly login',{
+                duration:5000,
+                style:toastStyle
+              })
             router.push('/')
             setLoading(false)
         }).catch((err)=>{
                 //   setError(err)
                 if(err instanceof Error){
+                    toast.error(err.message)
                     alert(err.message)
                   }
         }).finally(()=>setLoading(false))

@@ -82,13 +82,13 @@ function Modal() {
       if(addedToList){
         await deleteDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!))
         toast(`${movie?.title || movie?.original_title} has been removed from My list`,{
-          duration:8000,
+          duration:5000,
           style:toastStyle
         })
       }else {
         await setDoc(doc(db, 'customers', user!.uid, 'myList', movie?.id.toString()!),{...movie})
         toast(`${movie?.title || movie?.original_title} has been added to My list`,{
-          duration:8000,
+          duration:5000,
           style:toastStyle
         })
       }
@@ -97,7 +97,6 @@ function Modal() {
   return (
     <MuiModal open={modal} onClose={handleClose} className='fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide '>
     <>
-    <Toaster position='bottom-center' />
       <button onClick={handleClose} className='modalbtn absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#962c2c] hover:bg-[#181818]'>
         <XMarkIcon className='h-6 w-6'/>
       </button>
