@@ -45,7 +45,7 @@ const Header = () => {
         <Link href={'/account'}>
           <Image 
         //onClick={()=>logOut()}
-        src="/img/thriller.png"
+        src="/img/acc-logo.png"
         alt="account"
         width={30}
         height={30}

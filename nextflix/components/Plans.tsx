@@ -35,8 +35,8 @@ function Plans({products}:{products:ProductType}) {
             <Image 
             src={imgUrl}
             alt="netflix"
-            width={100}
-            height={100}
+            width={65}
+            height={65}
             priority
             className="cursor-pointer object-contain w-auto h-auto"/>
             </Link>
