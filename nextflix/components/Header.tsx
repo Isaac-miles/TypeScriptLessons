@@ -17,14 +17,14 @@ const Header = () => {
 
 
   return (
-    <header className='bg-transparent'>
+    <header className='bg-black/75'>
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 
-        src="/netflix-logo.png"
+        src="/img/thriller.png"
         alt="netflix"
-        width={100}
-        height={100}
+        width={60}
+        height={60}
         priority
         className="cursor-pointer object-contain w-auto h-auto"/>
 
