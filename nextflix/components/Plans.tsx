@@ -47,15 +47,15 @@ function Plans({products}:{products:ProductType}) {
             <h1 className='mb-3 text-3xl font-medium'>Choose a plan</h1>
             <ul>
                 <li className='flex items-center gap-x-2 text-lg'>
-                    <CheckIcon className='h-7 w-7 text-[#E50914]'/>
+                    <CheckIcon className='h-7 w-7 text-[#c31432]'/>
                     Watch all you want. Ad-free.
                 </li>
                 <li className='flex items-center gap-x-2 text-lg'>
-                    <CheckIcon className='h-7 w-7 text-[#E50914]'/>
+                    <CheckIcon className='h-7 w-7 text-[#c31432]'/>
                     Recommendations just for you
                 </li>
                 <li className='flex items-center gap-x-2 text-lg'>
-                    <CheckIcon className='h-7 w-7 text-[#E50914]'/>
+                    <CheckIcon className='h-7 w-7 text-[#c31432]'/>
                     change or cancel your plan anytime
                 </li>
             </ul>
@@ -73,7 +73,7 @@ function Plans({products}:{products:ProductType}) {
 
                 <button
             disabled={!selectedPlan || billingLoading}
-            className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
+            className={`mx-auto w-11/12 rounded bg-[#c31432] py-4 text-xl shadow hover:bg-[#240b36] md:w-[420px] ${
                 billingLoading && 'opacity-60'
             }`}
             onClick={subscribeToPlan}

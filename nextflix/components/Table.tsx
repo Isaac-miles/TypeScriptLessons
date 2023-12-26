@@ -15,20 +15,20 @@ function Table({products, selectedPlan}:TableProps) {
             <tr className='tableRow'>
                 <td className="tableDataTitle">Monthly Price</td>
                 {products?.map((product)=>(
-                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>₦{product.priceInfo.unit_amount/100}</td>
+                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#c31432]" :"text-[gray]"}`} key={product.priceId}>₦{product.priceInfo.unit_amount/100}</td>
                 ))}
             </tr>
             <tr className='tableRow'>
                 <td className="tableDataTitle">Video Quality</td>
                 {products?.map((product)=>(
-                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`} key={product.priceId}>{product.metadata.videoQuality }</td>
+                    <td className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#c31432]" :"text-[gray]"}`} key={product.priceId}>{product.metadata.videoQuality }</td>
                 ))}
             </tr>
         <tr className="tableRow">
           <td className="tableDataTitle">Resolution</td>
           {products.map((product) => (
             <td
-            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`}
+            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#c31432]" :"text-[gray]"}`}
               key={product.priceId}
             >
               {product.metadata.resolution}
@@ -41,7 +41,7 @@ function Table({products, selectedPlan}:TableProps) {
           </td>
           {products.map((product) => (
             <td
-            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#e50914]" :"text-[gray]"}`}
+            className={`tableDataFeature ${selectedPlan.priceId=== product.priceId? "text-[#c31432]" :"text-[gray]"}`}
               key={product.priceId}
             >
               {product.metadata.flexibility === 'true' && (

@@ -54,7 +54,7 @@ function LoginForm() {
             </label>
 
         </div>
-            <button className='w-full rounded bg-[#E50914] py-3 font-semibold' onClick={()=>setLogin(true)}>Sign In</button>
+            <button className='w-full rounded bg-[#240b36] py-3 font-semibold' onClick={()=>setLogin(true)}>Sign In</button>
 
             <div className='text-[grey]'>
                <span>New to Netflix ? </span> 
