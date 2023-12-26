@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
-
+import toast from "react-hot-toast";
+import { toastStyle } from "@/utils/styles";
 const initialState = {
     modal:false
 }
@@ -17,7 +18,10 @@ const modalSlice = createSlice({
                }else if(action?.payload.type === 'close'){
                 return  {...state, modal:action?.payload.action}
                }else{
-                return alert("Action not specified")
+                    toast("Action not specified",{
+                        duration:5000,
+                        style:toastStyle
+                      })
                }
                 
         }

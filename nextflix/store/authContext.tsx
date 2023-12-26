@@ -92,7 +92,10 @@ export function useAuth(){
        
     }).catch((err)=>{        
         if(err instanceof Error){
-          alert(err.message)
+            toast.error(err.message,{
+                duration:5000,
+                style:toastStyle
+            })
         }
             // return new NextResponse(err.message)
         
@@ -110,7 +113,10 @@ export function useAuth(){
     })
     .catch((err)=>{
         if(err instanceof Error){
-            alert(err.message)
+            toast.error(err.message,{
+                duration:5000,
+                style:toastStyle
+            })
           }
     }).finally(()=>setLoading(false))
 },[router])

@@ -39,7 +39,10 @@ function Modal() {
         )
         .then((res)=>res.json())
         .catch((err)=>{
-          // alert(err)
+          toast.error(err.message,{
+            duration:3000,
+            style:toastStyle
+          })
         })
         if(data?.videos){
           const index = data.videos.results.findIndex((element:Element)=>element.type=== "Trailer")
