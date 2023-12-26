@@ -1,5 +1,5 @@
 import getMoviesData from "@/utils/getData"
-
+import { Toaster } from "react-hot-toast"
 import Home from "./home"
 import {getProduct} from "./stripe-util/getStripesUtils"
 
@@ -32,7 +32,7 @@ export default async function App() {
 
   return (
     <>
-    <Toaster position='bottom-center' />
+    <Toaster />
     <Home 
     netflixOriginals={netflixOriginals}
     trendingNow={trendingNow}
