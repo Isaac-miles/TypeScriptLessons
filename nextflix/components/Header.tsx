@@ -17,7 +17,7 @@ const Header = () => {
 
 
   return (
-    <header className='bg-black/75'>
+    <header className='bg-black/10'>
 
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image 

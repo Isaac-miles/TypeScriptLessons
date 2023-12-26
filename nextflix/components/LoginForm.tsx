@@ -57,7 +57,7 @@ function LoginForm() {
             <button className='w-full rounded bg-[#c31432] py-3 font-semibold' onClick={()=>setLogin(true)}>Sign In</button>
 
             <div className='text-[grey]'>
-               <span>New to Netflix ? </span> 
+               <span>New to Thriller? </span> 
                 <button type="submit" className='text-white hover:underline' onClick={()=>setLogin(false)}>Sign up</button>
             </div>
     </form>
