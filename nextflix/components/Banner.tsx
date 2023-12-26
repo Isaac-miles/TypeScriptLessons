@@ -23,9 +23,7 @@ const Banner = ({netflixOriginals}:Props) => {
     useEffect(()=>{
         // setMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)])
         dispatch(openMovie(netflixOriginals.results[Math.floor(Math.random() * netflixOriginals.results.length)]))
-   
-
-    },[netflixOriginals.results])
+    },[netflixOriginals.results, dispatch])
     if(!movie){
         return <p>Loading Image...</p>
     }
@@ -45,7 +43,7 @@ const Banner = ({netflixOriginals}:Props) => {
         alt="Movie logo" 
         // objectFit="cover" 
         sizes="100%"
-         priority/>
+        priority/>
         </div>
 
         <h1 className="text-2xl md:text-4xl font-bold lg:text-7xl">{movie?.title || movie?.original_title}</h1>

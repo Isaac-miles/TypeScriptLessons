@@ -72,14 +72,14 @@ export default  function Home({
       <Banner netflixOriginals={netflixOriginals} />
       <section className='md:space-y-24'>
         <Row title="Netflix Originals" movies={netflixOriginals.results}/>
-        <Row title="Trending Now" movies={trendingNow.results}/>
+        {/* <Row title="Trending Now" movies={trendingNow.results}/>
         <Row title="TopRated" movies={topRated.results}/>
         {list.length > 0 && <Row title='My List' movies={list}/>}
         <Row title="Documentaries" movies={documentaries.results}/>
         <Row title="Action Movies" movies={actionMovies.results}/>
         <Row title="Comedy Movies" movies={comedyMovies.results}/>
         <Row title="Horror Movies" movies={horrorMovies.results}/>
-        <Row title="Romance Movies" movies={romanceMovies.results}/>
+        <Row title="Romance Movies" movies={romanceMovies.results}/> */}
 
       </section>
     </main>

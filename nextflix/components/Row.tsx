@@ -42,11 +42,9 @@ const Row = ({title,movies} : RowProps) => {
                       
                     ))}
                   
-                </div>
-     
+            </div>
             <ChevronRightIcon  className={`rowIcons right-2`}  onClick={()=>handleClick("right")}/>
-
-        </div> 
+    </div> 
     </div>
     
   )
