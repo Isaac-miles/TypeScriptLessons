@@ -88,6 +88,7 @@ export async function gotToBillingPage(){
             duration:5000,
             style:toastStyle
         })
+        alert(error.message)
     })
 }
 export type SubscriptionType = Awaited<ReturnType<typeof getActiveSubscription>>

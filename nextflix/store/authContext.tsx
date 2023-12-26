@@ -63,6 +63,7 @@ export function useAuth(){
         await createUserWithEmailAndPassword(auth,email, password)
         .then((userCredentials):void =>{
             setUser(userCredentials.user)
+            alert('SignUp successful, kindly login')
             toast.success('SignUp successful, kindly login',{
                 duration:5000,
                 style:toastStyle
@@ -71,6 +72,7 @@ export function useAuth(){
             setLoading(false)
         }).catch((err)=>{
                 //   setError(err)
+                alert(err.message)
                 if(err instanceof Error){
                     toast.error(err.message,{
                         duration:5000,
@@ -92,6 +94,7 @@ export function useAuth(){
        
     }).catch((err)=>{        
         if(err instanceof Error){
+            alert(err.message)
             toast.error(err.message,{
                 duration:5000,
                 style:toastStyle
@@ -113,6 +116,7 @@ export function useAuth(){
     })
     .catch((err)=>{
         if(err instanceof Error){
+            alert(err.message)
             toast.error(err.message,{
                 duration:5000,
                 style:toastStyle
