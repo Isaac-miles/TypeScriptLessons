@@ -84,6 +84,10 @@ function Plans({products}:{products:ProductType}) {
               'Subscribe'
             )}
           </button>
+         <p> copy any of these stripe test cards no with any future 3 digits and future date: 
+            <span className='text-[#c31432] mr-4'>4242424242424242</span> 
+            <span className=''>5555555555554444</span>
+            </p>
             </div>
         </main>
     </div>

@@ -91,7 +91,7 @@ function Account() {
         <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0">
           <h4 className="text-lg text-[gray]">Settings</h4>
           <p
-            className="col-span-3 cursor-pointer text-blue-500 hover:underline"
+            className="col-span-3 cursor-pointer text-[#c31432] hover:underline"
             onClick={logOut}
           >
             Sign out of all devices
