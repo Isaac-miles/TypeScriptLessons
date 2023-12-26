@@ -13,7 +13,7 @@ import ReactPlayer from 'react-player/youtube'
 import { FaPlay, FaVolumeMute, FaVolumeUp } from 'react-icons/fa'
 import { useAuth } from '@/store/authContext'
 import { Movies } from '@/types'
-
+import { toastStyle } from '@/utils/styles'
 function Modal() {
   const dispatch = useAppDispatch()
   const movie = useSelector(movieState)
@@ -24,15 +24,6 @@ function Modal() {
   const [addedToList, setAddedToList]= useState(false)
   const [movies, setMovies] = useState<Movies[] | DocumentData[]>([])
 
-  const toastStyle ={
-    background:'white',
-    color:'black',
-    fontWeight:'bold',
-    fontSize:'16px',
-    padding:'15px',
-    borderRadius:'9999px',
-    maxWidth:'1000px'
-  }
   const {user} = useAuth()
 
     useEffect(()=>{
