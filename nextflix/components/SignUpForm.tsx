@@ -59,7 +59,7 @@ function SignUpForm({setLogin}:SignUpProps) {
               'Sign Up'
               
             )}
-            {/* </button> */}
+            </button>
 
             <div className='text-[grey]'>
                <span>Already registered? </span> 
