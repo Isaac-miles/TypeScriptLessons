@@ -11,4 +11,4 @@ const requests = {
   fetchDocumentaries: `${BASE_URL}/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&with_genres=99`,
 }
 
-// export default requests
+export default requests
