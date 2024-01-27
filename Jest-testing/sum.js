@@ -3,4 +3,12 @@
     return a + b
 }
 
-module.exports = sum;
+const throwAnException = (input) =>{
+    if(typeof input !='number'){
+        throw new Error("Invalid data")
+    }
+    
+  }
+  
+
+module.exports = {sum,throwAnException};

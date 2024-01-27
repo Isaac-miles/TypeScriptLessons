@@ -24,3 +24,10 @@ test('object assignment first', () => {
     const n = 1;
     expect(n).toBeTruthy()
   })
+
+  const {throwAnException} = require('./sum')
+  test('throws error', () => { 
+    expect(()=>{
+        throwAnException('8')
+    }).toThrow()
+   })
