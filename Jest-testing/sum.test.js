@@ -20,3 +20,7 @@ test('object assignment first', () => {
     const n = undefined;
     expect(n).toBeFalsy()
   })
+ test('should be truthy', () => { 
+    const n = 1;
+    expect(n).toBeTruthy()
+  })
