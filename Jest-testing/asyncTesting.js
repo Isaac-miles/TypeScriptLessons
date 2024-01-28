@@ -5,4 +5,12 @@ function fetchData(callback){
     },1000)
 }
 
-module.exports = {fetchData}
+//Promise based function
+function fetchPromise(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>resolve("user data"),1000);
+    });
+
+}
+
+module.exports = {fetchData,fetchPromise}
