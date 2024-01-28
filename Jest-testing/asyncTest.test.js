@@ -23,5 +23,5 @@ test('user data', (done) => {
  //asynchronous
  test("the data is user data", async()=>{
     const data = await fetchPromise();
-    
+    expect(data).toBe("user data");
  })
