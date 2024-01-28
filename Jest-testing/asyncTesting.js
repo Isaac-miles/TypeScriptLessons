@@ -12,5 +12,11 @@ function fetchPromise(){
     });
 
 }
+function fetchPromise1(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>reject(()=>{throw new Error("error")}),1000);
+    });
 
-module.exports = {fetchData,fetchPromise}
+}
+
+module.exports = {fetchData,fetchPromise,fetchPromise1}

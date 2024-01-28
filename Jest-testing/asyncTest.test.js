@@ -1,5 +1,5 @@
 const {fetchData }= require('./asyncTesting')
-const {fetchPromise }= require('./asyncTesting')
+const {fetchPromise,fetchPromise1 }= require('./asyncTesting')
 
 test('user data', (done) => { 
     function callback(data){
@@ -17,7 +17,7 @@ test('user data', (done) => {
     return expect(fetchPromise()).resolves.toBe("user data");
  })
  test("user data failed",()=>{
-    return expect(fetchPromise()).rejects.toThrow("error");
+    return expect(fetchPromise1()).rejects.toThrow("error");
  })
 
  //asynchronous
