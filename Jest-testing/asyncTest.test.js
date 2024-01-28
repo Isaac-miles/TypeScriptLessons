@@ -25,3 +25,6 @@ test('user data', (done) => {
     const data = await fetchPromise();
     expect(data).toBe("user data");
  })
+ 
+ //mocking and spying
+ 
