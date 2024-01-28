@@ -4,4 +4,5 @@
 test("mocking a basic function",()=>{
     const mock = jest.fn(x=>5 + x);
     expect(mock(5)).toBe(10);
+    expect(mock).toHaveBeenCalledWith(5);
 })
