@@ -26,6 +26,10 @@ class Animal{
     toDesc(){
         log("this refers to",this)
     }
+    shakeTail(mode="shaking"){
+        log('This is :',this)
+        return `${this.type} likes ${mode}`
+    }
     static getThis(){
         console.log(this)
     }
@@ -49,3 +53,8 @@ const cat = new Animal("Cat")
  const dog = new Animal('shepard')
  desc.call(dog)
  //we can also pass args to the call
+
+const newDog = dog.shakeTail
+log(newDog.call(dog,"dancing"))
+
+//example 2
