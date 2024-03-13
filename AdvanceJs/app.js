@@ -58,3 +58,9 @@ const newDog = dog.shakeTail
 log(newDog.call(dog,"dancing"))
 
 //example 2
+const linda ={
+    name:'Lindiway',
+    city:'Abuja'
+}
+person.sing()
+person.sing.call(linda)
