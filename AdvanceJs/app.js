@@ -24,7 +24,7 @@ class Animal{
     }
 
     toDesc(){
-        return this.type + this
+        log("this refers to",this)
     }
     static getThis(){
         console.log(this)
@@ -41,3 +41,11 @@ const cat = new Animal("Cat")
 
  //CALL and BIND
  //sometimes, you'll need to say call this function on this object, That's what call() is for
+ log(cat.toDesc())
+ const desc = cat.toDesc
+ desc()
+ desc.call(cat)
+
+ const dog = new Animal('shepard')
+ desc.call(dog)
+ //we can also pass args to the call
