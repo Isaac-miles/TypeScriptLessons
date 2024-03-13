@@ -2,6 +2,7 @@ const person = {
     name:'doe',
     city:'lagos',
     sing:function(){
+        console.log(this)
         return `${this.name} sings Hellow world`
     }
 }
@@ -14,3 +15,4 @@ const obj ={
     age:2,
     whatIsThis
 }
+//in the case above the this key word refers to the obj
