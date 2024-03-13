@@ -1,3 +1,4 @@
+const {log} = console
 const person = {
     name:'doe',
     city:'lagos',
@@ -16,3 +17,17 @@ const obj ={
     whatIsThis
 }
 //in the case above the this key word refers to the obj
+class Animal{
+    type;
+    constructor(type){
+        this.type = type
+    }
+
+    toDesc(){
+        return this.type + this
+    }
+    static getThis(){
+        console.log(this)
+    }
+}
+const cat = new Animal("Cat")
