@@ -38,3 +38,6 @@ const cat = new Animal("Cat")
 
  but there are ways to force the value of this to be whatever we want
  */
+
+ //CALL and BIND
+ //sometimes, you'll need to say call this function on this object, That's what call() is for
