@@ -35,4 +35,6 @@ const cat = new Animal("Cat")
  OOP and this
  when you cakk a function on nothing,but the function comes from inside a class,the value of this will be undefined, not the window
  in either case,you'll see this refered ato as "losing the this context"
+
+ but there are ways to force the value of this to be whatever we want
  */
