@@ -64,3 +64,39 @@ const linda ={
 }
 person.sing()
 person.sing.call(linda)
+
+//apply we use it to call a function with a specific value  for keyword this, the main difference is in how it handles arguments, it expects you to pass the arguments as an array
+const ringMe = {
+    name:'Miles',
+    greet:function(greeting){
+        console.log(`${this.name} says ${greeting}`)
+    }
+}
+const samuel = {
+    name:"Helen",
+    fullName:"Jones Helen"
+}
+
+ringMe.greet.call(samuel,"Hello miles")
+ringMe.greet.apply(samuel,["hey"])
+
+const nums = [1,19,28,6,5];
+Math.max.apply(null,nums);
+
+function maximum(){
+    // log(arguments)
+    return Math.max.apply(null,arguments)
+}
+maximum(1,2,3,4,5,6)
+
+const Fruit = {
+    name:'Mango',
+    taste:function(sweet,bitter){
+        log(`the fruit is ${sweet} and ${bitter}`)
+    }
+}
+
+Fruit.taste.call(null,"tasty","harsh")
+Fruit.taste.apply(null,["tasty","harsh"])
+
+//Bind: you can "perma-bind a function to a context"
