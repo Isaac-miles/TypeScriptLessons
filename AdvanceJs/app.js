@@ -95,8 +95,8 @@ const Fruit = {
         log(`the fruit is ${sweet} and ${bitter}`)
     }
 }
-
 Fruit.taste.call(null,"tasty","harsh")
 Fruit.taste.apply(null,["tasty","harsh"])
 
 //Bind: you can "perma-bind a function to a context"
+const drSam = ringMe.greet.bind(samuel)
