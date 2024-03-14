@@ -100,3 +100,4 @@ Fruit.taste.apply(null,["tasty","harsh"])
 
 //Bind: you can "perma-bind a function to a context"
 const drSam = ringMe.greet.bind(samuel)
+
