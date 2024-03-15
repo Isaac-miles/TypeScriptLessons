@@ -102,6 +102,6 @@ Fruit.taste.apply(null,["tasty","harsh"])
 // const drSam = ringMe.greet.bind(samuel)
 
 //Bind Arguments
-function applySaleTac(taxRate, price){
+function applySaleTax(taxRate, price){
     return price + price * taxRate
 }
