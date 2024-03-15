@@ -106,6 +106,7 @@ function applySaleTax(taxRate, price){
     return price + price * taxRate
 }
 const ngSalesTax = applySaleTax.bind(null,0.072)
-const GHSalesTax = applySaleTax.bind(null,0.072,200)
+const GHSalesTax = applySaleTax.bind(null,0.072,200)//bind both args, set this to null
 log(ngSalesTax(300))
 log(GHSalesTax())
+//bind is mostly used with(event listeners,timers,callbacks(map,filter,etc))
