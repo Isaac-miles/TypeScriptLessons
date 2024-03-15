@@ -101,3 +101,7 @@ Fruit.taste.apply(null,["tasty","harsh"])
 //Bind: you can "perma-bind a function to a context"
 const drSam = ringMe.greet.bind(samuel)
 
+//Bind Arguments
+function applySaleTac(taxRate, price){
+    return price + price * taxRate
+}
