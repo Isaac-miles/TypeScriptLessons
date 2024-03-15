@@ -106,4 +106,6 @@ function applySaleTax(taxRate, price){
     return price + price * taxRate
 }
 const ngSalesTax = applySaleTax.bind(null,0.072)
+const GHSalesTax = applySaleTax.bind(null,0.072,200)
 log(ngSalesTax(300))
+log(GHSalesTax())
