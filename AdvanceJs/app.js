@@ -110,3 +110,5 @@ const GHSalesTax = applySaleTax.bind(null,0.072,200)//bind both args, set this t
 log(ngSalesTax(300))
 log(GHSalesTax())
 //bind is mostly used with(event listeners,timers,callbacks(map,filter,etc))
+
+const btn = document.querySelector("#click_here")
