@@ -105,3 +105,5 @@ Fruit.taste.apply(null,["tasty","harsh"])
 function applySaleTax(taxRate, price){
     return price + price * taxRate
 }
+const ngSalesTax = applySaleTax.bind(null,0.072)
+log(ngSalesTax(300))
