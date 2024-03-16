@@ -113,4 +113,4 @@ log(GHSalesTax())
 
 // const btn = document.querySelector("#click_here")
 const btn = document.querySelector("#clickMe")
- btn.addEventListener("click",ringMe.greet.bind(ringMe,"hi"))
+ btn.addEventListener("click",person.sing.bind(person))
