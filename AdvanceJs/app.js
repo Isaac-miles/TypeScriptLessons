@@ -114,3 +114,4 @@ log(GHSalesTax())
 // const btn = document.querySelector("#click_here")
 const btn = document.querySelector("#clickMe")
 console.log(btn)
+document.getElementById("p").innerText = "miles"
