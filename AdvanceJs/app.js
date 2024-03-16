@@ -137,5 +137,22 @@ const btn = document.querySelector("#clickMe")
         constructor(firstName){
             this.firstName = firstName
         }
+        superGreet(){
+            log(`#2 I am ${this.firstName}`)
+
+            setTimeout(function(){
+            log("this is: ",this);
+                log(`#2 I am ${this.firstName}`)
+            },500);
+
+            setTimeout(()=>{
+            log("this is: ",this);
+                log(`#2 I am ${this.firstName}`)
+            },1000);
+
+        }
     }
+
+    let hood = new Cat("kitty")
+    hood.superGreet()
  
