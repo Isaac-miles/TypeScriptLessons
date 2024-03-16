@@ -115,3 +115,11 @@ log(GHSalesTax())
 const btn = document.querySelector("#clickMe")
 //without binding js sets the context of this object to btn, but binding mean you bind it to person
  btn.addEventListener("click",person.sing.bind(person))
+
+ //timers
+ class Counter{
+    constructor(startNum, increment){
+        this.startNum = startNum
+        this.increment = increment
+    }
+ }
