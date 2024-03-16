@@ -3,7 +3,7 @@ creates an empty object, sets the keyword this to be that object
 returns the object
 creates a link to the object's prototype*/
 
-class Dog{
+class DogClass{
     constructor(name,breed){
         this.name = name;
         this.breed = breed;
@@ -16,9 +16,14 @@ class Dog{
     }
 }
 //below is a constructor function
-// function Dog(name,breed){
-//     console.log("This is" ,this)
-//     this.name = name;
-//     this.breed = breed;
-// }
+function Dog(name,breed){
+    this.name = name;
+    this.breed = breed;
+    this.bark = function(){
+        return `${this.name} says woof`
+    }
+    this.sleep = function(){
+        return `${this.name} is sleeping`
+    }
+}
 //prototype
