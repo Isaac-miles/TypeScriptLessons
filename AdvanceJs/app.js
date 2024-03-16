@@ -118,14 +118,16 @@ const btn = document.querySelector("#clickMe")
 
  //timers
  class Counter{
-    constructor(startNum, increment){
+    constructor(startNum=0, increment=1){
         this.count = startNum
         this.increment = increment
     }
     start(){
-        setInterval(function(){
-            log(this.count)
-            this.count += this.increment;
-        },1000)
+        setInterval(this.incrementAndPrint.bind(this),1000)
     }
- }
+    incrementAndPrint(){
+            log(this)
+            this.count += this.increment;
+        }
+    }
+ 
