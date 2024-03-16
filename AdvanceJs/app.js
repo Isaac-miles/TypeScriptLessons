@@ -132,4 +132,10 @@ const btn = document.querySelector("#clickMe")
     }
 
     //arrow function and this( Arrow functions dont make their own this, they dont get a new value for the keyword this)
+
+    class Cat{
+        constructor(firstName){
+            this.firstName = firstName
+        }
+    }
  
