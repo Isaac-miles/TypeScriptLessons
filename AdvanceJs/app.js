@@ -122,4 +122,10 @@ const btn = document.querySelector("#clickMe")
         this.startNum = startNum
         this.increment = increment
     }
+    start(){
+        setInterval(function(){
+            log(this.startNum)
+            this.startNum += this.increment;
+        })
+    }
  }
