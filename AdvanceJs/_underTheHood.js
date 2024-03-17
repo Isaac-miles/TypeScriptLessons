@@ -50,3 +50,7 @@ const parent ={
         log("hello")
     }
 }
+const child ={
+    daughter:'miles',
+  
+}
