@@ -19,12 +19,12 @@ class DogClass{
 function Dog(name,breed){
     this.name = name;
     this.breed = breed;
-    this.bark = function(){
-        return `${this.name} says woof`
-    }
-    this.sleep = function(){
-        return `${this.name} is sleeping`
-    }
+    // this.bark = function(){
+    //     return `${this.name} says woof`
+    // }
+    // this.sleep = function(){
+    //     return `${this.name} is sleeping`
+    // }
 }
 //prototypes are the basic mechanism that gives JS objects th ability to inherit features and functionality from each other.the prototype itself is an object that has its own prototype
 const myObj ={
