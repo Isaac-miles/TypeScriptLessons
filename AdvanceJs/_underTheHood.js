@@ -26,7 +26,7 @@ function Dog(name,breed){
         return `${this.name} is sleeping`
     }
 }
-//prototype
+//prototypes are the basic mechanism that gives JS objects th ability to inherit features and functionality from each other.the protype itself is an object that has its own prototype
 const myObj ={
     color:'red',
     score:9,
