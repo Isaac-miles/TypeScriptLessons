@@ -56,7 +56,12 @@ const child ={
 }
 
 class fineDog extends DogClass{
+    constructor(name,breed,owner){
+        this.name = name;
+        this.breed = breed;
+        this.owner = owner
+    }
     alert(){
-        
+     return `${this.name} alerts you to danger`   
     }
 }
