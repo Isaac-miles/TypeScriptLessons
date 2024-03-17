@@ -44,3 +44,9 @@ Dog.prototype.sleep =function(){
 Dog.prototype.toString =function(){
     return `${this.name} is the toString method`
 }
+const parent ={
+    son:'miles',
+    sing(){
+        log("hello")
+    }
+}
