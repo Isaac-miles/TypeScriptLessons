@@ -55,8 +55,9 @@ const child ={
   
 }
 
-class fineDog extends DogClass{
+class FineDog extends DogClass{
     constructor(name,breed,owner){
+        super()
         this.name = name;
         this.breed = breed;
         this.owner = owner
