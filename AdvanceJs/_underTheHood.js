@@ -38,3 +38,9 @@ const myObj ={
 Dog.prototype.bark = function(){
     return `${this.name} says woof`
 }
+Dog.prototype.sleep =function(){
+    return `${this.name} is sleeping`
+}
+Dog.prototype.toString =function(){
+    return `${this.name} is the toString method`
+}
