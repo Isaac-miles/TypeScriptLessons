@@ -34,3 +34,7 @@ const myObj ={
         log('hello')
     }
 }
+
+Dog.prototype.bark = function(){
+    return `${this.name} says woof`
+}
