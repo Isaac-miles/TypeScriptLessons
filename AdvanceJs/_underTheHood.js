@@ -54,3 +54,9 @@ const child ={
     daughter:'miles',
   
 }
+
+class fineDog extends DogClass{
+    alert(){
+        
+    }
+}
