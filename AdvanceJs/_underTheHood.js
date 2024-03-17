@@ -27,3 +27,10 @@ function Dog(name,breed){
     }
 }
 //prototype
+const myObj ={
+    color:'red',
+    score:9,
+    greet(){
+        log('hello')
+    }
+}
