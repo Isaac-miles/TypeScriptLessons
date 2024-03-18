@@ -52,4 +52,6 @@ async function allSettled(){
     let joe = fetch(`${GITHUB_BASE}/users/joelburton`);
     let badUrl =fetch("fakenotasite.com");
     let colt =fetch(`${GITHUB_BASE}/users/colt`);
+    let banotherBadUrl =fetch("fakenotasite.com");
+
 }
