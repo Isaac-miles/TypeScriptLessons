@@ -63,5 +63,6 @@ async function allSettle(){
     ]);
 
     log(res)
-    const fulfilled = res.filter((r)=>r.status=="fulfilled")
+    const fulfilled = res.filter((r)=>r.status=="fulfilled");
+    const rejected = res.filter((r)=>r.status=="rejected");
 }
