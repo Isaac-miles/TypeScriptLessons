@@ -10,3 +10,11 @@ fetch(`${BASE_URL}/1`)
 
 //promise chaining
 
+ const fetchData = async()=>{
+    try {
+      const data = await fetch(`${BASE_URL}/1f`)
+        log(data)
+    } catch (error) {
+        log(error)
+    }
+ }
