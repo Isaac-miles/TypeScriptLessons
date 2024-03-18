@@ -66,3 +66,11 @@ class FineDog extends DogClass{
      return `${this.name} alerts you to danger`   
     }
 }
+//useful prototype methods
+const p ={
+    sing(){
+        return "hey"
+    },
+    isHuman:true
+}
+const tom = Object.create(p) //this creates an object with the p as prototype.
