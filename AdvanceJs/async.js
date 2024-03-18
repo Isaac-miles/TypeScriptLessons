@@ -50,9 +50,9 @@ async function allSettle(){
     const GITHUB_BASE = "https://api.github.com";
     let el = fetch(`${GITHUB_BASE}/users/elie`);
     let miles = fetch(`${GITHUB_BASE}/users/isaac-miles`);
-    let badUrl =fetch("fakenotasite.com");
+    let badUrl =fetch("http://fakenotasite.com");
     let colt =fetch(`${GITHUB_BASE}/users/colt`);
-    let anotherBadUrl =fetch("fakenotasite.com");
+    let anotherBadUrl =fetch("http://anotherfakenotasite.com");
 
     let res = await Promise.allSettled([
         el,
@@ -65,4 +65,6 @@ async function allSettle(){
     log(res)
     const fulfilled = res.filter((r)=>r.status=="fulfilled");
     const rejected = res.filter((r)=>r.status=="rejected");
+    log(fulfilled)
+    log(rejected)
 }
