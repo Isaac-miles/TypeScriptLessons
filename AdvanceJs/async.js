@@ -4,9 +4,9 @@ const {log} = console;
 
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 
-fetch(`${BASE_URL}/1`)
-.then((res)=>log(res))
-.catch((err)=>log(err))
+// fetch(`${BASE_URL}/1`)
+// .then((res)=>log(res))
+// .catch((err)=>log(err))
 
 //promise chaining
 
@@ -38,8 +38,8 @@ const  plentyFetch = [
 
 async function getLotsOfFetch(){
     try {
-       const result = await Promise.all(plentyFetch)
-       log("results",result)
+    //    const result = await Promise.all(plentyFetch)
+    //    log("results",result)
     } catch (error) {
         log("one request failed")
     }
@@ -68,3 +68,8 @@ async function allSettle(){
     log(fulfilled)
     log(rejected)
 }
+//many calls, first one wins
+//Promise.race accepts an array of promises and returns a new promise, this new promise will resolve or reject as soon as one promise in the array resolves or rejects, it doesn't wait for all of them, only the first one that either resolves or rejects
+Promise.race(plentyFetch).
+then(winner =>log(winner)).
+catch(err=>log(err))
