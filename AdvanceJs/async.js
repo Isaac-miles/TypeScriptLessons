@@ -46,3 +46,7 @@ async function getLotsOfFetch(){
 }
 getLotsOfFetch()
 //but sometimes you may want to send a bunch of promise calls, some may work and some wont and you want to handle them differently how do you handle this?
+async function allSettled(){
+    const GITHUB_BASE = "https://api.github.com";
+    let el = fetch(`${GITHUB_BASE}/users/elie`);
+}
