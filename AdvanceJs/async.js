@@ -32,6 +32,17 @@ const fetchData = async () => {
 const  plentyFetch = [
     fetch(`${BASE_URL}/1`),
     fetch(`${BASE_URL}/2`),
-    fetch(`${BASE_URL}/3`),
+    fetch(`${BASE_URL}/3g`),
     fetch(`${BASE_URL}/4`)
 ]
+
+async function getLotsOfFetch(){
+    try {
+       const result = await Promise.all(plentyFetch)
+       log("results",result)
+    } catch (error) {
+        log("one request failed")
+    }
+}
+getLotsOfFetch()
+//but sometimes you may want to send a bunch of promise calls, some may work and some wont and you want to handle them differently how do you handle this?
