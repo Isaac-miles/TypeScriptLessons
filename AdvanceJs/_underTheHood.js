@@ -74,3 +74,6 @@ const p ={
     isHuman:true
 }
 const tom = Object.create(p) //this creates an object with the p as prototype.
+
+Object.getPrototypeOf(tom) //returns the prototype of an object
+Object.setPrototypeOf(tom, {isHuman:false})
