@@ -12,8 +12,15 @@ fetch(`${BASE_URL}/1`)
 
  const fetchData = async()=>{
     try {
-      const data = await fetch(`${BASE_URL}/1f`)
-        log(data)
+      const data = await fetch(`${BASE_URL}/1`)
+      log(data)
+
+      const data1 = await fetch(`${BASE_URL}/2`)
+      log(data1)
+
+      const data2 = await fetch(`${BASE_URL}/1f`)
+        log(data2)
+        
     } catch (error) {
         log(error)
     }
