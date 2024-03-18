@@ -10,18 +10,22 @@ fetch(`${BASE_URL}/1`)
 
 //promise chaining
 
- const fetchData = async()=>{
+const fetchData = async () => {
     try {
-      const data = await fetch(`${BASE_URL}/1`)
-      log(data)
+        const data = await fetch(`${BASE_URL}/1`);
+        log(data);
 
-      const data1 = await fetch(`${BASE_URL}/2`)
-      log(data1)
+        const data1 = await fetch(`${BASE_URL}/2`);
+        log(data1);
 
-      const data2 = await fetch(`${BASE_URL}/1f`)
-        log(data2)
-        
+        const response = await fetch(`${BASE_URL}/1f`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch data2');
+        }
+        const data2 = await response.json();
+        log(data2);
     } catch (error) {
-        log(error)
+        log("something went wrong:", error.message);
     }
- }
+};
+//Promise.all accepts an array of promise and returns a new promise, the new promise will resolve when every promise in array resolves and will be rejected if any promise in array is rejected
