@@ -29,3 +29,9 @@ const fetchData = async () => {
     }
 };
 //Promise.all accepts an array of promise and returns a new promise, the new promise will resolve when every promise in array resolves and will be rejected if any promise in array is rejected
+const  plentyFetch = [
+    fetch(`${BASE_URL}/1`),
+    fetch(`${BASE_URL}/2`),
+    fetch(`${BASE_URL}/3`),
+    fetch(`${BASE_URL}/4`)
+]
