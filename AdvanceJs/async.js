@@ -1,0 +1,2 @@
+//callbacks are functions used for async functionality
+//Promise in Js are Objects, they are native to the language as of ES2015, a promise can be in one of the three states, pending resolve(fulfilled) and rejected
