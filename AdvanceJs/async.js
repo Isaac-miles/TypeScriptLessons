@@ -75,3 +75,6 @@ then(winner =>log(winner)).
 catch(err=>log(err))
 
 //building own promises: you can use promise with the new keyword to make your own promises,promise accepts a single function(call it fn) as an argument, fn accepts two functions as arg resolve and reject
+setTimeout(()=>{
+    log('hi')
+},1000)
