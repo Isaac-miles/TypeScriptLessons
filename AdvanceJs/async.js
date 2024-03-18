@@ -32,7 +32,7 @@ const fetchData = async () => {
 const  plentyFetch = [
     fetch(`${BASE_URL}/1`),
     fetch(`${BASE_URL}/2`),
-    fetch(`${BASE_URL}/3g`),
+    fetch(`${BASE_URL}/3`),
     fetch(`${BASE_URL}/4`)
 ]
 
@@ -46,12 +46,22 @@ async function getLotsOfFetch(){
 }
 getLotsOfFetch()
 //but sometimes you may want to send a bunch of promise calls, some may work and some wont and you want to handle them differently how do you handle this?
-async function allSettled(){
+async function allSettle(){
     const GITHUB_BASE = "https://api.github.com";
     let el = fetch(`${GITHUB_BASE}/users/elie`);
-    let joe = fetch(`${GITHUB_BASE}/users/joelburton`);
+    let miles = fetch(`${GITHUB_BASE}/users/isaac-miles`);
     let badUrl =fetch("fakenotasite.com");
     let colt =fetch(`${GITHUB_BASE}/users/colt`);
-    let banotherBadUrl =fetch("fakenotasite.com");
+    let anotherBadUrl =fetch("fakenotasite.com");
 
+    let res = await Promise.allSettled([
+        el,
+        miles,
+        badUrl,
+        colt,
+        anotherBadUrl
+    ]);
+
+    log(res)
+    const fulfilled = res.filter((r)=>r.status=="fulfilled")
 }
