@@ -49,4 +49,7 @@ getLotsOfFetch()
 async function allSettled(){
     const GITHUB_BASE = "https://api.github.com";
     let el = fetch(`${GITHUB_BASE}/users/elie`);
+    let joe = fetch(`${GITHUB_BASE}/users/joelburton`);
+    let badUrl =fetch("fakenotasite.com");
+    let colt =fetch(`${GITHUB_BASE}/users/colt`);
 }
