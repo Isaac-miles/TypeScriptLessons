@@ -7,3 +7,6 @@ const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 fetch(`${BASE_URL}/1`)
 .then((res)=>log(res))
 .catch((err)=>log(err))
+
+//promise chaining
+
