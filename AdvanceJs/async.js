@@ -126,7 +126,14 @@ log(loggedInUser)
 let score;
 score ??=0
 
-function doSomeSetUp(options={}){
-    options.timeOut ??=3000;
-    options.entries??=5
+function doSomeSetUp(options={timeOut:0,entries:0}){
+    options.timeOut ??=3000; //this wont set timeout to 3s 
+    options.entries??=5 // this  wont sets entries to 5
+    log(options)
 }
+function doSomeSetUp(options={timeOut:0,entries:0}){
+    options.timeOut ||=4000; //this sets timeout to 4s 
+    options.entries ||=5 // this sets entries to 5
+    log(options)
+}
+//Promise.any
