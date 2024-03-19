@@ -148,3 +148,19 @@ then((firstResolved)=>log("first to resolve",firstResolved))
 
 //Generators and yield
 //JavaScript can have generator functions-functions that return a generator that can be lazily looped over
+ function* evens(n){
+    while(n){
+        yield n;
+        n +=2;
+    }
+
+ }
+
+ function* fibonacci(){
+    let a=0, b=1;
+
+    while(true){
+        yield a;
+        [a, b] = [b, a+b];
+    }
+ }
