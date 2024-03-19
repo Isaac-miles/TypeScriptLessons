@@ -91,4 +91,6 @@ const wait = (duration)=>{
 //    log(val)
 //     log("there")
 // }
-wait(3000).then(r=>log(r))
+// wait(3000).then(r=>log(r))
+
+//Nullish coalescing: operator(??)
