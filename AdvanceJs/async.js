@@ -136,4 +136,4 @@ function doSomeSetUp(options={timeOut:0,entries:0}){
     options.entries ||=5 // this sets entries to 5
     log(options)
 }
-//Promise.any
+//Promise.any : takes an iterable of promise objects and returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected if all of the given promises are rejected
