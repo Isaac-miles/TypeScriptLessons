@@ -184,4 +184,12 @@ then((firstResolved)=>log("first to resolve",firstResolved))
  }
 
  const imageGen = getBatchOfImages(allImages);
-log( imageGen.next())
+
+ //Array.from: helps to generate array from a non array obj using an iterable
+Array.from("Hello") //this creates an array e.g ['M','i',...]
+
+const set = new Set([1,2,3,4,5])
+Array.from(set)
+
+//we can also pass a mapping function as a second arg that transforms each element eg
+Array.from("abcd",x=>x.toLocaleUpperCase())
