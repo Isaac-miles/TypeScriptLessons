@@ -145,3 +145,6 @@ Promise.any([
 ]).
 then((firstResolved)=>log("first to resolve",firstResolved))
 .catch(err=>log('all of them failed',err))
+
+//Generators and yield
+//JavaScript can have generator functions-functions that return a generator that can be lazily looped over
