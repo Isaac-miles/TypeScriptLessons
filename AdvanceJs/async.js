@@ -106,6 +106,7 @@ const colors = ["red","blue","green"]
 log(colors.at(-1))
 
 //Logical OR assignment ||=
-const db = {task:"",priority:""}
+const db = {task:"",priority:"Top most"}
 
-log(db.priority ||= "Less priority")
+log(db.priority ||= "Less priority") //this is equivalent to
+// db.priority || (db.priority ="Less")
