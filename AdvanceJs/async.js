@@ -113,3 +113,12 @@ log(db.priority ||= "Less priority") //this is equivalent to
  
 let num = 9;
 num &&=50 //assigns 50 to num if only num has a truty value
+
+let loggedInUser = true;
+
+if(loggedInUser){
+    loggedInUser = {...loggedInUser,colorScheme:"purple"}
+}
+loggedInUser &&= {...loggedInUser,colorScheme:"red"}
+
+log(loggedInUser)
