@@ -100,3 +100,5 @@ const person ={
 }
 const username = person.firstName?? "not applicable"
 log(username)
+
+//Array.prototype.at() allows us to access an array at an index
