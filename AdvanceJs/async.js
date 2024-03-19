@@ -170,11 +170,18 @@ then((firstResolved)=>log("first to resolve",firstResolved))
 
  //practical example for using generators:lets get batch of images in 10s
 
- const allImages = Arrays.from(
+ const allImages = Array.from(
     {length:1000},
     (_,i) =>`https://placeimg.com/640/480/any?image=${i}`
  );
 
  function* getBatchOfImages(images,batchSize=10){
     let  currentIndex = 0;
+    while(currentIndex < images.length){
+        yield images.slice(currentIndex,currentIndex+batchSize);
+        currentIndex +=batchSize;
+    }
  }
+
+ const imageGen = getBatchOfImages(allImages);
+log( imageGen.next())
