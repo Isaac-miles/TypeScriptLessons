@@ -110,3 +110,6 @@ const db = {task:"",priority:"Top most"}
 
 log(db.priority ||= "Less priority") //this is equivalent to
 // db.priority || (db.priority ="Less")
+ 
+let num = 9;
+num &&=50 //assigns 50 to num if only num has a truty value
