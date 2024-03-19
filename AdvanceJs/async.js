@@ -98,9 +98,14 @@ const person ={
     name:"Anonymous",
     age:29
 }
-const username = person.firstName?? "not applicable"
+const username = person.firstName ?? "not applicable"
 log(username)
 
 //Array.prototype.at() allows us to access an array element at an index
 const colors = ["red","blue","green"]
 log(colors.at(-1))
+
+//Logical OR assignment ||=
+const db = {task:"",priority:""}
+
+log(db.priority ||= "Less priority")
