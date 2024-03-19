@@ -122,3 +122,11 @@ if(loggedInUser){
 loggedInUser &&= {...loggedInUser,colorScheme:"red"}
 
 log(loggedInUser)
+
+let score;
+score ??=0
+
+function doSomeSetUp(options={}){
+    options.timeOut ??=3000;
+    options.entries??=5
+}
