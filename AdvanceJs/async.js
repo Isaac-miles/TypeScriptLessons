@@ -164,3 +164,17 @@ then((firstResolved)=>log("first to resolve",firstResolved))
         [a, b] = [b, a+b];
     }
  }
+
+ const fibGen = fibonacci()
+ fibGen.next()
+
+ //practical example for using generators:lets get batch of images in 10s
+
+ const allImages = Arrays.from(
+    {length:1000},
+    (_,i) =>`https://placeimg.com/640/480/any?image=${i}`
+ );
+
+ function* getBatchOfImages(images,batchSize=10){
+    let  currentIndex = 0;
+ }
