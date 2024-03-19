@@ -93,4 +93,10 @@ const wait = (duration)=>{
 // }
 // wait(3000).then(r=>log(r))
 
-//Nullish coalescing: operator(??) is a logicAL OPERATOR THAT returns its right hand operand when its left operand is null or undefined, and otherwise returns its left hand operan
+//Nullish coalescing: operator(??) is a logicAL OPERATOR THAT returns its right hand operand when its left operand is null or undefined, and otherwise returns its left hand operator this is a way to handle default values more predictably than using the OR(||) operator.
+const person ={
+    name:"Anonymous",
+    age:29
+}
+const username = person.firstName?? "not applicable"
+log(username)
