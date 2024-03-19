@@ -137,3 +137,11 @@ function doSomeSetUp(options={timeOut:0,entries:0}){
     log(options)
 }
 //Promise.any : takes an iterable of promise objects and returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected if all of the given promises are rejected
+Promise.any([
+    fetch(`${BASE_URL}/1`),
+    fetch(`${BASE_URL}/2`),
+    fetch(`${BASE_URL}/3`),
+    fetch(`${BASE_URL}/4`)
+]).
+then((firstResolved)=>log("first to resolve",firstResolved))
+.catch(err=>log('all of them failed',err))
