@@ -197,3 +197,7 @@ Array.from("abcd",x=>x.toLocaleUpperCase())
 Array.from({length:5},(el,i)=>"miles".concat("wrld"+i))
 
 log("-".repeat(20))
+
+//Scope and closure: Js is a stickly or lexically scoped language, determining scope is not dynamic the scope of a value is not dependent on its execution context
+
+let Animal = "first Animal"
