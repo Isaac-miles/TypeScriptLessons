@@ -193,3 +193,7 @@ Array.from(set)
 
 //we can also pass a mapping function as a second arg that transforms each element eg
 Array.from("abcd",x=>x.toLocaleUpperCase())
+
+Array.from({length:5},(el,i)=>"miles".concat("wrld"+i))
+
+log("-".repeat(20))
