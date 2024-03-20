@@ -22,6 +22,14 @@ log(food2) //this doesnt throw an error but instead undefined for var
 var food2 = "rice"
 
 //this translates to
-let food2 = undefined;
+let foodTwo = undefined;
 log(food2)
-food2 = "rice"
+foodTwo = "rice"
+
+print();
+
+function print(){
+    // var color =undefined
+    log(color)
+    var color = "black"
+}
