@@ -20,3 +20,8 @@ printAnimal2() //this prints  first animal
 //exam 2
 log(food2) //this doesnt throw an error but instead undefined for var
 var food2 = "rice"
+
+//this translates to
+let food2 = undefined;
+log(food2)
+food2 = "rice"
