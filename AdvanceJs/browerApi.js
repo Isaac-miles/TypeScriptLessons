@@ -58,4 +58,8 @@ function debounce(callback, delay){
         },delay)
     }
 }
-const debouncedQueryAPI = debounce(queryAPI,300)
+const debouncedQueryAPI = debounce(queryApi,300)
+
+search.addEventListener("input",()=>{
+    debouncedQueryAPI();
+})
