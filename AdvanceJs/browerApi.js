@@ -1,3 +1,4 @@
+const {log} = console;
 //setTimeOut:execute a piece of code after a certain period has elapse.
 function showNotification(message, duration){
     const notification = document.createElement("Div");
@@ -36,6 +37,10 @@ const cancelButton = document.querySelector("#cancel");
 const search = document.getElementById("search")
 
 function queryApi(){
-    log("searching api")
     log("MAKING API REQUEST")
 }
+
+let debounceTimeout;
+search.addEventListener("input",()=>{
+    queryApi();
+})
