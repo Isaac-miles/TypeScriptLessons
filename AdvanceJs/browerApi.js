@@ -40,10 +40,22 @@ function queryApi(){
     log("MAKING API REQUEST")
 }
 
-let debounceTimeout;
-search.addEventListener("input",()=>{
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(()=>{
-        queryApi();
-    },400)
-});
+// let debounceTimeout;
+// search.addEventListener("input",()=>{
+//     clearTimeout(debounceTimeout);
+//     debounceTimeout = setTimeout(()=>{
+//         queryApi();
+//     },400)
+// });
+
+function debounce(callback, delay){
+    let timeoutId;
+    return ()=>{
+        if(timeoutId) clearTimeout(timeoutId)
+
+        timeoutId = setTimeout(()=>{
+            callback()
+        },delay)
+    }
+}
+const debouncedQueryAPI = debounce(queryAPI,300)
