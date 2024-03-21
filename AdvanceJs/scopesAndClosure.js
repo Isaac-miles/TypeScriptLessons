@@ -36,5 +36,5 @@ function print(){
 //with let and const its not like this
 function printA(){
     console.log(name);
-    let name = "Isaac"
+    const name = "Isaac"
 }
