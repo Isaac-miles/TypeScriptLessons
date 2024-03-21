@@ -42,5 +42,8 @@ function queryApi(){
 
 let debounceTimeout;
 search.addEventListener("input",()=>{
-    queryApi();
-})
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(()=>{
+        queryApi();
+    },400)
+});
