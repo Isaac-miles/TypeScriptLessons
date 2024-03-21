@@ -33,3 +33,8 @@ function print(){
     log(color)
     var color = "black"
 }
+//with let and const its not like this
+function printA(){
+    console.log(name);
+    let name = "Isaac"
+}
