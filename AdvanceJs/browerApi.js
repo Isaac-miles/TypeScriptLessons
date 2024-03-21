@@ -22,8 +22,20 @@ function startCountDown(duration){
 
 }
 
-const cancelButton = document.querySelector("cancel");
+const cancelButton = document.querySelector("#cancel");
 
-const redirect = setTimeout(()=>{
-    window.location.href = "http://www.google.com"
-},5000)
+// const redirect = setTimeout(()=>{
+//     window.location.href = "http://www.google.com"
+// },5000)
+
+// cancelButton.addEventListener('click',()=>{
+//     clearTimeout(redirect)
+// })
+
+//debouncing: essentially adding a pause before a function is ran or to make sure a function is not too called frequently
+const search = document.getElementById("search")
+
+function queryApi(){
+    log("searching api")
+    log("MAKING API REQUEST")
+}
