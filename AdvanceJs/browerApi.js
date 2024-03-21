@@ -21,3 +21,9 @@ function startCountDown(duration){
     },1000)
 
 }
+
+const cancelButton = document.querySelector("cancel");
+
+const redirect = setTimeout(()=>{
+    window.location.href = "http://www.google.com"
+},5000)
