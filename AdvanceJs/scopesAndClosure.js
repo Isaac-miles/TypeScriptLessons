@@ -41,7 +41,8 @@ function printA(){
 
 function printB(){
     //TEMPORAL DEAD ZONE STARTS
-    console.log(name);
+    console.log(color);
+    //reference error cannot access 'color' before initialization
     
-    const name = "Isaac"
+    const color = "Isaac"
 }
