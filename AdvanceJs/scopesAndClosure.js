@@ -63,3 +63,4 @@ function outerFunction(){
 
 const myClosure = outerFunction()
 myClosure()
+//benefits closures, enables us to create private variable
