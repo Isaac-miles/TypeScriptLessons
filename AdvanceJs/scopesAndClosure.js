@@ -38,3 +38,10 @@ function printA(){
     console.log(name);
     const name = "Isaac"
 }
+
+function printB(){
+    //TEMPORAL DEAD ZONE STARTS
+    console.log(name);
+    
+    const name = "Isaac"
+}
