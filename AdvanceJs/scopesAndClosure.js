@@ -89,3 +89,7 @@ const square = createExponentFunction(2);
 const cube = createExponentFunction(3)
 log(square(2))
 log(cube(3))
+
+document.querySelector("button").addEventListener("click",()=>{
+    
+})
