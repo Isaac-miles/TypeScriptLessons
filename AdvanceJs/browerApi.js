@@ -8,3 +8,8 @@ function showNotification(message, duration){
         notification.remove()
     },duration)
 }
+
+//setInterval runs some functions repeatedly between some sets of intervals
+function startCountDown(duration){
+    
+}
