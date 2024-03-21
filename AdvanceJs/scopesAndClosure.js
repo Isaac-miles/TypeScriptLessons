@@ -85,3 +85,7 @@ function createExponentFunction(exponent){
         return  val ** exponent;
     };
 }
+const square = createExponentFunction(2);
+const cube = createExponentFunction(3)
+log(square(2))
+log(cube(3))
