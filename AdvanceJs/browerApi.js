@@ -13,10 +13,11 @@ function showNotification(message, duration){
 function startCountDown(duration){
     const h1 = document.getElementById("timer")
     let secondsRemaining = duration;
-    setInterval(()=>{
+   const interval = setInterval(()=>{
         h1.innerText = secondsRemaining;
         secondsRemaining -=1;
-        if(secondsRemaining < 5) clearInterval()
+
+        if(secondsRemaining < 0) clearInterval(interval)
     },1000)
 
 }
