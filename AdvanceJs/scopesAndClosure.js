@@ -50,3 +50,8 @@ function printB(){
 (function(){
     log("hello iffff")
 })()
+
+//closures
+function outerFunction(){
+    let outerVariable =" I am outer function !"
+}
