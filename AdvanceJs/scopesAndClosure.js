@@ -51,7 +51,14 @@ function printB(){
     log("hello iffff")
 })()
 
-//closures
+//closures, inner functions having access to the outer function properties
 function outerFunction(){
     let outerVariable =" I am outer function !"
+    function innerFunction(){
+        log("Inner function")
+        log("outer variable is ",outerVariable)
+    }
+    return innerFunction
 }
+
+outerFunction()
