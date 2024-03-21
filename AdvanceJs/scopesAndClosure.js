@@ -90,6 +90,10 @@ const cube = createExponentFunction(3)
 log(square(2))
 log(cube(3))
 
-document.querySelector("button").addEventListener("click",()=>{
-    
-})
+document.querySelector("button").addEventListener("click",(()=>{
+    let count = 0;
+    return function(){
+        count +=1;
+        log("you clicked me ",count ,"times")
+    }
+})())
