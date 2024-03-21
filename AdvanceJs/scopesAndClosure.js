@@ -70,5 +70,11 @@ function createCounter(){
         increment:function(){
             return count++;
         },
+        decrement:function(){
+            return count--;
+        },
+        getCount:function(){
+            return count;
+        },
     }
 }
