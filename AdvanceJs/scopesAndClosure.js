@@ -46,3 +46,7 @@ function printB(){
     
     const color = "Isaac"
 }
+//IFF immediately invoked functions
+(function(){
+    log("hello iffff")
+})()
