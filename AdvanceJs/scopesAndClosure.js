@@ -65,5 +65,10 @@ const myClosure = outerFunction()
 myClosure()
 //benefits closures, enables us to create private variable
 function createCounter(){
-    
+    let count =0 ;
+    return {
+        increment:function(){
+            return count++;
+        },
+    }
 }
