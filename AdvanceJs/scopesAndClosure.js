@@ -63,7 +63,7 @@ function outerFunction(){
 
 const myClosure = outerFunction()
 myClosure()
-//benefits closures, enables us to create private variable
+//benefits closures, enables us to create private variable, eg count below can not be accessed except the inner functions
 function createCounter(){
     let count =0 ;
     return {
@@ -79,3 +79,9 @@ function createCounter(){
     }
 }
 const counter = createCounter()
+
+function createExponentFunction(exponent){
+    return function(val){
+        return  val ** exponent;
+    };
+}
