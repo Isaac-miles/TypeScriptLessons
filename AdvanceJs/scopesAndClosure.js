@@ -61,4 +61,5 @@ function outerFunction(){
     return innerFunction
 }
 
-outerFunction()
+const myClosure = outerFunction()
+myClosure()
