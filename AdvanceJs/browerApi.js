@@ -36,8 +36,8 @@ const cancelButton = document.querySelector("#cancel");
 //debouncing: essentially adding a pause before a function is ran or to make sure a function is not too called frequently
 const search = document.getElementById("search")
 
-function queryApi(){
-    log("MAKING API REQUEST")
+function queryApi(searchItem){
+    log("MAKING API REQUEST for ", searchItem)
 }
 
 // let debounceTimeout;
@@ -50,16 +50,16 @@ function queryApi(){
 
 function debounce(callback, delay){
     let timeoutId;
-    return ()=>{
+    return (...args)=>{
         if(timeoutId) clearTimeout(timeoutId)
 
         timeoutId = setTimeout(()=>{
-            callback()
+            callback(...args)
         },delay)
     }
 }
 const debouncedQueryAPI = debounce(queryApi,300)
 
-search.addEventListener("input",()=>{
-    debouncedQueryAPI();
+search.addEventListener("input",(e)=>{
+    debouncedQueryAPI(e.target.value);
 })
