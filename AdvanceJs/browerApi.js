@@ -61,5 +61,5 @@ function debounce(callback, delay){
 const debouncedQueryAPI = debounce(queryApi,300)
 
 search.addEventListener("input",(e)=>{
-    debouncedQueryAPI(e.target.value);
+    // debouncedQueryAPI(e.target.value);
 })
