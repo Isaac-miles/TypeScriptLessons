@@ -136,3 +136,10 @@ function throttle(callback,delay = 500){
         setTimeout(executeCallback,delay)
     }
 }
+
+window.addEventListener("scroll",()=>{
+    loadMoreItems();
+})
+
+//initial load
+loadMoreItems();
