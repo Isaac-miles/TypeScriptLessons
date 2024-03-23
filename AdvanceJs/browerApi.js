@@ -121,7 +121,16 @@ function throttle(callback,delay = 500){
         if(savedArgs===null){
             isThrottled = false
         }else{
-            
+            callback(...savedArgs);
+            savedArgs = null;
+            setTimeout(executeCallback,delay);
         }
+    }
+    return(...args) =>{
+        if(isThrottled){
+            savedArgs = args;
+            return;
+        }
+        callback(...args)
     }
 }
