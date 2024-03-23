@@ -96,6 +96,7 @@ function loadMoreItems(){
             item.classList.add("item")
             item.textContent = "Item " + (content.children.length + 1);
             item.style.backgroundColor = getRandomColor();
+            content.appendChild(item);
         }
     }
 }
