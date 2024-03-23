@@ -89,5 +89,8 @@ const content = document.getElementById("content");
 function loadMoreItems(){
     const scrollDistanceToBottom = document.documentElement.scrollHeight - window.screenY - window.innerHeight
 
-    
+    if(scrollDistanceToBottom < 200){
+        log("loading data from an api!!");
+        
+    }
 }
