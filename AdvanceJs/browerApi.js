@@ -84,3 +84,4 @@ function getRandomColor(){
     const randomIndex = Math.floor(Math.random() * palette.length);
     return palette[randomIndex]
 }
+const content = document.getElementById("content");
