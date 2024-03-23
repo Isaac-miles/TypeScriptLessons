@@ -100,6 +100,8 @@ function loadMoreItems(){
         }
     }
 }
+
+let isThrottled = false;
 window.addEventListener("scroll", ()=>{
     loadMoreItems();
 });
