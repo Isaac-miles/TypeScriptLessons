@@ -143,3 +143,16 @@ window.addEventListener("scroll",()=>{
 
 //initial load
 loadMoreItems();
+
+//requestAnimation frame
+const boxInterval = document.getElementById("boxInterval");
+const boxAnimationFrame = document.getElementById("content");
+
+let intervalAngle = 0;
+
+function animateWithInterval(){
+    boxInterval.style.transform = "rotate(" + intervalAngle + "deg)"
+    intervalAngle +=2;
+}
+// Start the animations
+setInterval(animateWithInterval,16); //60 FPS (approximately)
