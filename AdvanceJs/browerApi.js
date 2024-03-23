@@ -63,3 +63,5 @@ const debouncedQueryAPI = debounce(queryApi,300)
 search.addEventListener("input",(e)=>{
     debouncedQueryAPI(e.target.value);
 })
+
+//Throttling: is a technique used to make sure a function is called at most one time within some duration.
