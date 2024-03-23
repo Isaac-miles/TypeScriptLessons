@@ -79,5 +79,8 @@ function getRandomColor(){
         "#FFE156",
         "#6A0572",
         "#AB83A1",
-    ]
+    ];
+
+    const randomIndex = Math.floor(Math.random() * palette.length);
+    return palette[randomIndex]
 }
