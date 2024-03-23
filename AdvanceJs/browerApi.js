@@ -65,3 +65,10 @@ search.addEventListener("input",(e)=>{
 })
 
 //Throttling: is a technique used to make sure a function is called at most one time within some duration.
+function getRandomColor(){
+    const palette = [
+        "#FFADAD",
+        "#FFADAD",
+        "#FFADAD",
+    ]
+}
