@@ -91,6 +91,11 @@ function loadMoreItems(){
 
     if(scrollDistanceToBottom < 200){
         log("loading data from an api!!");
-        
+        for(let i=0; i <10; i++){
+            const item = document.createElement("div");
+            item.classList.add("item")
+            item.textContent = "Item " + (content.children.length + 1);
+            item.style.backgroundColor = getRandomColor();
+        }
     }
 }
