@@ -170,5 +170,15 @@ requestAnimationFrame(animateWithAnimationFrame)
 //using animation frame
 // requestAnimationFrame(animateWithAnimationFrame)
 function smoothScrollToTop(){
-    const duration = 1000;// duration in miliseconds
+    const duration = 1000;// duration in miliseconds;
+    const start = window.scrollY;
+    const end = 0;
+    const change = end - start;
+    let startTime = null;
+
+    function animateScroll(currentTime){
+        if(startTime===null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        log(timeElapsed)
+    }
 }
