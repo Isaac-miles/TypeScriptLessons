@@ -179,6 +179,10 @@ function smoothScrollToTop(){
     function animateScroll(currentTime){
         if(startTime===null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
-        log(timeElapsed)
+        log(timeElapsed);
+        const progress = Math.min(timeElapsed/duration,1);
+
+        window.scrollTo(0,start + change*progress);
+        
     }
 }
