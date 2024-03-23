@@ -70,5 +70,14 @@ function getRandomColor(){
         "#FFADAD",
         "#FFADAD",
         "#FFADAD",
+        "#392F5A",
+        "#31A2AC",
+        "#61C0BF",
+        "#6B4226",
+        "#D9BF77",
+        "#ACD8AA",
+        "#FFE156",
+        "#6A0572",
+
     ]
 }
