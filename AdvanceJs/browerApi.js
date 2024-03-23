@@ -78,6 +78,6 @@ function getRandomColor(){
         "#ACD8AA",
         "#FFE156",
         "#6A0572",
-
+        "#AB83A1",
     ]
 }
