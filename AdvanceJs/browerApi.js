@@ -146,7 +146,7 @@ loadMoreItems();
 
 //requestAnimation frame
 const boxInterval = document.getElementById("boxInterval");
-const boxAnimationFrame = document.getElementById("content");
+const boxAnimationFrame = document.getElementById("boxAnimationFrame");
 
 let intervalAngle = 0;
 
@@ -156,3 +156,9 @@ function animateWithInterval(){
 }
 // Start the animations
 setInterval(animateWithInterval,16); //60 FPS (approximately)
+
+function animateWithInterval(){
+    boxAnimationFrame.style.transform = "rotate(" + intervalAngle + "deg)"
+}
+//using animation frame
+// requestAnimationFrame()
