@@ -118,6 +118,10 @@ function throttle(callback,delay = 500){
     let savedArgs = null;
 
     const executeCallback = ()=>{
-        
+        if(savedArgs===null){
+            isThrottled = false
+        }else{
+            
+        }
     }
 }
