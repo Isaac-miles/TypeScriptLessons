@@ -100,4 +100,9 @@ function loadMoreItems(){
         }
     }
 }
-window.addEventListener("")
+window.addEventListener("scroll", ()=>{
+    loadMoreItems();
+});
+
+//Initial load
+loadMoreItems();
