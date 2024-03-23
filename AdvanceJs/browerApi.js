@@ -113,3 +113,11 @@ window.addEventListener("scroll", ()=>{
     }
 });
 
+function throttle(callback,delay = 500){
+    let isThrottled = false;
+    let savedArgs = null;
+
+    const executeCallback = ()=>{
+        
+    }
+}
