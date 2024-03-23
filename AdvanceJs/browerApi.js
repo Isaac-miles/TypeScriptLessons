@@ -183,6 +183,8 @@ function smoothScrollToTop(){
         const progress = Math.min(timeElapsed/duration,1);
 
         window.scrollTo(0,start + change*progress);
-        
+        if(timeElapsed < duration){
+            requestAnimationFrame(animateScroll)
+        }
     }
 }
