@@ -85,3 +85,9 @@ function getRandomColor(){
     return palette[randomIndex]
 }
 const content = document.getElementById("content");
+
+function loadMoreItems(){
+    const scrollDistanceToBottom = document.documentElement.scrollHeight - window.screenY - window.innerHeight
+
+    
+}
