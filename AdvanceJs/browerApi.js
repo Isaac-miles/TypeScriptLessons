@@ -187,4 +187,5 @@ function smoothScrollToTop(){
             requestAnimationFrame(animateScroll)
         }
     }
+    requestAnimationFrame(animateScroll);
 }
