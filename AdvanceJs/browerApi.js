@@ -158,7 +158,10 @@ function animateWithInterval(){
 // Start the animations
 // setInterval(animateWithInterval,16); //60 FPS (approximately)
 
-function animateWithAnimationFrame(){
+function animateWithAnimationFrame(currentTime){
+    //currentTime is passed automatically by the requestAnimationFrame,it provides a timeStamp, a very high resolution time stamp.
+
+    log(currentTime)
     boxAnimationFrame.style.transform = "rotate(" + animationFrameAngle + "deg)"
     animationFrameAngle +=2
 requestAnimationFrame(animateWithAnimationFrame)
@@ -166,3 +169,6 @@ requestAnimationFrame(animateWithAnimationFrame)
 }
 //using animation frame
 // requestAnimationFrame(animateWithAnimationFrame)
+function smoothScrollToTop(){
+    const duration = 1000;// duration in miliseconds
+}
