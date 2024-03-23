@@ -149,6 +149,7 @@ const boxInterval = document.getElementById("boxInterval");
 const boxAnimationFrame = document.getElementById("boxAnimationFrame");
 
 let intervalAngle = 0;
+let animationFrameAngle = 0;
 
 function animateWithInterval(){
     boxInterval.style.transform = "rotate(" + intervalAngle + "deg)"
