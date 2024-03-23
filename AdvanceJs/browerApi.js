@@ -132,5 +132,7 @@ function throttle(callback,delay = 500){
             return;
         }
         callback(...args)
+        isThrottled = true;
+        setTimeout(executeCallback,delay)
     }
 }
