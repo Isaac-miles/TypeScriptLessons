@@ -156,10 +156,13 @@ function animateWithInterval(){
     intervalAngle +=2;
 }
 // Start the animations
-setInterval(animateWithInterval,16); //60 FPS (approximately)
+// setInterval(animateWithInterval,16); //60 FPS (approximately)
 
-function animateWithInterval(){
-    boxAnimationFrame.style.transform = "rotate(" + intervalAngle + "deg)"
+function animateWithAnimationFrame(){
+    boxAnimationFrame.style.transform = "rotate(" + animationFrameAngle + "deg)"
+    animationFrameAngle +=2
+requestAnimationFrame(animateWithAnimationFrame)
+
 }
 //using animation frame
-// requestAnimationFrame()
+// requestAnimationFrame(animateWithAnimationFrame)
