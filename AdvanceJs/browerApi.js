@@ -101,6 +101,7 @@ function loadMoreItems(){
     }
 }
 
+//basic throttling technique
 let isThrottled = false;
 window.addEventListener("scroll", ()=>{
     if(!isThrottled){
@@ -112,5 +113,3 @@ window.addEventListener("scroll", ()=>{
     }
 });
 
-//Initial load
-loadMoreItems();
