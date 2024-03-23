@@ -100,3 +100,4 @@ function loadMoreItems(){
         }
     }
 }
+window.addEventListener("")
