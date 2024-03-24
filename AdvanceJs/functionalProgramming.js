@@ -58,3 +58,5 @@ function addToArray(arr,value){
 function pureAddToArray(arr,value){
     return [...arr,value]
 }
+
+//Higher Order functions: a function that receives another func as argument, returns a func, or does both
