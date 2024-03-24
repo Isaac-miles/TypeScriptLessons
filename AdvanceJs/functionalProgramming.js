@@ -15,8 +15,10 @@ const nums = [1,2,3,4,5,6,7,8,9];
 //Imperative approach
 const evens = [];
 for(let num of nums){
-    if(num%2 != 0)evens.push(num)
+    if(num%2 === 0)evens.push(num)
 }
 log(evens)
 
-//
+//functional approach
+const odd = nums.filter((n)=> n % 2 !== 0);
+log(odd)
