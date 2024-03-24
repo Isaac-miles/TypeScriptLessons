@@ -74,3 +74,5 @@ function multiplyBy(factor){
 
 const double = multiplyBy(2);
 log(double(2))
+
+//Immutability
