@@ -48,3 +48,8 @@ function squareAndUpdateValue(num){
 function square(num){
     return num * num;
 }
+//Impure
+const colors = ["red","orange"];
+function addToArray(arr,value){
+    return arr.push(value);
+}
