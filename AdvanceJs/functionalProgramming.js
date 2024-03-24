@@ -36,4 +36,12 @@ log(max)
 //functional approach
 Math.max(...numbers);
 
-//pure functions
+//pure functions: referential transparency, the function always gives the same return value for the same argument, the function cannot depend on any mutable state, side effect free.
+
+//Impure
+let value =2;
+function squareAndUpdateValue(num){
+    value = num * num
+    return num;
+}
+//
