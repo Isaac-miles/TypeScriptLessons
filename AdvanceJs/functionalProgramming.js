@@ -99,3 +99,10 @@ function factorial2(n){
     }
     return n* factorial(n-1);
 }
+
+//Partial application
+//the process of executing a function with some or all of its arguments. the pratially applied function then gets returned for later use.
+function greet(greeting, name){
+    log(`${greeting},${name}!!`)
+}
+const greetMe = greet.bind(null,"G' Dya")
