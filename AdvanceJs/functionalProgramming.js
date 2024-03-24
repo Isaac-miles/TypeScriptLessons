@@ -83,3 +83,11 @@ const person = {name:"Jon", age:4}
 Object.freeze(person) // one way of preventing mutability in objects
 
 //Recursion
+//factorial: 3!, this is not a recursive approach
+function factorial(n){
+    let result = 1;
+    for(let i=n;i>1; i--){
+        result *= i
+    }
+    return result
+}
