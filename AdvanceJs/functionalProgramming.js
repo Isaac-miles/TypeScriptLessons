@@ -35,3 +35,5 @@ log(max)
 
 //functional approach
 Math.max(...numbers);
+
+//pure functions
