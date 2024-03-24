@@ -93,3 +93,9 @@ function factorial(n){
 }
 
 //recursive approach
+function factorial2(n){
+    if(n===0 || n===1){
+        return 1;
+    }
+    return n* factorial(n-1);
+}
