@@ -106,3 +106,7 @@ function greet(greeting, name){
     log(`${greeting},${name}!!`)
 }
 const greetMe = greet.bind(null,"G' Dya")
+
+function multiply(a,b){
+    return a*b;
+}
