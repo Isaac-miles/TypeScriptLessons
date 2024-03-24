@@ -60,3 +60,17 @@ function pureAddToArray(arr,value){
 }
 
 //Higher Order functions: a function that receives another func as argument, returns a func, or does both
+function doTwice(func){
+    func()
+    func()
+}
+doTwice(()=>log("Hello I am an argument"));
+
+function multiplyBy(factor){
+    return (number)=>{
+        return number * factor
+    };
+}
+
+const double = multiplyBy(2);
+log(double(2))
