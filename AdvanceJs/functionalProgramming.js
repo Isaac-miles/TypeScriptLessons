@@ -110,3 +110,9 @@ const greetMe = greet.bind(null,"G' Dya")
 function multiply(a,b){
     return a*b;
 }
+
+function partial(func,...fixedArgs){
+    return function(...remainingArgs){
+        return func(...fixedArgs,...remainingArgs)
+    };
+}
