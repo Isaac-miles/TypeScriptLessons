@@ -44,4 +44,7 @@ function squareAndUpdateValue(num){
     value = num * num
     return num;
 }
-//
+//Pure
+function square(num){
+    return num * num;
+}
