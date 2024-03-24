@@ -22,3 +22,13 @@ log(evens)
 //functional approach
 const odd = nums.filter((n)=> n % 2 !== 0);
 log(odd)
+
+//Imperative approach
+let numbers = [1,2,3,4,5]
+let max = numbers[0];
+for(let i=1; i<numbers.length; i++){
+    if(numbers[i] > max){
+        max = numbers[i]
+    }
+}
+log(max)
