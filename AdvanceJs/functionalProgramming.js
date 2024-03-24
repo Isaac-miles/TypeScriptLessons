@@ -91,3 +91,5 @@ function factorial(n){
     }
     return result
 }
+
+//recursive approach
