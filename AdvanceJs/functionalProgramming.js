@@ -81,3 +81,5 @@ arrayNum.push(5) //const alone doesn't prevent mutability
 
 const person = {name:"Jon", age:4}
 Object.freeze(person) // one way of preventing mutability in objects
+
+//Recursion
