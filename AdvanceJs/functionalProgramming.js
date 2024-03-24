@@ -32,3 +32,6 @@ for(let i=1; i<numbers.length; i++){
     }
 }
 log(max)
+
+//functional approach
+Math.max(...numbers);
