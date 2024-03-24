@@ -76,3 +76,8 @@ const double = multiplyBy(2);
 log(double(2))
 
 //Immutability
+const arrayNum = [1,2,3,4]
+arrayNum.push(5) //const alone doesn't prevent mutability
+
+const person = {name:"Jon", age:4}
+Object.freeze(person) // one way of preventing mutability in objects
