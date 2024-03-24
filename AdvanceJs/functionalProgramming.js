@@ -53,3 +53,8 @@ const colors = ["red","orange"];
 function addToArray(arr,value){
     return arr.push(value);
 }
+
+//Pure: this returns a new copy of the array
+function pureAddToArray(arr,value){
+    return [...arr,value]
+}
