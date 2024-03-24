@@ -2,8 +2,10 @@
 
 //functional programming methods (map,filter,some/every,find/findIndex,reduce)
 
-//Imperative programming eg
+//Imperative programming eg: describing using code
 let sum = 0;
 for(let i=0; i<=5;i++){
     sum += i
 }
+//functional programming: writing pure functions to archive same result
+let j = [1,2,3,4,5].reduce((acc,val)=> acc + val, 1);
