@@ -18,28 +18,28 @@ async function getPokemon(){
 
 }
 
-fetch(POKE_URL)
-    .then((res)=>{
-        if(!res.ok){
-            throw new Error("Http error")
-        }
-        return res.json()
-    })
-    .then(data=>log(data))
-    .catch((e)=>{
-        log(e)
-    })
+// fetch(POKE_URL)
+//     .then((res)=>{
+//         if(!res.ok){
+//             throw new Error("Http error")
+//         }
+//         return res.json()
+//     })
+//     .then(data=>log(data))
+//     .catch((e)=>{
+//         log(e)
+//     })
 
     async function getPokemonWithHeaders(){
-        const headers = new Headers({"content-tye":"application/json"});
-        
+        const headers = new Headers({"content-tye":"application/json"}); //using the new header standardizes the headers
+
         try {
                 //the fetch api returns a readable streams of responses 
-             const response = await fetch(POKE_URL)
+             const response = await fetch(POKE_URL,headers)
             if(!response.ok){
                 throw new Error("Http error")
             }
-        //the json recieves a readable stream of responses from the fetch interface and brings it to completion
+        //the json receives a readable stream of responses from the fetch interface and brings it to completion
         const data = await response.json()
         log(data)
         } catch (error) {
