@@ -29,3 +29,22 @@ fetch(POKE_URL)
     .catch((e)=>{
         log(e)
     })
+
+    async function getPokemonWithHeaders(){
+        const headers = new Headers({"content-tye":"application/json"});
+        
+        try {
+                //the fetch api returns a readable streams of responses 
+             const response = await fetch(POKE_URL)
+            if(!response.ok){
+                throw new Error("Http error")
+            }
+        //the json recieves a readable stream of responses from the fetch interface and brings it to completion
+        const data = await response.json()
+        log(data)
+        } catch (error) {
+            log(e)
+        }
+    
+    }
+    
