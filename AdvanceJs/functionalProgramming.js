@@ -144,6 +144,10 @@ function lowerCaseString(str){
 
  function compose(...functions){
     return function(data){
-        functions.reduceRight((val,func)=>func(val), data)
+       return functions.reduceRight((val,func)=>func(val), data)
     }
  }
+
+ const slug = compose(joinWithDash,splitWords,lowerCaseString);
+
+ //Currying:a curried function can be called with any number of arguments- if you call it with fewer args than it takes,it returns a "smaller" partial which you can then call with remaining arguments.
