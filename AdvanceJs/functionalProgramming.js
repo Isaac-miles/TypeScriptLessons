@@ -123,3 +123,13 @@ const doubled = partial(multiply, 2)
 const add=(a,b) =>a+b;
 const square =(a)=>a*a;
 square(add(2,2))
+
+function lowerCaseString(str){
+    return str.toLowerCase()
+}
+ function slitWords(str){
+    return str.split(" ")
+ }
+ function joinWithDash(array){
+    return array.join("-")
+ }
