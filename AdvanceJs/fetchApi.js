@@ -5,8 +5,10 @@ const {log} = console;
 async function getPokemon(){
     try {
             //the fetch api returns a readable streams of responses 
-    const response = await fetch(POKE_URL)
-
+         const response = await fetch(POKE_URL)
+        if(!response.ok){
+            throw new Error("Http error")
+        }
     //the json recieves a readable stream of responses from the fetch interface and brings it to completion
     const data = await response.json()
     log(data)
