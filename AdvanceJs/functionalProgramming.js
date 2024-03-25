@@ -141,3 +141,9 @@ function lowerCaseString(str){
         )
     )
  );
+
+ function compose(...functions){
+    return function(data){
+        functions.reduceRight((val,func)=>func(val), data)
+    }
+ }
