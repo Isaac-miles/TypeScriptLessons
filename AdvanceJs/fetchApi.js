@@ -17,8 +17,13 @@ async function getPokemon(){
 }
 
 fetch(POKE_URL)
-    .then((res)=>res.json())
-    .then((data)=>log(data))
+    .then((res)=>{
+        if(!res.ok){
+            throw new Error("Http error")
+        }
+        return res.json()
+    })
+    .then(data=>log(data))
     .catch((e)=>{
         log(e)
     })
