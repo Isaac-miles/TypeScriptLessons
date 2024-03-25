@@ -179,3 +179,5 @@ function lowerCaseString(str){
         }
     }
  }
+
+ const curriedAdd = curry(add3);
