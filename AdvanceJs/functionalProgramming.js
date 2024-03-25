@@ -121,15 +121,23 @@ const doubled = partial(multiply, 2)
 
 //Composition:function composition is a mechanism of combining multiple functions to build a more complicated one. f(g(x))
 const add=(a,b) =>a+b;
-const square =(a)=>a*a;
-square(add(2,2))
+const squared =(a)=>a*a;
+squared(add(2,2))
 
 function lowerCaseString(str){
     return str.toLowerCase()
 }
- function slitWords(str){
+ function splitWords(str){
     return str.split(" ")
  }
  function joinWithDash(array){
+
     return array.join("-")
  }
+ joinWithDash(
+    splitWords(
+        lowerCaseString(
+            "Hello My Name is Miles"
+        )
+    )
+ );
