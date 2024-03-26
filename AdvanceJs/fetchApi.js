@@ -58,5 +58,6 @@ async function getPokemon(){
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(newUser)
-        })
+        });
+        const data = await response.json();
     }
