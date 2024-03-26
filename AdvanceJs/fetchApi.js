@@ -55,6 +55,7 @@ async function getPokemon(){
             designation:"banker"
         }
         const res = await fetch("api",{
-            
+            method:"POST",
+            headers:{"content-type":"application/json"}
         })
     }
