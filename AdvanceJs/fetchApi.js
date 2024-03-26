@@ -79,3 +79,8 @@ async function getPokemon(){
             log("Error uploading file", file)
         }
     }
+
+    const fileInput = document.querySelector("#fileUpload");
+    fileInput.addEventListener("change",(e)=>{
+        log(e)
+    })
