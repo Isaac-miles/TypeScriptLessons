@@ -85,3 +85,8 @@ async function getPokemon(){
         formData.append("logo",fileInput.files[0])
         log(formData)
     })
+
+    //storage
+    //localStorage:allows web applications to store key-value pains in a web browser persistently accross sessions
+
+    //sessionStorage: allows web applications to stor key-value pairs in a web browser for a single session
