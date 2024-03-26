@@ -56,6 +56,7 @@ async function getPokemon(){
         }
         const res = await fetch("api",{
             method:"POST",
-            headers:{"content-type":"application/json"}
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(newUser)
         })
     }
