@@ -48,3 +48,10 @@ async function getPokemon(){
     
     }
     
+    async function postData(){
+        const newUser ={
+            name:"miles",
+            age:23,
+            designation:"banker"
+        }
+    }
