@@ -68,8 +68,7 @@ async function getPokemon(){
     async function uploadFile(formData){
        
         try {
-             // const formData = new FormData();
-        // formData.append('file',file)
+      
         const response = await fetch("api",{
             method:"Post",
             body: formData
@@ -82,5 +81,7 @@ async function getPokemon(){
 
     const fileInput = document.querySelector("#fileUpload");
     fileInput.addEventListener("change",(e)=>{
-        log(e)
+        const formData = new FormData();
+        formData.append("logo",fileInput.files[0])
+        log(formData)
     })
