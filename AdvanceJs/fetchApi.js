@@ -60,4 +60,5 @@ async function getPokemon(){
             body:JSON.stringify(newUser)
         });
         const data = await response.json();
+        log(data)
     }
