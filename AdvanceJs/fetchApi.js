@@ -54,4 +54,7 @@ async function getPokemon(){
             age:23,
             designation:"banker"
         }
+        const res = await fetch("api",{
+            
+        })
     }
