@@ -62,3 +62,20 @@ async function getPokemon(){
         const data = await response.json();
         log(data)
     }
+
+    //uploading files
+
+    async function uploadFile(formData){
+       
+        try {
+             // const formData = new FormData();
+        // formData.append('file',file)
+        const response = await fetch("api",{
+            method:"Post",
+            body: formData
+        })
+        const res = await response.json();
+        } catch (error) {
+            log("Error uploading file", file)
+        }
+    }
