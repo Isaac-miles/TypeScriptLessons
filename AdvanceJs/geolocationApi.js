@@ -4,9 +4,7 @@
 
     const navigateBtn = document.querySelector("#getLocation").addEventListener("click",()=>{
         if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(function(position){
-                log(position)
-            },
+            navigator.geolocation.getCurrentPosition(displayGeoData,
             function(err){
                 log(err)
             })
@@ -16,4 +14,5 @@
     const displayGeoData = (position)=>{
         const {latitude,longitude} = position.coords;
         const displayArea = document.querySelector("#locationDisplay");
+        displayArea.textContent = `Latitude: ${latitude}, longitude: ${longitude}`
     }
