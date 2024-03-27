@@ -2,9 +2,13 @@
 
    const {log} = console;
 
-    if(navigator.geolocation){
-        log("access",navigator)
-    }
-    
-    const navigateBtn = document.querySelector("#getLocation");
-    
+    const navigateBtn = document.querySelector("#getLocation").addEventListener("click",()=>{
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                log(position)
+            },
+            function(err){
+                log(err)
+            })
+        }
+    });
