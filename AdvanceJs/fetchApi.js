@@ -92,7 +92,7 @@ async function getPokemon(){
     //sessionStorage: allows web applications to stor key-value pairs in a web browser for a single session
 
     //IndexedDB: can handle a lot more data
-    const open = indexedDB.open("myFirstDb",1) //the 1 here is version number
+    const open = indexedDB.open("myFirstDB",2); //the 2 here is version number
 
     open.onupgradeneeded =()=>{
         const db = open.result;
@@ -105,11 +105,17 @@ async function getPokemon(){
        const transaction = db.transaction("MyUserStore","readwrite")
        const store = transaction.objectStore("MyUserStore");
 
-       store.put({id:1,username:"bilbo",age:99})
-       store.get(1)
+    //    store.put({id:1,username:"bilbo",age:99})
+    //    store.put({id:2,username:"milo",age:10})
+    //    store.put({id:3,username:"kilo",age:19})
+       const user = store.getAll()
        user.onsuccess = ()=>{
-        log(user)
+        log(user.result)
        }
+       
+       transaction.oncomplete =()=>{
+        db.close()
+    }
     }
     open.onerror =()=>{
         log("error");
