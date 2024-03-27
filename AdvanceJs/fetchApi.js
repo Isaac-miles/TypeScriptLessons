@@ -94,9 +94,14 @@ async function getPokemon(){
     //IndexedDB: can handle a lot more data
     const open = indexedDB.open("myFirstDb",1) //the 1 here is version number
 
-open.onsuccess =()=>{
-    log("success")
-}
-open.onerror =()=>{
-    log("error")
-}
+    open.onupgradeneeded =()=>{
+        const db = open.result;
+        db.createObjectStore("MyUserStore",{keyPath:"id"});
+    }
+
+    open.onsuccess =()=>{
+        log("success")
+    }
+    open.onerror =()=>{
+        log("error")
+    }
