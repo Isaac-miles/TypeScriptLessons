@@ -120,3 +120,5 @@ async function getPokemon(){
     open.onerror =()=>{
         log("error");
     }
+
+ 
