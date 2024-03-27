@@ -12,3 +12,8 @@
             })
         }
     });
+
+    const displayGeoData = (position)=>{
+        const {latitude,longitude} = position.coords;
+        const displayArea = document.querySelector("#locationDisplay");
+    }
