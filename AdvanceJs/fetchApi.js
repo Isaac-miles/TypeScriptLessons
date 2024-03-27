@@ -90,3 +90,7 @@ async function getPokemon(){
     //localStorage:allows web applications to store key-value pains in a web browser persistently accross sessions
 
     //sessionStorage: allows web applications to stor key-value pairs in a web browser for a single session
+
+    //IndexedDB: can handle a lot more data
+    const open = indexedDB.open("myFirstDb",1) //the 1 here is version number
+    
