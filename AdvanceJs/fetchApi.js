@@ -97,11 +97,20 @@ async function getPokemon(){
     open.onupgradeneeded =()=>{
         const db = open.result;
         db.createObjectStore("MyUserStore",{keyPath:"id"});
-    }
+    };
 
     open.onsuccess =()=>{
         log("success")
+        const db= open.result;
+       const transaction = db.transaction("MyUserStore","readwrite")
+       const store = transaction.objectStore("MyUserStore");
+
+       store.put({id:1,username:"bilbo",age:99})
+       store.get(1)
+       user.onsuccess = ()=>{
+        log(user)
+       }
     }
     open.onerror =()=>{
-        log("error")
+        log("error");
     }
