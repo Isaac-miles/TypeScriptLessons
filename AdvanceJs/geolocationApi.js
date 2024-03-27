@@ -6,4 +6,5 @@
         log("access",navigator)
     }
     
-    const navigateBtn = document.querySelector("")
+    const navigateBtn = document.querySelector("#getLocation");
+    
