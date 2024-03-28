@@ -136,4 +136,9 @@
 
     performance.measure("Bubble sort Time","bubbleSortStart","bubbleSortStop")
 
-    const nativeDuration =performance.getEntriesByName("Native sort Time")[0].duration
+    const nativeDuration =performance.getEntriesByName("Native sort Time")[0].duration;
+
+    const bubbleDuration =performance.getEntriesByName("Bubble sort Time")[0].duration;
+    
+    log("Native sort took ",nativeDuration)
+    log("bubble sort took ",bubbleDuration)
