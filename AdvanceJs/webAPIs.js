@@ -77,9 +77,16 @@
     //enables drawing graphics via javascript and html <canvas> element.
     const canvas = document.querySelector("#canvas");
     ctx = canvas.getContext("2d");
-    ctx.fillStyle = "rbga(255,0,0,0.5)";
-    ctx.fillRect(0,0,200,80)
+    // ctx.fillStyle = "rbga(255,0,0,0.5)";
+    // ctx.fillRect(0,0,200,80)
 
-    ctx.fillStyle = "rbga(0,255,255,0.5)";
-    ctx.fillRect(100,50,200,80)
+    // ctx.fillStyle = "rbga(0,255,255,0.5)";
+    // ctx.fillRect(100,50,200,80)
+    ctx.strokeStyle = "teal";
+    ctx.lineWidth = 4;
+    ctx.fillRect(50,50,200,200);
+    ctx.clearRect(50,50,100,100)
+    ctx.strokeRect(50,50,100,100)
 
+    ctx.beginPath();
+    
