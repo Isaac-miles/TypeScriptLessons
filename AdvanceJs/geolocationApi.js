@@ -46,3 +46,6 @@
                 log(entry)
             })
         })
+        //lets say we have an advert we want to observe
+        const ad= document.querySelector(".add");
+        observer.observe(ad)
