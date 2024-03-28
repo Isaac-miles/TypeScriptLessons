@@ -89,9 +89,12 @@
                 const {id} = entry.target
 
                 if(isIntersecting){
-                    log(id,'is visible')
+                    log(id,'is visible');
                 }else{
-                    log(id,"add is not visible")
+                    log(id,"add is not visible");
                 }
             })
         },{threshold:0.5})
+
+        const ads = document.querySelectorAll(".ad");
+        ads.forEach((ad)=>observer.observe(ad))
