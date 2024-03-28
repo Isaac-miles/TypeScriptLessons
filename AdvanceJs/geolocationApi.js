@@ -128,6 +128,12 @@
     arrayForNativeSort.sort((a,b)=>a-b);
     performance.mark("nativeSortEnds")
 
+    performance.measure("Native sort Time","nativeSortStart","nativeSortEnds")
+
     performance.mark("bubbleSortStart")
     bubbleSort(arrayForBubbleSort);
-    
+    performance.mark("bubbleSortStop")
+
+    performance.measure("Bubble sort Time","bubbleSortStart","bubbleSortStop")
+
+    const nativeDuration =performance.getEntriesByName("Native sort Time")[0].duration
