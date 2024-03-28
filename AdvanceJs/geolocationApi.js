@@ -63,5 +63,10 @@
         let adVisibleStartTime;
 
         const addObserver = new IntersectionObserver((entries)=>{
-            
+            entries.forEach(entry=>{
+                const {isIntersecting} = entry;
+                if(isIntersecting){
+                    //ad is visible
+                }
+            })
         },{threshold:0.5})
