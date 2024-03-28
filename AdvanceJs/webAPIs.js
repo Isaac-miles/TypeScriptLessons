@@ -80,13 +80,22 @@
     // ctx.fillStyle = "rbga(255,0,0,0.5)";
     // ctx.fillRect(0,0,200,80)
 
-    // ctx.fillStyle = "rbga(0,255,255,0.5)";
+    ctx.fillStyle = "rbga(0,255,255,0.5)";
     // ctx.fillRect(100,50,200,80)
     ctx.strokeStyle = "teal";
     ctx.lineWidth = 4;
-    ctx.fillRect(50,50,200,200);
-    ctx.clearRect(50,50,100,100)
-    ctx.strokeRect(50,50,100,100)
+    // ctx.fillRect(50,50,200,200);
+    // ctx.clearRect(50,50,100,100)
+    // ctx.strokeRect(50,50,100,100)
 
     ctx.beginPath();
-    
+    ctx.moveTo(50,50);
+    ctx.lineTo(100,100);
+    ctx.lineTo(200,80);
+    ctx.lineTo(200,40);
+    // ctx.stroke();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(145,145,50,0,2 * Math.PI);
+    ctx.stroke();
