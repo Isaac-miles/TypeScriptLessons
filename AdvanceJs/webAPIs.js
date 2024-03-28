@@ -72,3 +72,7 @@
             oscillator = null;
         }
     })
+
+    //Canvas Api
+    //enables drawing graphics via javascript and html <canvas> element.
+    
