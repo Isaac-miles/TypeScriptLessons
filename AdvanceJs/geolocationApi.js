@@ -73,6 +73,7 @@
                    let addViewDuration = Date.now()- adVisibleStartTime;
 
                    adViewTimes.push(addViewDuration);
+                   log(`Ad was views for ${addViewDuration} ms`);
                 }
             })
         },{threshold:0.5})
