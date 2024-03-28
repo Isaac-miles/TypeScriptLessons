@@ -20,8 +20,26 @@
 
     //UserMedia
     const startStream = document.querySelector("#startStream").addEventListener("click",async()=>{
-      const stream = await navigator.mediaDevices.getUserMedia({video:true})
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({video:true})
         
-      const videoElement = document.querySelector("#videoElement");
-      videoElement.srcObject = stream;
+            const videoElement = document.querySelector("#videoElement");
+            videoElement.srcObject = stream;
+        } catch (error) {
+            log(error)
+            document.querySelector("#errorText").textContent = error.message
+        }
+   
     })
+
+    //if the user has multiple audio and media devices plugged in
+    navigator.mediaDevices.enumerateDevices()
+        .then((devices)=>{
+            log(devices)
+        })
+        .catch(err=>log(err.message))
+
+        //Intersection Observer API: provides a way to asynchronously observe changes in the intersection of a target element with its parent or the viewport
+        const observer = new IntersectionObserver((entries)=>{
+            
+        })
