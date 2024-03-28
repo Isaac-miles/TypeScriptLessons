@@ -145,3 +145,6 @@
 
     //web Audio APi:Allows for the processing and synthesizing of audio in web applications.
     const context = new AudioContext();
+    const slider = document.querySelector("#freqSlider");
+    const playBtn = document.querySelector("#playBtn")
+    const stopBtn = document.querySelector("#stopBtn")
