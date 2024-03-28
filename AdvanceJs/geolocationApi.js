@@ -74,6 +74,7 @@
 
                    adViewTimes.push(addViewDuration);
                    log(`Ad was views for ${addViewDuration} ms`);
+                //    observer.unobserve(entry.target) // stop observing
                    adVisibleStartTime = undefined;
                 }
             })
@@ -98,3 +99,9 @@
 
         const ads = document.querySelectorAll(".ad");
         ads.forEach((ad)=>observer.observe(ad))
+
+        //Performance ApI
+        //Allows measurement of the performance of web pages and web apps, it basically gives us access to very high precision timing data, and we can find the timing data on how long resources take to load, or how long function takes to run.
+        const largeArray = Array.from({length:1000},()=>{
+            return Math.floor(Math.random()*1000);
+        })
