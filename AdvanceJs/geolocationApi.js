@@ -151,5 +151,7 @@
 
     const oscillator = null;
     playBtn.addEventListener("click",()=>{
-         oscillator = context.createOscillator()
+         oscillator = context.createOscillator();
+         oscillator.type ="sawtooth";
+         oscillator.frequency.value = slider.value;
     })
