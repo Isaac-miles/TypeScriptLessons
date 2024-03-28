@@ -41,5 +41,8 @@
 
         //Intersection Observer API: provides a way to asynchronously observe changes in the intersection of a target element with its parent or the viewport
         const observer = new IntersectionObserver((entries)=>{
-            
+            entries.forEach((entry)=>{
+                log("INTERSECTION OBSERVED!!!");
+                log(entry)
+            })
         })
