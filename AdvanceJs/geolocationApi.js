@@ -74,6 +74,7 @@
 
                    adViewTimes.push(addViewDuration);
                    log(`Ad was views for ${addViewDuration} ms`);
+                   adVisibleStartTime = undefined;
                 }
             })
         },{threshold:0.5})
