@@ -86,6 +86,12 @@
         const addObserver2 = new IntersectionObserver((entries)=>{
             entries.forEach(entry=>{
                 const {isIntersecting} = entry;
-                
+                const {id} = entry.target
+
+                if(isIntersecting){
+                    log(id,'is visible')
+                }else{
+                    log(id,"add is not visible")
+                }
             })
         },{threshold:0.5})
