@@ -67,6 +67,10 @@
                 const {isIntersecting} = entry;
                 if(isIntersecting){
                     //ad is visible
+                    adVisibleStartTime = Date.now();
+                }else if(adVisibleStartTime){
+                    //ad has been visible, no longer os visible
+                    
                 }
             })
         },{threshold:0.5})
