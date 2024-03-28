@@ -70,7 +70,9 @@
                     adVisibleStartTime = Date.now();
                 }else if(adVisibleStartTime){
                     //ad has been visible, no longer os visible
-                    
+                   let addViewDuration = Date.now()- adVisibleStartTime;
+
+                   adViewTimes.push(addViewDuration);
                 }
             })
         },{threshold:0.5})
