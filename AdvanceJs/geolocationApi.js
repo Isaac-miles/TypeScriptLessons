@@ -58,3 +58,10 @@
                 log(entry)
             })
         },{threshold:[0,0.25,0.5,0.75,1]})//you can also pass an array of threshold [0,0.5,1,1.5]
+
+        let adViewTimes = [];
+        let adVisibleStartTime;
+
+        const addObserver = new IntersectionObserver((entries)=>{
+            
+        },{threshold:0.5})
