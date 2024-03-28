@@ -35,7 +35,7 @@
     //if the user has multiple audio and media devices plugged in
     navigator.mediaDevices.enumerateDevices()
         .then((devices)=>{
-            log(devices)
+            // log(devices)
         })
         .catch(err=>log(err.message))
 
@@ -43,12 +43,12 @@
         const observer = new IntersectionObserver((entries)=>{
             entries.forEach((entry)=>{
                 log("INTERSECTION OBSERVED!!!");
-                log(entry)
+                // log(entry)
             })
         })
         //lets say we have an advert we want to observe
-        const ad= document.querySelector(".add");
-        observer.observe(ad)
+        // const ad= document.querySelector(".add");
+        // observer.observe(ad)
 
         //the instersectionObserver can also accepts a second arg, object, with props like threshold, which tells it how long the doc is visible before the callback fires up.
 
@@ -76,5 +76,16 @@
                    log(`Ad was views for ${addViewDuration} ms`);
                    adVisibleStartTime = undefined;
                 }
+            })
+        },{threshold:0.5})
+
+        const ad= document.querySelector(".add");
+        observer.observe(ad)
+
+        //multiple entries
+        const addObserver2 = new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                const {isIntersecting} = entry;
+                
             })
         },{threshold:0.5})
