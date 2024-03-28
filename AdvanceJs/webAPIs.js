@@ -75,4 +75,8 @@
 
     //Canvas Api
     //enables drawing graphics via javascript and html <canvas> element.
+    const canvas = document.querySelector("#canvas");
+    ctx = canvas.getContext("2d");
+    ctx.fillStyle = "rbg(255,0,0)";
+    ctx.fillRect(0,0,50,90)
     
