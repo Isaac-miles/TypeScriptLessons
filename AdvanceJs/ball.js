@@ -31,12 +31,15 @@ class Ball{
 }
 
     function loopBall(){
+        ctx.fillStyle = "#f2f2f2";
+        
         for(let ball of balls){
             ball.update();
             ball.draw();
         }
         requestAnimationFrame(loop);
     }
+    
     canvas.addEventListener("click",(e)=>{
         const ball = new Ball(e.clientX, e.clientY);
         balls.push(ball);
