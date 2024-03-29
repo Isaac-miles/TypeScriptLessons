@@ -24,7 +24,6 @@ class Ball{
 }
 
 canvas.addEventListener("click",(e)=>{
-    log("clicked", e.clientX,e.clientY)
     const ball = new Ball(e.clientX, e.clientY);
     ball.draw();
 })
