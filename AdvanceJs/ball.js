@@ -26,11 +26,18 @@ class Ball{
     }
     update(){
         //check if its about to hit the canvas bound
-        if((this.x + this.size)>=canvas.width || (this.x-this.size)<=0){
+        if((this.x + this.size)>=canvas.width || (this.x - this.size)<=0){
             this.xVel =-this.xVel
+        }
+        if((this.y + this.size)>=canvas.width || (this.y - this.size)<=0){
+            this.yVel =-this.yVel
         }
         this.x += this.xVel;
         this.y -= this.yVel;
+
+        if((this.y + this.size) < canvas.height){
+            this.yVel += .5;
+        }
     }
 }
 
