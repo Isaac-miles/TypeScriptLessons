@@ -9,6 +9,7 @@ class Ball{
     constructor(x,y){
         this.x = x;
         this.y = y;
+        this.size = Math.random() * 30 + 10;
     }
     draw(){
         ctx.beginPath();
