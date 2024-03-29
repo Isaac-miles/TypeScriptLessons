@@ -24,7 +24,8 @@ class Ball{
         ctx.fill()
     }
     update(){
-        this.x = this.xVel
+        this.x = this.xVel;
+        this.y = this.yVel;
     }
 }
 
