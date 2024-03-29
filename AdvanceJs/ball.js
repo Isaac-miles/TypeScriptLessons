@@ -10,8 +10,8 @@ class Ball{
         this.x = x;
         this.y = y;
         this.size = Math.random() * 30 + 10;
-        this.xVel = (Math.random()-0.5) *20;
-        this.yVel = (Math.random()-0.5) *20;
+        this.xVel = (Math.random()-0.5) *10;
+        this.yVel = (Math.random()-0.5) *10;
     }
 
     static getRandomColor(){
@@ -22,6 +22,9 @@ class Ball{
         ctx.fillStyle = Ball.getRandomColor()
         ctx.arc(this.x, this.y,this.size, 0, Math.PI*2 );
         ctx.fill()
+    }
+    update(){
+        this.x = this.xVel
     }
 }
 
