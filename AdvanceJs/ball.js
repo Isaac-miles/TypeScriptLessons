@@ -32,14 +32,16 @@ class Ball{
 
     function loopBall(){
         ctx.fillStyle = "#f2f2f2";
-        
+        ctx.fillRect(0,0,canvas.width, canvas.height)
         for(let ball of balls){
             ball.update();
             ball.draw();
         }
-        requestAnimationFrame(loop);
+        requestAnimationFrame(loopBall);
     }
-    
+
+    loopBall();
+
     canvas.addEventListener("click",(e)=>{
         const ball = new Ball(e.clientX, e.clientY);
         balls.push(ball);
