@@ -4,6 +4,7 @@ const canvas = document.querySelector("#ballCanvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d")
+const balls = [];
 
 class Ball{
     constructor(x,y){
@@ -24,8 +25,8 @@ class Ball{
         ctx.fill()
     }
     update(){
-        this.x = this.xVel;
-        this.y = this.yVel;
+        this.x += this.xVel;
+        this.y -= this.yVel;
     }
 }
 
