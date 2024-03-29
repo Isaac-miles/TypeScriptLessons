@@ -11,9 +11,14 @@ class Ball{
         this.y = y;
         this.size = Math.random() * 30 + 10;
     }
+
+    static getRandomColor(){
+        return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+    }
     draw(){
         ctx.beginPath();
-        ctx.arc(this.x, this.y,10, 0, Math.PI*2 );
+        ctx.fillStyle = Ball.getRandomColor()
+        ctx.arc(this.x, this.y,this.size, 0, Math.PI*2 );
         ctx.fill()
     }
 }
