@@ -12,7 +12,7 @@ class Ball{
     }
     draw(){
         ctx.beginPath();
-        ctx.arc(this.x,this.y20,0,Math.PI*2);
+        ctx.arc(this.x, this.y,30, 0, Math.PI*2 );
         ctx.fill()
     }
 }
