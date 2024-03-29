@@ -10,11 +10,14 @@ class Ball{
         this.x = x;
         this.y = y;
     }
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x,this.y20,0,Math.PI*2);
+        ctx.fill()
+    }
 }
 
 canvas.addEventListener("click",(e)=>{
     log("clicked", e.clientX,e.clientY)
-    ctx.beginPath();
-    ctx.arc( e.clientX,e.clientY,20,0,Math.PI*2);
-    ctx.fill()
+ 
 })
