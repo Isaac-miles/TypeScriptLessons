@@ -35,6 +35,7 @@ class Ball{
             ball.update();
             ball.draw();
         }
+        requestAnimationFrame(loop);
     }
     canvas.addEventListener("click",(e)=>{
         const ball = new Ball(e.clientX, e.clientY);
