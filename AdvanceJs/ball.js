@@ -30,7 +30,13 @@ class Ball{
     }
 }
 
-canvas.addEventListener("click",(e)=>{
-    const ball = new Ball(e.clientX, e.clientY);
-    ball.draw();
-})
+    function loopBall(){
+        for(let ball of balls){
+            ball.update();
+            ball.draw();
+        }
+    }
+    canvas.addEventListener("click",(e)=>{
+        const ball = new Ball(e.clientX, e.clientY);
+        balls.push(ball);
+    })
