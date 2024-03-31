@@ -48,7 +48,7 @@ class Ball{
             ball.update();
             ball.draw();
         }
-        // requestAnimationFrame(loopBall);
+        requestAnimationFrame(loopBall);
     }
 
     loopBall();
