@@ -55,5 +55,5 @@ class Ball{
 
     canvas.addEventListener("click",(e)=>{
         const ball = new Ball(e.clientX, e.clientY);
-        balls.push(ball);
+        // balls.push(ball);
     })
