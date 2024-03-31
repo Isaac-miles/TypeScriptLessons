@@ -46,7 +46,7 @@ class Ball{
         ctx.fillRect(0,0,canvas.width, canvas.height)
         for(let ball of balls){
             ball.update();
-            ball.draw();
+            // ball.draw();
         }
         requestAnimationFrame(loopBall);
     }
