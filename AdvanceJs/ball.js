@@ -54,6 +54,6 @@ class Ball{
     loopBall();
 
     canvas.addEventListener("click",(e)=>{
-        // const ball = new Ball(e.clientX, e.clientY);
+        const ball = new Ball(e.clientX, e.clientY);
         balls.push(ball);
     })
