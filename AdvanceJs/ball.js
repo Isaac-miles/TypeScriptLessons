@@ -36,7 +36,7 @@ class Ball{
         this.y -= this.yVel;
 
         if((this.y + this.size) < canvas.height){
-            this.yVel += .5;
+            this.yVel += .5÷;
         }
     }
 }
