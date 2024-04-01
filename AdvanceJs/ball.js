@@ -32,7 +32,7 @@ class Ball{
         if((this.y + this.size)>=canvas.width || (this.y - this.size)<=0){
             this.yVel =-this.yVel
         }
-        // this.x += this.xVel;
+        this.x += this.xVel;
         this.y -= this.yVel;
 
         if((this.y + this.size) < canvas.height){
