@@ -12,7 +12,7 @@ class Ball{
         this.y = y;
         this.size = Math.random() * 30 + 10;
         this.xVel = (Math.random()-0.5) *10;
-        this.yVel = (Math.random()-0.5) *10;
+        // this.yVel = (Math.random()-0.5) *10;
     }
 
     static getRandomColor(){
