@@ -22,7 +22,7 @@ class Ball{
         ctx.beginPath();
         ctx.fillStyle = Ball.getRandomColor()
         ctx.arc(this.x, this.y,this.size, 0, Math.PI*2 );
-        ctx.fill()
+        // ctx.fill()
     }
     update(){
         //check if its about to hit the canvas bound
